@@ -4,6 +4,7 @@ import Navbar from "../components/navbar/Navbar.jsx";
 import githubIcon from '../assets/Github.svg'
 import linkedInIcon from '../assets/LinkedIn.svg'
 import mailIcon from '../assets/Mail.svg'
+import AbilityCard from "../components/abilityCard/AbilityCard.jsx";
 
 const Home = () => {
     return (
@@ -47,7 +48,16 @@ const Home = () => {
                     </div>
                 </main>
             </div>
-
+            <section className={"h-full w-screen flex py-12 overflow-hidden"}>
+                <div className="container mx-auto flex flex-col items-center px-5">
+                    <h2 className={"text-5xl text-center text-s leading-16"}>Construyendo productos digitales con precisión</h2>
+                    <p className={"text-center mx-4 leading-7 text-muted-foreground my-8"}>Soy un desarrollador y diseñador con más de 8 años de experiencia creando experiencias web elegantes y de alto rendimiento. He trabajado con startups y empresas consolidadas para dar vida a sus visiones digitales.</p>
+                    <AbilityCard Icon={"Code"} Title={"Código limpio"} Description={"Desarrollo con las mejores prácticas y arquitectura escalable"} />
+                    <AbilityCard Icon={"Art"} Title={"Código limpio"} Description={"Desarrollo con las mejores prácticas y arquitectura escalable"} />
+                    <AbilityCard Icon={"Rocket"} Title={"Código limpio"} Description={"Desarrollo con las mejores prácticas y arquitectura escalable"} />
+                    <AbilityCard Icon={"Lightning"} Title={"Código limpio"} Description={"Desarrollo con las mejores prácticas y arquitectura escalable"} />
+                </div>
+            </section>
             <div className={"bg-primary/20 size-100 rounded-full blur-3xl fixed bottom-1/2 right-1/2 " +
                 "animate-pulse [animation-duration:3s] xl:right-0"}></div>
             <div className={"bg-accent/20 size-100 rounded-full blur-3xl fixed top-1/2 left-1/3 delay-150 " +
