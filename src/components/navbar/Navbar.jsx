@@ -8,7 +8,7 @@ const Navbar = () => {
         {code: "DE", name: "Deutsch", flag: "DE"},
     ]
     return (
-        <nav className={" flex justify-between px-10 items-center bg-background min-h-20"}>
+        <nav className={"w-screen flex justify-between px-10 items-center bg-background min-h-20"}>
             <div>
                 <img src={logoIcon} alt="Logo" className={"h-11 w-11"}/>
             </div>

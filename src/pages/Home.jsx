@@ -10,12 +10,12 @@ import TextCard from "../components/textCard/TextCard.jsx";
 const Home = () => {
     return (
         <>
-            <div className={"h-screen w-full flex flex-col overflow-hidden"}>
+            <header className={"fixed z-1"}>
                 <Navbar/>
-                <main
-                    className={"flex-1 w-full bg-linear-to-br from-primary/20 via-primary/5 via-transparent to-accent/10 text-white"}>
-                    <div
-                        className={"container h-full flex gap-y-10 flex-col items-start mx-auto pt-4 px-4 md:justify-center md:gap-y-12 md:gap-4 "}>
+            </header>
+            <main className={"w-full flex flex-col overflow-hidden"}>
+                <section className={"h-screen bg-linear-to-br from-primary/20 via-primary/5 via-transparent to-accent/10 text-white"}>
+                    <div className={"container h-full flex justify-center gap-y-10 flex-col items-start mx-auto pt-4 px-4 md:gap-y-12 md:gap-4 "}>
                         <div
                             className={"flex bg-muted-foreground/10 gap-2 px-3 items-center outline-1 p-2 rounded-3xl"}>
                             <div className={"bg-accent size-2 rounded-full animate-pulse"}></div>
@@ -47,35 +47,45 @@ const Home = () => {
                             </button>
                         </div>
                     </div>
-                </main>
-            </div>
-            <section className={"h-full w-screen flex py-12 overflow-hidden xl:h-screen"}>
-                <div className="container mx-auto flex flex-col items-center px-5">
-                    <h2 className={"text-5xl text-center text-s leading-16"}>Construyendo productos digitales con precisión</h2>
-                    <p className={"text-center mx-4 leading-7 text-muted-foreground my-8"}>Soy un desarrollador y diseñador con más de 8 años de experiencia creando experiencias web elegantes y de alto rendimiento. He trabajado con startups y empresas consolidadas para dar vida a sus visiones digitales.</p>
-                    <div className={"grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
-                        <AbilityCard Icon={"Code"} Title={"Código limpio"} Description={"Desarrollo con las mejores prácticas y arquitectura escalable"} />
-                        <AbilityCard Icon={"Art"} Title={"Diseño Innovador"} Description={"Interfaces modernas y experiencias de usuario excepcionales"} />
-                        <AbilityCard Icon={"Rocket"} Title={"Alto Rendimiento"} Description={"Optimización extrema para velocidad y eficiencia"} />
-                        <AbilityCard Icon={"Lightning"} Title={"Entrega Rápida"} Description={"Metodologías ágiles para resultados rápidos y efectivos"} />
+                </section>
+
+                <section className={"h-full w-screen flex py-12 overflow-hidden xl:h-screen"}>
+                    <div className="container mx-auto flex flex-col items-center px-5">
+                        <h2 className={"text-5xl text-center text-s leading-16"}>Construyendo productos digitales con
+                            precisión</h2>
+                        <p className={"text-center mx-4 leading-7 text-muted-foreground my-8"}>Soy un desarrollador y
+                            diseñador con más de 8 años de experiencia creando experiencias web elegantes y de alto
+                            rendimiento. He trabajado con startups y empresas consolidadas para dar vida a sus visiones
+                            digitales.</p>
+                        <div className={"grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
+                            <AbilityCard Icon={"Code"} Title={"Código limpio"}
+                                         Description={"Desarrollo con las mejores prácticas y arquitectura escalable"}/>
+                            <AbilityCard Icon={"Art"} Title={"Diseño Innovador"}
+                                         Description={"Interfaces modernas y experiencias de usuario excepcionales"}/>
+                            <AbilityCard Icon={"Rocket"} Title={"Alto Rendimiento"}
+                                         Description={"Optimización extrema para velocidad y eficiencia"}/>
+                            <AbilityCard Icon={"Lightning"} Title={"Entrega Rápida"}
+                                         Description={"Metodologías ágiles para resultados rápidos y efectivos"}/>
+                        </div>
+                        <h2 className={"text-2xl my-10"}>Tecnologías y herramientas</h2>
+                        <div className="grid grid-cols-2 gap-3 w-full md:grid-cols-3 lg:grid-cols-4">
+                            <TextCard Text={"React y Next.js"}/>
+                            <TextCard Text={"React y Next.js"}/>
+                            <TextCard Text={"React y Next.js"}/>
+                            <TextCard Text={"React y Next.js"}/>
+                            <TextCard Text={"React y Next.js"}/>
+                            <TextCard Text={"React y Next.js"}/>
+                            <TextCard Text={"React y Next.js"}/>
+                            <TextCard Text={"React y Next.js"}/>
+                        </div>
                     </div>
-                    <h2 className={"text-2xl my-10"}>Tecnologías y herramientas</h2>
-                    <div className="grid grid-cols-2 gap-3 w-full md:grid-cols-3 lg:grid-cols-4">
-                        <TextCard Text={"React y Next.js"}/>
-                        <TextCard Text={"React y Next.js"}/>
-                        <TextCard Text={"React y Next.js"}/>
-                        <TextCard Text={"React y Next.js"}/>
-                        <TextCard Text={"React y Next.js"}/>
-                        <TextCard Text={"React y Next.js"}/>
-                        <TextCard Text={"React y Next.js"}/>
-                        <TextCard Text={"React y Next.js"}/>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </main>
+
             <div className={"bg-primary/20 size-100 rounded-full blur-3xl fixed bottom-1/2 right-1/2 " +
-                "animate-pulse [animation-duration:3s] xl:right-0"}></div>
+                "animate-pulse [animation-duration:3s] z-2 xl:right-0"}></div>
             <div className={"bg-accent/20 size-100 rounded-full blur-3xl fixed top-1/2 left-1/3 delay-150 " +
-                "animate-pulse [animation-duration:3s] [animation-delay:1.5s] xl:left-0"}></div>
+                "animate-pulse [animation-duration:3s] [animation-delay:1.5s] z-2 xl:left-0"}></div>
             <div className={"h-screen bg-red-500"}></div>
         </>
     )
