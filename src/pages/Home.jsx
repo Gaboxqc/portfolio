@@ -14,7 +14,7 @@ const Home = () => {
             <header className={"fixed z-1"}>
                 <Navbar/>
             </header>
-            <main className={"w-full flex flex-col overflow-hidden"}>
+            <main className={"w-full flex flex-col"}>
                 <section className={"h-screen bg-linear-to-br from-primary/20 via-transparent to-accent/10 text-white"}>
                     <div className={"container h-full flex justify-center gap-y-10 flex-col items-start mx-auto pt-4 px-4 md:gap-y-12 md:gap-4 "}>
                         <div
@@ -85,12 +85,17 @@ const Home = () => {
                     <p className={"text-center mx-4 leading-7 text-muted-foreground my-4"}>Una selección de proyectos que han impactado a miles de usuarios</p>
                     <div className="grid lg:grid-cols-12 mt-20 mb-30">
                         <div className={"flex flex-col col-span-5 gap-30"}>
-                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} tecnologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
-                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} tecnologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
-                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} tecnologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
-                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} tecnologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
+                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} technologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
+                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} technologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
+                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} technologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
+                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} technologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
                         </div>
-                        <div className={"hidden col-span-7 lg:block w-full h-150 bg-primary/20 rounded-xl"}></div>
+                        <div className={"col-span-7 flex flex-col gap-50"}>
+                            <div className={"hidden lg:block w-full h-150 bg-primary/20 rounded-xl sticky top-40 self-start"}></div>
+                            <div className={"hidden lg:block w-full h-150 bg-red-500/20 rounded-xl sticky top-40 self-start"}></div>
+                            <div className={"hidden lg:block w-full h-150 bg-green-500/20 rounded-xl sticky top-40 self-start"}></div>
+                            <div className={"hidden lg:block w-full h-150 bg-orange-500/20 rounded-xl sticky top-40 self-start"}></div>
+                        </div>
                     </div>
                     <GradientButton label={"Ver todos los proyectos"}></GradientButton>
                 </section>
