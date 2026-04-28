@@ -6,6 +6,7 @@ import linkedInIcon from '../assets/LinkedIn.svg'
 import mailIcon from '../assets/Mail.svg'
 import AbilityCard from "../components/abilityCard/AbilityCard.jsx";
 import TextCard from "../components/textCard/TextCard.jsx";
+import FeaturedProject from "../components/featuredProject/FeaturedProject.jsx";
 
 const Home = () => {
     return (
@@ -78,13 +79,28 @@ const Home = () => {
                         <TextCard Text={"React y Next.js"}/>
                     </div>
                 </section>
+
+                <section className={"container flex flex-col items-center mx-auto my-30"}>
+                    <h2 className={"text-5xl text-center text-s leading-16"}>Proyectos Principales</h2>
+                    <p className={"text-center mx-4 leading-7 text-muted-foreground my-4"}>Una selección de proyectos que han impactado a miles de usuarios</p>
+                    <div className="grid lg:grid-cols-12 mt-20 mb-30">
+                        <div className={"flex flex-col col-span-5 gap-30"}>
+                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} tecnologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
+                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} tecnologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
+                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} tecnologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
+                            <FeaturedProject position={1} year={2026} title={"Quantum Commerce Platform"} description={"Plataforma de comercio electrónico de próxima generación con recomendaciones impulsadas por IA, gestión de inventario en tiempo real y análisis predictivo de ventas."} tecnologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
+                        </div>
+                        <div className={"hidden col-span-7 lg:block w-full h-150 bg-primary/20 rounded-xl"}></div>
+                    </div>
+                    <GradientButton label={"Ver todos los proyectos"}></GradientButton>
+                </section>
             </main>
 
             <div className={"bg-primary/20 size-100 rounded-full blur-3xl fixed bottom-1/2 right-1/2 " +
                 "animate-pulse [animation-duration:3s] z-2 xl:right-0"}></div>
             <div className={"bg-accent/20 size-100 rounded-full blur-3xl fixed top-1/2 left-1/3 delay-150 " +
                 "animate-pulse [animation-duration:3s] [animation-delay:1.5s] z-2 xl:left-0"}></div>
-            <div className={"h-screen bg-red-500"}></div>
+            <div className={"h-screen bg-blue-950"}></div>
         </>
     )
 }
