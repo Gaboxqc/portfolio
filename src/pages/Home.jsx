@@ -7,6 +7,7 @@ import mailIcon from '../assets/Mail.svg'
 import SkillCard from "../components/skillCard/SkillCard.jsx";
 import TextCard from "../components/textCard/TextCard.jsx";
 import FeaturedProject from "../components/featuredProject/FeaturedProject.jsx";
+import CertificationCardS from "../components/certificationCardS/CertificationCardS.jsx";
 
 const Home = () => {
     return (
@@ -100,9 +101,19 @@ const Home = () => {
                     <GradientButton label={"Ver todos los proyectos"}></GradientButton>
                 </section>
 
-                <section>
-                    <h2>Certificaciones</h2>
-                    <p>Certificaciones profesionales que respaldan mi experiencia técnica</p>
+                <section className={"container mx-auto flex flex-col my-30"}>
+                    <h2 className={"text-5xl text-center text-s leading-16 md:text-left md:mx-4"}>Certificaciones</h2>
+                    <div className={"flex justify-center text-center md:mx-4 md:justify-between"}>
+                        <p className={"leading-7 text-muted-foreground my-4 md:text-left"}>Certificaciones profesionales que respaldan mi experiencia técnica</p>
+                        <button className={"text-primary font-normal hover:text-accent hidden md:block"}>Ver todas</button>
+                    </div>
+                    <div className={"w-full grid grid-cols-1 gap-8 my-20 px-4 md:grid-cols-2"}>
+                        <CertificationCardS title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
+                        <CertificationCardS title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
+                        <CertificationCardS title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
+                        <CertificationCardS title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
+                    </div>
+                    <button className={"bg-primary/20 self-center p-4 rounded-xl outline-1 hover:bg-primary/30 md:hidden"}>Ver todas las certificaciones</button>
                 </section>
             </main>
 
