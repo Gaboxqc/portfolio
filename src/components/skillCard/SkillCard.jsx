@@ -3,7 +3,7 @@ import Code from '../../assets/Code.svg'
 import Lightning from '../../assets/Lightning.svg'
 import Rocket from '../../assets/Rocket.svg'
 
-const AbilityCard = ({Icon, Title, Description}) => {
+const SkillCard = ({Icon, Title, Description}) => {
     switch (Icon) {
         case 'Code': {
             Icon = Code
@@ -39,4 +39,4 @@ const AbilityCard = ({Icon, Title, Description}) => {
     )
 }
 
-export default AbilityCard
+export default SkillCard

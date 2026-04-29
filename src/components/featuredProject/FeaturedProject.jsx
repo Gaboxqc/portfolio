@@ -1,4 +1,4 @@
-import TextCardSm from "../textCard/textCard/TextCardSm.jsx";
+import TextCardSm from "../textCardSm/TextCardSm.jsx";
 
 const FeaturedProject = ({position, year, title, description, technologies}) => {
     return (

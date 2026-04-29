@@ -4,7 +4,7 @@ import Navbar from "../components/navbar/Navbar.jsx";
 import githubIcon from '../assets/Github.svg'
 import linkedInIcon from '../assets/LinkedIn.svg'
 import mailIcon from '../assets/Mail.svg'
-import AbilityCard from "../components/abilityCard/AbilityCard.jsx";
+import SkillCard from "../components/skillCard/SkillCard.jsx";
 import TextCard from "../components/textCard/TextCard.jsx";
 import FeaturedProject from "../components/featuredProject/FeaturedProject.jsx";
 
@@ -58,14 +58,14 @@ const Home = () => {
                         rendimiento. He trabajado con startups y empresas consolidadas para dar vida a sus visiones
                         digitales.</p>
                     <div className={"grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
-                        <AbilityCard Icon={"Code"} Title={"Código limpio"}
-                                     Description={"Desarrollo con las mejores prácticas y arquitectura escalable"}/>
-                        <AbilityCard Icon={"Art"} Title={"Diseño Innovador"}
-                                     Description={"Interfaces modernas y experiencias de usuario excepcionales"}/>
-                        <AbilityCard Icon={"Rocket"} Title={"Alto Rendimiento"}
-                                     Description={"Optimización extrema para velocidad y eficiencia"}/>
-                        <AbilityCard Icon={"Lightning"} Title={"Entrega Rápida"}
-                                     Description={"Metodologías ágiles para resultados rápidos y efectivos"}/>
+                        <SkillCard Icon={"Code"} Title={"Código limpio"}
+                                   Description={"Desarrollo con las mejores prácticas y arquitectura escalable"}/>
+                        <SkillCard Icon={"Art"} Title={"Diseño Innovador"}
+                                   Description={"Interfaces modernas y experiencias de usuario excepcionales"}/>
+                        <SkillCard Icon={"Rocket"} Title={"Alto Rendimiento"}
+                                   Description={"Optimización extrema para velocidad y eficiencia"}/>
+                        <SkillCard Icon={"Lightning"} Title={"Entrega Rápida"}
+                                   Description={"Metodologías ágiles para resultados rápidos y efectivos"}/>
                     </div>
                     <h2 className={"text-2xl my-10"}>Tecnologías y herramientas</h2>
                     <div className="grid grid-cols-2 gap-3 w-full md:grid-cols-3 lg:grid-cols-4">
@@ -99,12 +99,17 @@ const Home = () => {
                     </div>
                     <GradientButton label={"Ver todos los proyectos"}></GradientButton>
                 </section>
+
+                <section>
+                    <h2>Certificaciones</h2>
+                    <p>Certificaciones profesionales que respaldan mi experiencia técnica</p>
+                </section>
             </main>
 
             <div className={"bg-primary/20 size-100 rounded-full blur-3xl fixed bottom-1/2 right-1/2 " +
-                "animate-pulse [animation-duration:3s] z-2 xl:right-0"}></div>
+                "animate-pulse [animation-duration:3s] -z-1 xl:right-0"}></div>
             <div className={"bg-accent/20 size-100 rounded-full blur-3xl fixed top-1/2 left-1/3 delay-150 " +
-                "animate-pulse [animation-duration:3s] [animation-delay:1.5s] z-2 xl:left-0"}></div>
+                "animate-pulse [animation-duration:3s] [animation-delay:1.5s] -z-1"}></div>
             <div className={"h-screen bg-blue-950"}></div>
         </>
     )
