@@ -4,6 +4,9 @@ import Navbar from "../components/navbar/Navbar.jsx";
 import githubIcon from '../assets/Github.svg'
 import linkedInIcon from '../assets/LinkedIn.svg'
 import mailIcon from '../assets/Mail.svg'
+import chatIcon from '../assets/Chat.svg'
+import locationIcon from '../assets/Location.svg'
+
 import SkillCard from "../components/skillCard/SkillCard.jsx";
 import TextCard from "../components/textCard/TextCard.jsx";
 import FeaturedProject from "../components/featuredProject/FeaturedProject.jsx";
@@ -52,7 +55,7 @@ const Home = () => {
                 </section>
 
                 <section className={"h-full w-screen flex flex-col items-center px-5 py-12 overflow-hidden xl:h-screen container mx-auto"}>
-                    <h2 className={"text-5xl text-center text-s leading-16"}>Construyendo productos digitales con
+                    <h2 className={"text-5xl text-center leading-16"}>Construyendo productos digitales con
                         precisión</h2>
                     <p className={"text-center mx-4 leading-7 text-muted-foreground my-8"}>Soy un desarrollador y
                         diseñador con más de 8 años de experiencia creando experiencias web elegantes y de alto
@@ -82,7 +85,7 @@ const Home = () => {
                 </section>
 
                 <section className={"container flex flex-col items-center mx-auto my-30"}>
-                    <h2 className={"text-5xl text-center text-s leading-16"}>Proyectos Principales</h2>
+                    <h2 className={"text-5xl text-center leading-16"}>Proyectos Principales</h2>
                     <p className={"text-center mx-4 leading-7 text-muted-foreground my-4"}>Una selección de proyectos que han impactado a miles de usuarios</p>
                     <div className="grid lg:grid-cols-12 mt-20 mb-30">
                         <div className={"flex flex-col col-span-5 gap-30"}>
@@ -102,7 +105,7 @@ const Home = () => {
                 </section>
 
                 <section className={"container mx-auto flex flex-col my-30"}>
-                    <h2 className={"text-5xl text-center text-s leading-16 md:text-left md:mx-4"}>Certificaciones</h2>
+                    <h2 className={"text-5xl text-center leading-16 md:text-left md:mx-4"}>Certificaciones</h2>
                     <div className={"flex justify-center text-center md:mx-4 md:justify-between"}>
                         <p className={"leading-7 text-muted-foreground my-4 md:text-left"}>Certificaciones profesionales que respaldan mi experiencia técnica</p>
                         <button className={"text-primary font-normal hover:text-accent hidden md:block"}>Ver todas</button>
@@ -114,6 +117,36 @@ const Home = () => {
                         <CertificationCardS title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
                     </div>
                     <button className={"bg-primary/20 self-center p-4 rounded-xl outline-1 hover:bg-primary/30 md:hidden"}>Ver todas las certificaciones</button>
+                </section>
+
+                <section className={"container mx-auto flex flex-col items-center my-30"}>
+                    <h2 className={"text-5xl text-center leading-16"}>Creemos algo excepcional juntos</h2>
+                    <p className={"text-center mx-4 leading-7 text-muted-foreground my-4"}>Disponible para proyectos freelance, oportunidades de tiempo completo y colaboraciones.</p>
+                    <div className={"grid grid-cols-1 gap-8 w-full px-4 my-16"}>
+                        <div className={"max-h-100 bg-card flex flex-col gap-4 items-center outline-1 rounded-xl py-8"}>
+                            <div className={"h-14 w-14 flex justify-center items-center bg-primary/20 rounded-xl outline-1"}>
+                                <img src={mailIcon} alt="Mail icon" className={"h-8 w-8"}/>
+                            </div>
+                            <span className={"text-xl"}>Email</span>
+                            <button className={"font-normal text-muted-foreground"}>gabrielmayorgate@gmail.com</button>
+                        </div>
+                        <div className={"max-h-100 bg-card flex flex-col gap-4 items-center outline-1 rounded-xl py-8"}>
+                            <div className={"h-14 w-14 flex justify-center items-center bg-primary/20 rounded-xl outline-1"}>
+                                <img src={locationIcon} alt="Mail icon" className={"h-8 w-8"}/>
+                            </div>
+                            <span className={"text-xl"}>Ubicación</span>
+                            <button className={"font-normal text-muted-foreground"}>Managua, NI</button>
+                        </div>
+                        <div className={"max-h-100 bg-card flex flex-col gap-4 items-center outline-1 rounded-xl py-8"}>
+                            <div className={"h-14 w-14 flex justify-center items-center bg-primary/20 rounded-xl outline-1"}>
+                                <img src={chatIcon} alt="Mail icon" className={"h-8 w-8"}/>
+                            </div>
+                            <span className={"text-xl"}>Chat</span>
+                            <button className={"font-normal text-muted-foreground"}>Telegram / Discord</button>
+                        </div>
+                    </div>
+
+                    <GradientButton label={"Iniciar Conversación"}/>
                 </section>
             </main>
 
