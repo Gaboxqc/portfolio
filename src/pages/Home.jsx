@@ -122,7 +122,7 @@ const Home = () => {
                 <section className={"container mx-auto flex flex-col items-center my-30"}>
                     <h2 className={"text-5xl text-center leading-16"}>Creemos algo excepcional juntos</h2>
                     <p className={"text-center mx-4 leading-7 text-muted-foreground my-4"}>Disponible para proyectos freelance, oportunidades de tiempo completo y colaboraciones.</p>
-                    <div className={"grid grid-cols-1 gap-8 w-full px-4 my-16"}>
+                    <div className={"grid grid-cols-1 gap-8 w-full px-4 my-16 md:grid-cols-2 lg:grid-cols-3"}>
                         <div className={"max-h-100 bg-card flex flex-col gap-4 items-center outline-1 rounded-xl py-8"}>
                             <div className={"h-14 w-14 flex justify-center items-center bg-primary/20 rounded-xl outline-1"}>
                                 <img src={mailIcon} alt="Mail icon" className={"h-8 w-8"}/>
