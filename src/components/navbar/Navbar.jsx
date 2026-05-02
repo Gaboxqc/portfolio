@@ -9,8 +9,9 @@ const Navbar = () => {
     ]
     return (
         <nav className={"w-screen flex justify-between px-10 items-center bg-background min-h-20"}>
-            <div>
+            <div className={"flex items-center"}>
                 <img src={logoIcon} alt="Logo" className={"h-11 w-11"}/>
+                <p>Portafolio</p>
             </div>
             <div className={"hidden"}>
                 <ul className={"flex gap-5"}>

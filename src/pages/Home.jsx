@@ -11,6 +11,7 @@ import SkillCard from "../components/skillCard/SkillCard.jsx";
 import TextCard from "../components/textCard/TextCard.jsx";
 import FeaturedProject from "../components/featuredProject/FeaturedProject.jsx";
 import CertificationCardS from "../components/certificationCardS/CertificationCardS.jsx";
+import Footer from "../components/footer/Footer.jsx";
 
 const Home = () => {
     return (
@@ -149,12 +150,11 @@ const Home = () => {
                     <GradientButton label={"Iniciar Conversación"}/>
                 </section>
             </main>
-
+            <Footer/>
             <div className={"bg-primary/20 size-100 rounded-full blur-3xl fixed bottom-1/2 right-1/2 " +
                 "animate-pulse [animation-duration:3s] -z-1 xl:right-0"}></div>
             <div className={"bg-accent/20 size-100 rounded-full blur-3xl fixed top-1/2 left-1/3 delay-150 " +
                 "animate-pulse [animation-duration:3s] [animation-delay:1.5s] -z-1"}></div>
-            <div className={"h-screen bg-blue-950"}></div>
         </>
     )
 }
