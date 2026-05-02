@@ -55,7 +55,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className={"h-full w-screen flex flex-col items-center px-5 py-12 overflow-hidden xl:h-screen container mx-auto"}>
+                <section className={"container h-full flex flex-col items-center px-5 py-12 xl:h-screen mx-auto"}>
                     <h2 className={"text-5xl text-center leading-16"}>Construyendo productos digitales con
                         precisión</h2>
                     <p className={"text-center mx-4 leading-7 text-muted-foreground my-8"}>Soy un desarrollador y
