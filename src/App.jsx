@@ -1,5 +1,6 @@
 import Home from "./pages/Home.jsx";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
         <Home/>
         <Analytics/>
+        <SpeedInsights/>
     </>
   )
 }
