@@ -1,6 +1,6 @@
 import logoIcon from '../../assets/Logo.svg'
 import flatArrowIcon from '../../assets/FlatArrow.svg'
-import {Link, NavLink} from "react-router";
+import {NavLink} from "react-router";
 
 const Navbar = () => {
     const languages = [
@@ -12,7 +12,7 @@ const Navbar = () => {
         <nav className={"w-screen flex justify-between px-10 items-center bg-background min-h-20"}>
             <div className={"flex items-center"}>
                 <img src={logoIcon} alt="Logo" className={"h-11 w-11"}/>
-                <p>Portafolio</p>
+                <p className={"font-bold"}>Portafolio</p>
             </div>
             <div className={"hidden md:block"}>
                 <ul className={"flex gap-5"}>

@@ -21,6 +21,10 @@ function App() {
                 <Route path="/projects" element={<Projects/>}/>
             </Routes>
             <Footer/>
+            <div className={"bg-primary/20 size-100 rounded-full blur-3xl fixed bottom-1/2 right-1/2 " +
+                "animate-pulse [animation-duration:3s] -z-1 xl:right-0"}></div>
+            <div className={"bg-accent/20 size-100 rounded-full blur-3xl fixed top-1/2 left-1/3 delay-150 " +
+                "animate-pulse [animation-duration:3s] [animation-delay:1.5s] -z-1"}></div>
         </BrowserRouter>
         <Analytics/>
         <SpeedInsights/>
