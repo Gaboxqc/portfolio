@@ -7,7 +7,7 @@ const Projects = () => {
         <main className={"container pt-24 flex flex-col gap-8 mx-auto px-4"}>
             <section className={"flex flex-col gap-8"}>
                 <p className={"text-muted-foreground"}>Volver</p>
-                <h1 className={"text-5xl md:text-6xl"}>Todos los proyectos</h1>
+                <h1 className={"text-5xl md:text-6xl"}>Proyectos</h1>
                 <p className={"text-muted-foreground text-lg max-w-4xl"}>Una colección completa de proyectos que abarcan desarrollo web, aplicaciones móviles, herramientas open source y soluciones empresariales.</p>
             </section>
             <section className={"flex flex-col gap-8"}>
@@ -17,7 +17,7 @@ const Projects = () => {
                            placeholder={"Buscar proyectos..."}/>
                 </div>
                 <div>
-                    <p className={"mb-2 text-muted-foreground"}>Tipo de proyecto</p>
+                    <p className={"mb-2 text-muted-foreground"}>Filtrar por tipo de proyecto</p>
                     <ul className={"flex gap-2 flex-wrap"}>
                         <li><TextCardTr text={"Aplicación Web"}/></li>
                         <li><TextCardTr text={"App Mobile"}/></li>
@@ -28,7 +28,7 @@ const Projects = () => {
                     </ul>
                 </div>
                 <div>
-                    <p className={"mb-2 text-muted-foreground"}>Dificultad</p>
+                    <p className={"mb-2 text-muted-foreground"}>Filtrar por dificultad</p>
                     <ul className={"flex gap-2 flex-wrap"}>
                         <li><TextCardTr text={"Principiante"}/></li>
                         <li><TextCardTr text={"Intermedio"}/></li>
@@ -37,7 +37,7 @@ const Projects = () => {
                     </ul>
                 </div>
                 <div>
-                    <p className={"mb-2 text-muted-foreground"}>Tecnologías</p>
+                    <p className={"mb-2 text-muted-foreground"}>Filtrar por tecnologías</p>
                     <ul className={"flex gap-2 flex-wrap"}>
                         <li><TextCardTr text={"CLI"}/></li>
                         <li><TextCardTr text={"D3.js"}/></li>
