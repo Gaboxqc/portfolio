@@ -12,7 +12,7 @@ function App() {
   return (
     <>
         <BrowserRouter>
-            <header className={"fixed z-1"}>
+            <header>
                 <Navbar/>
             </header>
             <Routes>

@@ -1,17 +1,14 @@
-import GradientButton from "../components/gradientButton/GradientButton.jsx";
-import Navbar from "../components/navbar/Navbar.jsx";
-
 import githubIcon from '../assets/Github.svg'
 import linkedInIcon from '../assets/LinkedIn.svg'
 import mailIcon from '../assets/Mail.svg'
 import chatIcon from '../assets/Chat.svg'
 import locationIcon from '../assets/Location.svg'
 
+import GradientButton from "../components/gradientButton/GradientButton.jsx";
 import SkillCard from "../components/skillCard/SkillCard.jsx";
 import TextCard from "../components/textCard/TextCard.jsx";
 import FeaturedProject from "../components/featuredProject/FeaturedProject.jsx";
 import CertificationCardS from "../components/certificationCardS/CertificationCardS.jsx";
-import Footer from "../components/footer/Footer.jsx";
 
 const Home = () => {
     return (
