@@ -36,7 +36,7 @@ const Navbar = () => {
                     : ""}`}>
                     <li><NavLink to="/">Inicio</NavLink></li>
                     <li><NavLink to="/certifications">Certificaciones</NavLink></li>
-                    <li><NavLink to="/projects">Projects</NavLink></li>
+                    <li><NavLink to="/projects">Proyectos</NavLink></li>
                 </ul>
             </div>
             <div className={`items-center gap-4 justify-self-end ${isScrolled ? "hidden" : "flex"}`}>
