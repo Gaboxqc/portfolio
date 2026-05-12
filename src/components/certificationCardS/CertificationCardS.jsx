@@ -4,7 +4,7 @@ import Platzi from '../../assets/Platzi.svg'
 
 const CertificationCardS = ({title, year, academy, link}) => {
     return (
-        <div className="max-h-100 bg-card flex flex-col gap-4 p-5 outline-1 rounded-xl">
+        <div className="max-h-100 bg-card flex flex-col gap-4 p-5 outline-1 rounded-xl z-1">
             <div className={"flex justify-between"}>
                 <div className={"h-12 w-12 bg-primary/20 outline-1 rounded-xl flex items-center justify-center"}>
                     <img src={Platzi} alt="Platzi logo" className={"h-8 w-8"}/>

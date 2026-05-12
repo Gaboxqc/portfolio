@@ -4,11 +4,11 @@ import TextCardSm from "../textCardSm/TextCardSm.jsx";
 
 const ProjectCard = ({title, description, year, dificulty, tags, type, image, gitUrl, projectUrl}) => {
     return (
-        <div className={"max-h-200 w-full border rounded-2xl overflow-hidden"}>
+        <div className={"max-h-200 w-full border rounded-2xl overflow-hidden z-1"}>
             <div className={"h-100"}>
                 <img src={test} alt="test img" className={"h-full w-full object-cover"}/>
             </div>
-            <div className={"p-4 flex flex-col gap-4"}>
+            <div className={"p-4 flex flex-col gap-4 bg-card"}>
                 <div className={"flex items-center gap-2"}>
                     <p className={"text-sm text-muted-foreground"}>2026</p>*
                     <p className={"border border-red-400 text-red-400 rounded-xl p-2 text-xs"}>Avanzado</p>*

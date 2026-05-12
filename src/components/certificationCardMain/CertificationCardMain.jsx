@@ -6,7 +6,7 @@ import TextCardSm from "../textCardSm/TextCardSm.jsx";
 
 const CertificationCardMain = ({title, academy, year, tags, seria, url, isMain, isVerified}) => {
   return (
-      <div className="max-h-100 bg-card flex flex-col gap-4 p-5 border border-yellow-200/40 rounded-xl hover:border-yellow-200/70 relative">
+      <div className="max-h-100 bg-card flex flex-col gap-4 p-5 border border-yellow-200/40 rounded-xl hover:border-yellow-200/70 relative z-1">
             <div className={"flex h-16 justify-between"}>
                 <div className={"h-12 w-12 bg-primary/20 outline-1 rounded-xl flex items-center justify-center"}>
                     <img src={Platzi} alt="Platzi logo" className={"h-8 w-8"}/>
