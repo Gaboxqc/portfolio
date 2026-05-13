@@ -1,7 +1,7 @@
 import Platzi from "../../assets/Platzi.svg";
 import Link from "../../assets/Link.svg";
 import Date from "../../assets/Date.svg";
-import TextCardSm from "../textCardSm/TextCardSm.jsx";
+import TextCardSm from "./TextCardSm.jsx";
 
 const CertificationCard = ({title, academy, year, tags, seria, url, isMain, isVerified}) => {
   return (

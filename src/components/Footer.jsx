@@ -1,9 +1,9 @@
-import logoIcon from '../../assets/Logo.svg'
-import githubIcon from '../../assets/Github.svg'
-import linkedinIcon from '../../assets/LinkedIn.svg'
-import mailIcon from '../../assets/Mail.svg'
-import locationIcon from '../../assets/Location.svg'
-import timeIcon from '../../assets/Time.svg'
+import logoIcon from '../assets/Logo.svg'
+import githubIcon from '../assets/Github.svg'
+import linkedinIcon from '../assets/LinkedIn.svg'
+import mailIcon from '../assets/Mail.svg'
+import locationIcon from '../assets/Location.svg'
+import timeIcon from '../assets/Time.svg'
 
 const Footer = () => {
     return(

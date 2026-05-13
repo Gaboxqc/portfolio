@@ -1,6 +1,6 @@
 import searchIcon from '../assets/Search.svg'
-import TextCardTr from "../components/textCardTr/TextCardTr.jsx";
-import ProjectCard from "../components/projectCard/ProjectCard.jsx";
+import TextCardTr from "../components/cards/TextCardTr.jsx";
+import ProjectCard from "../components/cards/ProjectCard.jsx";
 
 const Projects = () => {
     return (

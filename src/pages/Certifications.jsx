@@ -1,6 +1,6 @@
-import TextCardTr from "../components/textCardTr/TextCardTr.jsx";
-import CertificationCardMain from "../components/certificationCardMain/CertificationCardMain.jsx";
-import CertificationCard from "../components/certificationCard/CertificationCard.jsx";
+import TextCardTr from "../components/cards/TextCardTr.jsx";
+import CertificationCardMain from "../components/cards/CertificationCardMain.jsx";
+import CertificationCard from "../components/cards/CertificationCard.jsx";
 
 const Certifications = () => {
     return (

@@ -1,8 +1,8 @@
-import logoIcon from '../../assets/Logo.svg'
-import flatArrowIcon from '../../assets/FlatArrow.svg'
+import logoIcon from '../assets/Logo.svg'
+import flatArrowIcon from '../assets/FlatArrow.svg'
 import {NavLink} from "react-router";
 import {useEffect, useState} from "react";
-import SectionsNav from "../sectionsNav/SectionsNav.jsx";
+import SectionsNav from "./SectionsNav.jsx";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)

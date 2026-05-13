@@ -1,6 +1,6 @@
-import TextCardSm from "../textCardSm/TextCardSm.jsx";
+import TextCardSm from "./TextCardSm.jsx";
 
-const FeaturedProject = ({position, year, title, description, technologies}) => {
+const FeaturedProjectCard = ({position, year, title, description, technologies}) => {
     return (
         <div className={"grid grid-cols-12 px-4 xl:h-screen"}>
             <span className={"col-span-4 text-7xl text-accent font-bold"}>0{position}</span>
@@ -19,4 +19,4 @@ const FeaturedProject = ({position, year, title, description, technologies}) => 
     )
 }
 
-export default FeaturedProject
+export default FeaturedProjectCard
