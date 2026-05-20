@@ -3,6 +3,7 @@ import flatArrowIcon from '../assets/FlatArrow.svg'
 import {NavLink} from "react-router";
 import {useEffect, useState} from "react";
 import SectionsNav from "./SectionsNav.jsx";
+import LanguageSelector from "./LanguageSelector.jsx";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -20,11 +21,6 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [])
 
-    const languages = [
-        {code: "ES", name: "Español", flag: "🌏"},
-        {code: "EN", name: "English", flag: "US"},
-        {code: "DE", name: "Deutsch", flag: "DE"},
-    ]
     return (
         <nav className={`w-screen grid px-10 items-center min-h-20 fixed transition-all duration-500 ease-in-out ${isScrolled 
             ? "grid-cols-1 z-2" 
@@ -45,14 +41,10 @@ const Navbar = () => {
                             <li><NavLink to="/projects">Proyectos</NavLink></li>
                         </>
                     )}
-
                 </ul>
             </div>
             <div className={`items-center gap-4 justify-self-end ${isScrolled ? "hidden" : "flex"}`}>
-                <button className={"h-10 w-auto px-4 outline-1 rounded-lg bg-primary/10 hover:bg-primary/20 flex justify-center items-center"}>
-                    🌏 {languages[1].flag}
-                    <img src={flatArrowIcon} alt="Arrow" className={"h-4 w-4"}/>
-                </button>
+                <LanguageSelector/>
                 <button className={"h-10 w-auto px-4 outline-1 rounded-lg bg-primary/10 hover:bg-primary/20"}>CV</button>
             </div>
         </nav>

@@ -140,7 +140,6 @@ const Home = () => {
                             <button className={"font-normal text-muted-foreground"}>Telegram / Discord</button>
                         </div>
                     </div>
-
                     <GradientButton label={"Iniciar Conversación"}/>
                 </section>
             </main>
