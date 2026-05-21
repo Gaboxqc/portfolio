@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "portfolio": "Portfolio",
+    "home": "Startseite",
+    "certificates": "Zertifizierungen",
+    "projects": "Projekte"
+  },
+  "hero": {
+    "available": "Verfügbar für neue Projekte",
+    "subtitle": "Softwareentwickler",
+    "description": "Ich schaffe außergewöhnliche digitale Erlebnisse mit sauberem Code und innovativem Design. Ich bin spezialisiert auf moderne Webanwendungen und interaktive Benutzeroberflächen.",
+    "projects": "View projects",
+    "contact": "Contact me"
+  }
+}

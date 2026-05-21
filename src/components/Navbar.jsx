@@ -1,12 +1,14 @@
 import logoIcon from '../assets/Logo.svg'
-import flatArrowIcon from '../assets/FlatArrow.svg'
 import {NavLink} from "react-router";
 import {useEffect, useState} from "react";
 import SectionsNav from "./SectionsNav.jsx";
 import LanguageSelector from "./LanguageSelector.jsx";
+import useLanguage from "../hooks/useLanguage.jsx";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
+
+    const {translate} = useLanguage()
 
     useEffect( () => {
         const handleScroll = () => {
@@ -27,7 +29,7 @@ const Navbar = () => {
             : "bg-background/40 grid-cols-2 md:grid-cols-3"}`}>
             <div className={`items-center ${isScrolled ? "hidden" : "flex"}`}>
                 <img src={logoIcon} alt="Logo" className={"h-11 w-11"}/>
-                <p className={"font-bold"}>Portafolio</p>
+                <p className={"font-bold"}>{translate("navbar.portfolio")}</p>
             </div>
             <div className={`md:flex md:justify-center transition-all duration-500 ease-in-out ${isScrolled ? "block" : "hidden"}`}>
                 <ul className={`flex justify-center gap-5 md:w-full md:max-w-xs transition-all duration-500 ease-in-out ${isScrolled
@@ -36,9 +38,9 @@ const Navbar = () => {
                     {isScrolled ? <SectionsNav/> : (
                         <>
                             <li><NavLink to="/" className={`px-4 py-2 rounded-md text-sm 
-                            font-medium transition-all duration-300 ease-in-out`}>Inicio</NavLink></li>
-                            <li><NavLink to="/certifications">Certificaciones</NavLink></li>
-                            <li><NavLink to="/projects">Proyectos</NavLink></li>
+                            font-medium transition-all duration-300 ease-in-out`}>{translate("navbar.home")}</NavLink></li>
+                            <li><NavLink to="/certifications">{translate("navbar.certificates")}</NavLink></li>
+                            <li><NavLink to="/projects">{translate("navbar.projects")}</NavLink></li>
                         </>
                     )}
                 </ul>

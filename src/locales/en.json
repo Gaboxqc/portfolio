@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "portfolio": "Portfolio",
+    "home": "Home",
+    "certificates": "Certificates",
+    "projects": "Projects"
+  },
+  "hero": {
+    "available": "Available to new projects",
+    "subtitle": "Software Developer",
+    "description": "Creating excepcional digital experiences with clean code and innovative desing.Specializing in web applications and interactive interfaces",
+    "projects": "View projects",
+    "contact": "Contact me"
+  }
+}
