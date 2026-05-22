@@ -8,8 +8,48 @@
   "hero": {
     "available": "Available to new projects",
     "subtitle": "Software Developer",
-    "description": "Creating excepcional digital experiences with clean code and innovative desing.Specializing in web applications and interactive interfaces",
-    "projects": "View projects",
+    "description": "I’m a developer who loves mastering new technologies to build useful digital products. My certifications are my technical foundation, and I use AI as a helpful ally for interface design.",
     "contact": "Contact me"
+  },
+  "about": {
+    "title": "Building digital solutions with dedication",
+    "description": "What I might lack in traditional workplace experience, I make up for with constant study and a real passion for what I do. I enjoy building digital products that run smoothly, always following the best practices I’ve learned and certified. I adapt quickly to any tool",
+    "clean-code": "Clean code",
+    "clean-code-description": "Writing tidy, maintainable, and scalable code is my priority. I believe a solid structure is key for any project to grow without issues.",
+    "ai-interfaces": "AI-Powered Interfaces",
+    "ai-interfaces-description": "I’m not a designer, but I use AI as a helpful tool to generate modern and attractive interfaces, making sure they stay intuitive",
+    "high-performance": "High Performance",
+    "high-performance-description": "I'm big on making programs run fast. I optimize every resource to ensure the software's response is as efficient as possible.",
+    "fast-delivery": "Fast Delivery",
+    "fast-delivery-description": "I work in an organized, agile way. I focus on taking things step-by-step and delivering working results quickly so I can improve along the way."
+  },
+  "projects": {
+    "title": "Main Projects",
+    "subtitle": "A look at the technical challenges I’ve solved to put my knowledge into practice and keep learning.",
+    "all-projects": "View all projects"
+  },
+  "certificates":{
+    "title": "Certificates",
+    "subtitle": "Validated courses and training that back up my knowledge and technical skills."
+  },
+  "contact": {
+    "title": "Let's build something exceptional together",
+    "subtitle": "I'm available for freelance projects or joining a team full-time",
+    "conversation": "Start a conversation",
+    "all-certificates": "View all"
+  },
+  "footer": {
+    "title": "Full-stack developer focused on creating functional digital solutions. I combine a solid certified background with the use of AI to solve problems and design interfaces.",
+    "navigation": "Navigation",
+    "about": "About me",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "contact": "Contact",
+    "services": "Services",
+    "web-development": "Web Development",
+    "app-development": "Mobile Development",
+    "desktop-development": "Desktop Development",
+    "mentoring": "Mentoring",
+    "time": "Mon - Fri, 2PM - 10PM (GMT-6)"
   }
 }

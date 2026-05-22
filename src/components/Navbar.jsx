@@ -32,7 +32,7 @@ const Navbar = () => {
                 <p className={"font-bold"}>{translate("navbar.portfolio")}</p>
             </div>
             <div className={`md:flex md:justify-center transition-all duration-500 ease-in-out ${isScrolled ? "block" : "hidden"}`}>
-                <ul className={`flex justify-center gap-5 md:w-full md:max-w-xs transition-all duration-500 ease-in-out ${isScrolled
+                <ul className={`flex justify-center gap-5 lg:max-w-3xl md:max-w-xs transition-all duration-500 ease-in-out ${isScrolled
                     ? "border py-2 rounded-full bg-card/60 backdrop-blur-md shadow-lg shadow-black/20 "
                     : ""}`}>
                     {isScrolled ? <SectionsNav/> : (

@@ -8,8 +8,49 @@
   "hero": {
     "available": "Verfügbar für neue Projekte",
     "subtitle": "Softwareentwickler",
-    "description": "Ich schaffe außergewöhnliche digitale Erlebnisse mit sauberem Code und innovativem Design. Ich bin spezialisiert auf moderne Webanwendungen und interaktive Benutzeroberflächen.",
-    "projects": "View projects",
-    "contact": "Contact me"
+    "description": "Ich bin ein Entwickler, der es liebt, neue Technologien zu lernen, um nützliche digitale Produkte zu bauen. Meine Zertifikate sind mein technisches Fundament, und ich nutze KI als clevere Unterstützung für das Interface-Design.",
+    "projects": "Projekte anzeigen",
+    "contact": "Kontaktiere mich"
+  },
+  "about": {
+    "title": "Digitale Lösungen mit vollem Einsatz entwickeln",
+    "description": "Was mir an traditioneller Berufserfahrung in Unternehmen fehlt, mache ich durch ständiges Lernen und echte Leidenschaft wett. Es macht mir Spaß, digitale Produkte zu bauen, die rund laufen. Dabei wende ich immer die Best Practices an, die ich mir durch Zertifikate erarbeitet habe. Ich passe mich schnell an jedes Tool an.",
+    "clean-code": "Sauberer Code",
+    "clean-code-description": "Strukturierter, wartbarer und skalierbarer Code steht bei mir an erster Stelle. Nur mit einer guten Basis kann ein Projekt problemlos wachsen.",
+    "ai-interfaces": "KI-gestützte Interfaces",
+    "ai-interfaces-description": "Ich bin kein Designer, aber ich nutze KI als praktisches Werkzeug, um moderne und ansprechende Oberflächen zu gestalten, die intuitiv bleiben",
+    "high-performance": "Hohe Performance",
+    "high-performance-description": "Ich lege großen Wert darauf, dass Programme schnell laufen. Ich optimiere jede Ressource, damit die Software so effizient wie möglich reagiert.",
+    "fast-delivery": "Schnelle Umsetzung",
+    "fast-delivery-description": "Ich arbeite organisiert und agil. Mein Fokus liegt darauf, schnell funktionierende Zwischenstände zu liefern, um darauf flexibel aufzubauen."
+  },
+  "projects": {
+    "title": "Wichtigste Projekte",
+    "subtitle": "Ein Einblick in die technischen Herausforderungen, die ich gelöst habe, um mein Wissen in die Praxis umzusetzen und mich weiterzuentwickeln.",
+    "all-projects": "Alle Projekte anzeigen"
+  },
+  "certificates": {
+    "title": "Zertifikate",
+    "subtitle": "Validierte Kurse und Weiterbildungen, die mein Wissen und meine technischen Fähigkeiten belegen.",
+    "all-certificates": "Alle anzeigen"
+  },
+  "contact": {
+    "title": "Lass uns zusammen etwas Großartiges schaffen",
+    "subtitle": "Ich stehe für freiberufliche Projekte zur Verfügung oder bin bereit, mich in ein Team auf Vollzeitbasis zu integrieren",
+    "conversation": "Gespräch beginnen"
+  },
+  "footer": {
+    "title": "Full-Stack-Entwickler mit dem Fokus auf funktionale digitale Lösungen. Ich verbinde ein solides zertifiziertes Fundament mit dem Einsatz von KI, um Probleme zu lösen und Interfaces zu gestalten.",
+    "navigation": "Navigation",
+    "about": "Über mich",
+    "certificates": "Zertifikate",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "services": "Dienstleistungen",
+    "web-development": "Webentwicklung",
+    "app-development": "App-Entwicklung",
+    "desktop-development": "Desktop-Entwicklung",
+    "mentoring": "Mentoring",
+    "time": "Mo – Fr, 14:00 – 22:00 Uhr (GMT-6)"
   }
 }

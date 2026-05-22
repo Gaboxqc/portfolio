@@ -1,11 +1,15 @@
 import {NavLink} from "react-router";
 import { motion } from 'framer-motion';
+import useLanguage from "../hooks/useLanguage.jsx";
 
 const SectionsNav = () => {
+
+    const {translate} = useLanguage()
+
     const links = [
-        {name: "Inicio", path: "/"},
-        {name: "Certificaciones", path: "./certifications"},
-        {name: "Proyectos", path: "./projects"}
+        {name: translate("navbar.home"), path: "/"},
+        {name: translate("navbar.certificates"), path: "./certifications"},
+        {name: translate("navbar.projects"), path: "./projects"}
     ]
     return (
         <div>

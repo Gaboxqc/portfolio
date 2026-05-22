@@ -4,8 +4,12 @@ import linkedinIcon from '../assets/LinkedIn.svg'
 import mailIcon from '../assets/Mail.svg'
 import locationIcon from '../assets/Location.svg'
 import timeIcon from '../assets/Time.svg'
+import UseLanguage from "../hooks/useLanguage.jsx";
 
 const Footer = () => {
+
+    const {translate} = UseLanguage()
+
     return(
         <footer className={"container mx-auto p-4"}>
             <div className={"flex flex-col items-start gap-8 mt-4 mb-16"}>
@@ -13,7 +17,7 @@ const Footer = () => {
                     <img src={logoIcon} alt="Logo icon" className={"h-8 w-8"}/>
                     <h2>Gabriel Mayorga</h2>
                 </div>
-                <p className={"text-muted-foreground text-md"}>Desarrollador full-stack y diseñador digital especializado en crear experiencias web excepcionales.</p>
+                <p className={"text-muted-foreground text-md"}>{translate("footer.title")}</p>
                 <div className={"flex items-center justify-center gap-4"}>
                     <button className={"bg-primary/10 outline-1 p-2 rounded-xl"}>
                         <img src={githubIcon} alt="Github" className={"h-8 w-8"}/>
@@ -28,21 +32,21 @@ const Footer = () => {
             </div>
             <div className={"grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12"}>
                 <div>
-                    <h4 className={"text-lg"}>Navegación</h4>
+                    <h4 className={"text-lg"}>{translate("footer.navigation")}</h4>
                     <ul className={"text-muted-foreground flex flex-col gap-4 my-4"}>
-                        <li>Sobre Mí</li>
-                        <li>Proyectos</li>
-                        <li>Certificaciones</li>
-                        <li>Contacto</li>
+                        <li>{translate("footer.about")}</li>
+                        <li>{translate("footer.projects")}</li>
+                        <li>{translate("footer.certificates")}</li>
+                        <li>{translate("footer.contact")}</li>
                     </ul>
                 </div>
                 <div>
-                    <h4 className={"text-lg"}>Servicios</h4>
+                    <h4 className={"text-lg"}>{translate("footer.services")}</h4>
                     <ul className={"text-muted-foreground flex flex-col gap-4 my-4"}>
-                        <li>Desarrollo Web</li>
-                        <li>Diseño UI/UX</li>
-                        <li>Consultoría</li>
-                        <li>Mentoring</li>
+                        <li>{translate("footer.web-development")}</li>
+                        <li>{translate("footer.app-development")}</li>
+                        <li>{translate("footer.desktop-development")}</li>
+                        <li>{translate("footer.mentoring")}</li>
                     </ul>
                 </div>
                 <div>
@@ -58,7 +62,7 @@ const Footer = () => {
                         </li>
                         <li className={"flex items-center gap-2"}>
                             <img src={timeIcon} alt="Mail icon" className={"h-4 w-4"}/>
-                            <p>Lun - Vie, 2PM - 10PM PST</p>
+                            <p>{translate("footer.time")}</p>
                         </li>
                     </ul>
                 </div>

@@ -8,8 +8,49 @@
   "hero": {
     "available": "Disponible para nuevos proyectos",
     "subtitle": "Desarrollador de software",
-    "description": "Creando experiencias digitales excepcionales con código limpio y diseño innovador. Especializado en aplicaciones web modernas e interfaces interactivas.",
+    "description": "Soy un desarrollador que disfruta aprendiendo a dominar nuevas tecnologías para construir productos digitales útiles. Mis certificaciones son mi base técnica, y uso la IA como aliada para el diseño de interfaces.",
     "projects": "Ver proyectos",
     "contact": "Contáctame"
+  },
+  "about": {
+    "title": "Creando soluciones digitales con dedicación",
+    "description": "Lo que me falta de experiencia laboral en empresas, lo compenso con estudio constante y una enorme pasión por lo que hago. Disfruto construir productos digitales que funcionen bien, aplicando siempre las mejores prácticas que he ido aprendiendo y certificando. Me adapto rápido a cualquier herramienta",
+    "clean-code": "Código limpio",
+    "clean-code-description": "Escribir código ordenado, mantenible y escalable es mi prioridad. Creo que una buena estructura es la clave para que cualquier proyecto crezca sin problemas.",
+    "ai-interfaces": "Interfaces con IA",
+    "ai-interfaces-description": "No soy diseñador, pero uso la IA como una herramienta aliada para generar interfaces modernas y atractivas, asegurándome de que sean intuitivas.",
+    "high-performance": "Alto Rendimiento",
+    "high-performance-description": "Me obsesiona que los programas funcionen rápido. Optimizo cada recurso para que la respuesta del software sea lo más eficiente posible.",
+    "fast-delivery": "Entrega Rápida",
+    "fast-delivery-description": "Trabajo de manera organizada y ágil. Me enfoco en avanzar por pasos y lograr resultados funcionales rápido para poder mejorar sobre la marcha."
+  },
+  "projects": {
+    "title": "Proyectos Principales",
+    "subtitle": "Una selección de mis proyectos principales, donde empiezo a llevar todo lo aprendido en mis certificaciones a la práctica y a la realidad.",
+    "all-projects": "Ver todos los proyectos"
+  },
+  "certificates":{
+    "title": "Certificaciones",
+    "subtitle": "Formación y cursos validados que respaldan mis conocimientos y mi capacidad técnica.",
+    "all-certificates": "Ver todas"
+  },
+  "contact": {
+    "title": "Creemos algo excepcional juntos",
+    "subtitle": "Estoy disponible para proyectos freelance o integrarme a un equipo a tiempo completo",
+    "conversation": "Iniciar conversación"
+  },
+  "footer": {
+    "title": "Desarrollador full-stack enfocado en crear soluciones digitales funcionales. Combino una sólida base certificada con el uso de IA para resolver problemas y diseñar interfaces.",
+    "navigation": "Navegación",
+    "about": "Sobre mi",
+    "projects": "Proyectos",
+    "certificates": "Certificaciones",
+    "contact": "Contacto",
+    "services": "Servicios",
+    "web-development": "Desarrollo Web",
+    "app-development": "Desarrollo Mobil",
+    "desktop-development": "Desarrollo de escritorio",
+    "mentoring": "Mentorías",
+    "time": "Lun - Vie, 2PM - 10PM (GMT-6)"
   }
 }
