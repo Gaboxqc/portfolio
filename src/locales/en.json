@@ -50,6 +50,9 @@
     "app-development": "Mobile Development",
     "desktop-development": "Desktop Development",
     "mentoring": "Mentoring",
-    "time": "Mon - Fri, 2PM - 10PM (GMT-6)"
+    "time": "Mon - Fri, 2PM - 10PM (GMT-6)",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "service": "Terms of Service"
   }
 }

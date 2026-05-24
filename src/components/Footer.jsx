@@ -68,10 +68,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className={"text-muted-foreground text-sm text-center py-12 border-t"}>
-                <p>© 2026 Gabriel Mayorga. Todos los derechos reservados.</p>
+                <p>© 2026 Gabriel Mayorga. {translate("footer.rights")}</p>
                 <div className={"flex justify-center gap-4 mt-4"}>
-                    <p>Política de Privacidad</p>
-                    <p>Términos de Servicio</p>
+                    <p>{translate("footer.privacy")}</p>
+                    <p>{translate("footer.service")}</p>
                     <p>Cookies</p>
                 </div>
             </div>
