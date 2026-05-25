@@ -17,7 +17,7 @@ const LanguageSelector = () => {
     return (
         <Select.Root value={locale} onValueChange={setLocale}>
             <Select.Trigger
-                className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2 focus:outline-0">
+                className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2 focus:outline-0 cursor-pointer">
                 <svg
                     className="h-4 w-4 text-slate-400"
                     fill="none"

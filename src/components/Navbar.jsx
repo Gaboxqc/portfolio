@@ -1,9 +1,11 @@
-import logoIcon from '../assets/Logo.svg'
 import {NavLink} from "react-router";
 import {useEffect, useState} from "react";
 import SectionsNav from "./SectionsNav.jsx";
 import LanguageSelector from "./LanguageSelector.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
+
+import logoIcon from '../assets/Logo.svg'
+import cv from '../assets/Curriculum Gabriel Mayorga.pdf'
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -47,7 +49,9 @@ const Navbar = () => {
             </div>
             <div className={`items-center gap-4 justify-self-end ${isScrolled ? "hidden" : "flex"}`}>
                 <LanguageSelector/>
-                <button className={"h-10 w-auto px-4 outline-1 rounded-lg bg-primary/10 hover:bg-primary/20"}>CV</button>
+                <a href={cv} download={"Gabriel Mayorga CV"}>
+                    <button className={"h-10 w-auto px-4 outline-1 rounded-lg bg-primary/10 hover:bg-primary/20 cursor-pointer"}>CV</button>
+                </a>
             </div>
         </nav>
     )
