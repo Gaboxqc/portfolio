@@ -1,4 +1,4 @@
-import {NavLink} from "react-router";
+import {Link, NavLink} from "react-router";
 import {useEffect, useState} from "react";
 import SectionsNav from "./SectionsNav.jsx";
 import LanguageSelector from "./LanguageSelector.jsx";
@@ -31,7 +31,9 @@ const Navbar = () => {
             : "bg-background/40 grid-cols-2 md:grid-cols-3"}`}>
             <div className={`items-center ${isScrolled ? "hidden" : "flex"}`}>
                 <img src={logoIcon} alt="Logo" className={"h-11 w-11"}/>
-                <p className={"font-bold"}>{translate("navbar.portfolio")}</p>
+                <Link to={"./"}>
+                    <p className={"font-bold"}>{translate("navbar.portfolio")}</p>
+                </Link>
             </div>
             <div className={`md:flex md:justify-center transition-all duration-500 ease-in-out ${isScrolled ? "block" : "hidden"}`}>
                 <ul className={`flex justify-center gap-5 lg:max-w-3xl md:max-w-xs transition-all duration-500 ease-in-out ${isScrolled
