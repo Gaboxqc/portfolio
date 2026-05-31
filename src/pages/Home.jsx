@@ -10,6 +10,7 @@ import TextCard from "../components/cards/TextCard.jsx";
 import FeaturedProjectCard from "../components/cards/FeaturedProjectCard.jsx";
 import CertificationCardS from "../components/cards/CertificationCardS.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
+import {Link} from "react-router";
 
 const Home = () => {
 
@@ -32,20 +33,24 @@ const Home = () => {
                         </div>
                         <p className={"text-lg text-muted-foreground max-w-150"}>{translate("hero.description")}.</p>
                         <div className={"flex gap-4"}>
-                            <GradientButton label={translate("hero.projects")}/>
-                            <button className={"h-13 w-auto px-6 outline-1 rounded-lg hover:bg-primary/10"}>{translate("hero.contact")}
-                            </button>
+                            <GradientButton label={translate("hero.projects")} nav={"/projects"}/>
+                            <a href="#contact">
+                                <button className={"h-13 w-auto rounded-lg px-6 outline-1 hover:bg-primary/10"}>
+                                    {translate("hero.contact")}
+                                </button>
+                            </a>
                         </div>
                         <div className={"flex items-center justify-center gap-5"}>
-                            <button className={""}>
+                            <a href={"https://github.com/Gaboxqc"}>
                                 <img src={githubIcon} alt="Github" className={"h-8 w-8"}/>
-                            </button>
-                            <button className={""}>
+                            </a>
+                            <a href={"https://linkedin.com/in/gabriel-mayorga-b36611231"}>
                                 <img src={linkedInIcon} alt="Github" className={"h-8 w-8"}/>
-                            </button>
-                            <button className={""}>
+                            </a>
+                            <a href={"mailto:gabrielmayorgate@gmail.com"}>
                                 <img src={mailIcon} alt="Github" className={"h-8 w-8"}/>
-                            </button>
+                            </a>
+
                         </div>
                     </div>
                 </section>
@@ -93,14 +98,14 @@ const Home = () => {
                             <div className={"hidden lg:block w-full h-150 bg-orange-500/20 rounded-xl sticky top-40 self-start"}></div>
                         </div>
                     </div>
-                    <GradientButton label={translate("projects.all-projects")}></GradientButton>
+                    <GradientButton label={translate("projects.all-projects")} nav={"/projects"}></GradientButton>
                 </section>
 
-                <section className={"container mx-auto flex flex-col my-30"}>
+                <section className={"container mx-auto flex flex-col items-center my-30"}>
                     <h2 className={"text-5xl text-center leading-16 md:text-left md:mx-4"}>{translate("certificates.title")}</h2>
-                    <div className={"flex justify-center text-center md:mx-4 md:justify-between"}>
-                        <p className={"leading-7 text-muted-foreground my-4 md:text-left"}>{translate("certificates.subtitle")}</p>
-                        <button className={"text-primary font-normal hover:text-accent hidden md:block"}>{translate("certificates.all-certificates")}</button>
+                    <div className={"grid grid-cols-1 w-full items-center md:mx-4 md:grid-cols-3"}>
+                        <p className={"w-max leading-7 text-muted-foreground my-4 md:text-left col-start-2 justify-self-center"}>{translate("certificates.subtitle")}</p>
+                        <Link to={"/certificates"} className={"text-primary font-normal hover:text-accent hidden md:block col-start-3 text-end"}>{translate("certificates.all-certificates")}</Link>
                     </div>
                     <div className={"w-full grid grid-cols-1 gap-8 my-20 px-4 md:grid-cols-2"}>
                         <CertificationCardS title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
@@ -108,10 +113,12 @@ const Home = () => {
                         <CertificationCardS title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
                         <CertificationCardS title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
                     </div>
-                    <button className={"bg-primary/20 self-center p-4 rounded-xl outline-1 hover:bg-primary/30 md:hidden"}>{translate("certificates.all-certificates")}</button>
+                    <Link to={"/certificates"} className={"bg-primary/20 self-center p-4 rounded-xl outline-1 hover:bg-primary/30 md:hidden cursor-pointer"}>
+                        {translate("certificates.all-certificates")}
+                    </Link>
                 </section>
 
-                <section className={"container mx-auto flex flex-col items-center my-30"}>
+                <section id={"contact"} className={"container mx-auto flex flex-col items-center py-30"}>
                     <h2 className={"text-5xl text-center leading-16"}>{translate("contact.title")}</h2>
                     <p className={"text-center mx-4 leading-7 text-muted-foreground my-4"}>{translate("contact.subtitle")}</p>
                     <div className={"grid grid-cols-1 gap-8 w-full px-4 my-16 md:grid-cols-2 lg:grid-cols-3"}>
@@ -120,24 +127,28 @@ const Home = () => {
                                 <img src={mailIcon} alt="Mail icon" className={"h-8 w-8"}/>
                             </div>
                             <span className={"text-xl"}>Email</span>
-                            <button className={"font-normal text-muted-foreground"}>gabrielmayorgate@gmail.com</button>
+                            <a href={"mailto:gabrielmayorgate@gmail.com"} className={"font-normal text-muted-foreground hover:text-accent"}>
+                                gabrielmayorgate@gmail.com
+                            </a>
                         </div>
                         <div className={"max-h-100 bg-card flex flex-col gap-4 items-center outline-1 rounded-xl py-8"}>
                             <div className={"h-14 w-14 flex justify-center items-center bg-primary/20 rounded-xl outline-1"}>
                                 <img src={locationIcon} alt="Mail icon" className={"h-8 w-8"}/>
                             </div>
                             <span className={"text-xl"}>Ubicación</span>
-                            <button className={"font-normal text-muted-foreground"}>Managua, NI</button>
+                            <p className={"font-normal text-muted-foreground"}>Managua, NI</p>
                         </div>
                         <div className={"max-h-100 bg-card flex flex-col gap-4 items-center outline-1 rounded-xl py-8"}>
                             <div className={"h-14 w-14 flex justify-center items-center bg-primary/20 rounded-xl outline-1"}>
                                 <img src={chatIcon} alt="Mail icon" className={"h-8 w-8"}/>
                             </div>
                             <span className={"text-xl"}>Chat</span>
-                            <button className={"font-normal text-muted-foreground"}>Telegram / Discord</button>
+                            <a href={"https://t.me/Gaboxqc"} className={"font-normal text-muted-foreground hover:text-accent"}>
+                                Telegram/Discord: Gaboxqc
+                            </a>
                         </div>
                     </div>
-                    <GradientButton label={translate("contact.conversation")}/>
+                    <GradientButton label={translate("contact.conversation")} nav={"https://t.me/Gaboxqc"}/>
                 </section>
             </main>
 

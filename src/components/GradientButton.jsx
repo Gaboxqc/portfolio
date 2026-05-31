@@ -1,6 +1,10 @@
-const GradientButton = ({label}) => {
+import {Link} from "react-router";
+
+const GradientButton = ({label, nav}) => {
     return(
-        <button className={"h-13 w-auto px-6 rounded-lg bg-linear-to-r from-primary to-accent text-white"}>{label}</button>
+        <Link to={nav} className={"h-13 w-auto flex justify-center items-center px-6 rounded-lg bg-linear-to-r from-primary to-accent text-white cursor-pointer"}>
+            {label}
+        </Link>
     )
 }
 

@@ -2,7 +2,7 @@ import TextCardTr from "../components/cards/TextCardTr.jsx";
 import CertificationCardMain from "../components/cards/CertificationCardMain.jsx";
 import CertificationCard from "../components/cards/CertificationCard.jsx";
 
-const Certifications = () => {
+const Certificates = () => {
     return (
         <main className={"container pt-24 flex flex-col gap-8 mx-auto px-4 mb-30"}>
             <section className={"flex flex-col gap-8"}>
@@ -73,4 +73,4 @@ const Certifications = () => {
     )
 }
 
-export default Certifications
+export default Certificates

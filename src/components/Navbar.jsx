@@ -41,7 +41,7 @@ const Navbar = () => {
                         <>
                             <li><NavLink to="/" className={`px-4 py-2 rounded-md text-sm 
                             font-medium transition-all duration-300 ease-in-out`}>{translate("navbar.home")}</NavLink></li>
-                            <li><NavLink to="/certifications">{translate("navbar.certificates")}</NavLink></li>
+                            <li><NavLink to="/certificates">{translate("navbar.certificates")}</NavLink></li>
                             <li><NavLink to="/projects">{translate("navbar.projects")}</NavLink></li>
                         </>
                     )}

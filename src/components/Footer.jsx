@@ -19,15 +19,15 @@ const Footer = () => {
                 </div>
                 <p className={"text-muted-foreground text-md"}>{translate("footer.title")}</p>
                 <div className={"flex items-center justify-center gap-4"}>
-                    <button className={"bg-primary/10 outline-1 p-2 rounded-xl"}>
-                        <img src={githubIcon} alt="Github" className={"h-8 w-8"}/>
-                    </button>
-                    <button className={"bg-primary/10 outline-1 p-2 rounded-xl"}>
-                        <img src={linkedinIcon} alt="Github" className={"h-8 w-8"}/>
-                    </button>
-                    <button className={"bg-primary/10 outline-1 p-2 rounded-xl"}>
-                        <img src={mailIcon} alt="Github" className={"h-8 w-8"}/>
-                    </button>
+                    <a href={"https://github.com/Gaboxqc"} className={"bg-primary/10 outline-1 p-2 rounded-xl cursor-pointer"}>
+                        <img src={githubIcon} alt="Github Icon" className={"h-8 w-8"}/>
+                    </a>
+                    <a href={"https://linkedin.com/in/gabriel-mayorga-b36611231"} className={"bg-primary/10 outline-1 p-2 rounded-xl cursor-pointer"}>
+                        <img src={linkedinIcon} alt="LinkedIn Icon" className={"h-8 w-8"}/>
+                    </a>
+                    <a href={"mailto:gabrielmayorgate@gmail.com"} className={"bg-primary/10 outline-1 p-2 rounded-xl cursor-pointer"}>
+                        <img src={mailIcon} alt="Mail Icon" className={"h-8 w-8"}/>
+                    </a>
                 </div>
             </div>
             <div className={"grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12"}>
@@ -52,15 +52,15 @@ const Footer = () => {
                 <div>
                     <h4 className={"text-lg"}>Contacto</h4>
                     <ul className={"text-muted-foreground flex flex-col gap-4 my-4"}>
-                        <li className={"flex items-center gap-2"}>
+                        <li className={"flex items-center gap-2 cursor-default"}>
                             <img src={mailIcon} alt="Mail icon" className={"h-4 w-4"}/>
                             <p>gabrielmayorgate@gmail.com</p>
                         </li>
-                        <li className={"flex items-center gap-2"}>
+                        <li className={"flex items-center gap-2 cursor-default"}>
                             <img src={locationIcon} alt="Mail icon" className={"h-4 w-4"}/>
                             <p>Managua, NI</p>
                         </li>
-                        <li className={"flex items-center gap-2"}>
+                        <li className={"flex items-center gap-2 cursor-default"}>
                             <img src={timeIcon} alt="Mail icon" className={"h-4 w-4"}/>
                             <p>{translate("footer.time")}</p>
                         </li>

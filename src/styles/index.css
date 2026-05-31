@@ -45,6 +45,14 @@
     line-height: 1.5;
   }
 
+  a {
+    cursor: pointer;
+  }
+
+  li {
+    cursor: pointer;
+  }
+
   button {
     font-size: var(--text-base);
     font-weight: var(--font-weight-medium);

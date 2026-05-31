@@ -2,7 +2,7 @@ import Home from "./pages/Home.jsx";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import {BrowserRouter, Route, Routes} from "react-router";
-import Certifications from "./pages/Certifications.jsx";
+import Certificates from "./pages/Certificates.jsx";
 import Projects from "./pages/Projects.jsx";
 import Layout from "./Layout.jsx";
 
@@ -14,7 +14,7 @@ function App() {
             <Routes>
                 <Route path={"/"} element={<Layout/>}>
                     <Route index element={<Home/>}/>
-                    <Route path="/certifications" element={<Certifications/>}/>
+                    <Route path="/certificates" element={<Certificates/>}/>
                     <Route path="/projects" element={<Projects/>}/>
                 </Route>
             </Routes>

@@ -8,7 +8,7 @@ const SectionsNav = () => {
 
     const links = [
         {name: translate("navbar.home"), path: "/"},
-        {name: translate("navbar.certificates"), path: "./certifications"},
+        {name: translate("navbar.certificates"), path: "./certificates"},
         {name: translate("navbar.projects"), path: "./projects"}
     ]
     return (
