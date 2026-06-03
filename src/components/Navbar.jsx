@@ -51,8 +51,8 @@ const Navbar = () => {
             </div>
             <div className={`items-center gap-4 justify-self-end ${isScrolled ? "hidden" : "flex"}`}>
                 <LanguageSelector/>
-                <a href={cv} download={"Gabriel Mayorga CV"}>
-                    <button className={"h-10 w-auto px-4 outline-1 rounded-lg bg-primary/10 hover:bg-primary/20 cursor-pointer"}>CV</button>
+                <a href={cv} download={"Gabriel Mayorga CV"} className={"h-10 w-auto px-4 flex justify-center items-center outline-1 rounded-lg bg-primary/10 hover:bg-primary/20 cursor-pointer"}>
+                    CV
                 </a>
             </div>
         </nav>
