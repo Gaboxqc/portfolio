@@ -34,10 +34,8 @@ const Home = () => {
                         <p className={"text-lg text-muted-foreground max-w-150"}>{translate("hero.description")}.</p>
                         <div className={"flex gap-4"}>
                             <GradientButton label={translate("hero.projects")} nav={"/projects"}/>
-                            <a href="#contact">
-                                <button className={"h-13 w-auto rounded-lg px-6 outline-1 hover:bg-primary/10"}>
-                                    {translate("hero.contact")}
-                                </button>
+                            <a href="#contact" className={"h-13 w-auto flex justify-center items-center rounded-lg px-6 outline-1 hover:bg-primary/10"}>
+                                {translate("hero.contact")}
                             </a>
                         </div>
                         <div className={"flex items-center justify-center gap-5"}>
