@@ -1,5 +1,4 @@
 import test from '../../assets/test.jpg'
-import TextCardTr from "./TextCardTr.jsx";
 import TextCardSm from "./TextCardSm.jsx";
 
 const ProjectCard = ({title, description, year, dificulty, tags, type, image, gitUrl, projectUrl}) => {

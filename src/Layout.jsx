@@ -1,22 +1,24 @@
 import Navbar from "./components/Navbar.jsx";
-import {Outlet} from "react-router";
+import { Outlet, ScrollRestoration } from "react-router";
 import Footer from "./components/Footer.jsx";
 import LanguageProvider from "./context/LanguageContext.jsx";
 
 const Layout = () => {
-  return(
-      <LanguageProvider>
-          <div>
-              <header>
-                  <Navbar/>
-              </header>
-              <main>
-                  <Outlet/>
-              </main>
-              <Footer/>
-          </div>
-      </LanguageProvider>
-  )
-}
+  return (
+    <LanguageProvider>
+      <div>
+        <header>
+          <Navbar />
+        </header>
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
 
-export default Layout
+      <ScrollRestoration />
+    </LanguageProvider>
+  );
+};
+
+export default Layout;

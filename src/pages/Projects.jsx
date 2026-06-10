@@ -1,4 +1,4 @@
-import searchIcon from '../assets/Search.svg'
+import {SearchIcon} from "../assets/icons/index.js";
 import TextCardTr from "../components/cards/TextCardTr.jsx";
 import ProjectCard from "../components/cards/ProjectCard.jsx";
 
@@ -12,7 +12,7 @@ const Projects = () => {
             </section>
             <section className={"flex flex-col gap-8"}>
                 <div className={"w-full h-12 bg-background flex items-center border rounded-xl"}>
-                    <img src={searchIcon} alt="Search icon" className={"h-5 w-5 ml-3 mr-2"}/>
+                    <img src={SearchIcon} alt="Search icon" className={"h-5 w-5 ml-3 mr-2"}/>
                     <input type="text" className={"text-muted-foreground outline-0 p-2"}
                            placeholder={"Buscar proyectos..."}/>
                 </div>

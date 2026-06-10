@@ -2,12 +2,12 @@ import TextCardTr from "../components/cards/TextCardTr.jsx";
 import CertificationCardMain from "../components/cards/CertificationCardMain.jsx";
 import CertificationCard from "../components/cards/CertificationCard.jsx";
 
-const Certificates = () => {
+const Courses = () => {
     return (
         <main className={"container pt-24 flex flex-col gap-8 mx-auto px-4 mb-30"}>
             <section className={"flex flex-col gap-8"}>
                 <p className={"text-muted-foreground"}>Volver</p>
-                <h1 className={"text-5xl md:text-6xl"}>Certificaciones</h1>
+                <h1 className={"text-5xl md:text-6xl"}>Cursos y certificaciones</h1>
                 <p className={"text-muted-foreground text-lg max-w-4xl"}>Un registro completo de mis certificaciones profesionales, validando experiencia en desarrollo, cloud computing, DevOps y seguridad.</p>
             </section>
             <section className={"flex flex-col gap-8"}>
@@ -73,4 +73,4 @@ const Certificates = () => {
     )
 }
 
-export default Certificates
+export default Courses

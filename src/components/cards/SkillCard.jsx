@@ -1,41 +1,52 @@
-import Art from '../../assets/Art.svg'
-import Code from '../../assets/Code.svg'
-import Lightning from '../../assets/Lightning.svg'
-import Rocket from '../../assets/Rocket.svg'
+import {motion} from "framer-motion";
+
+import {ArtIcon, CodeIcon, LightningIcon, RocketIcon} from "../../assets/icons/index.js";
 
 const SkillCard = ({Icon, Title, Description}) => {
     switch (Icon) {
         case 'Code': {
-            Icon = Code
+            Icon = <CodeIcon/>
             break
         }
         case 'Art': {
-            Icon = Art
+            Icon = <ArtIcon/>
             break
         }
         case 'Rocket': {
-            Icon = Rocket
+            Icon = <RocketIcon/>
             break
         }
         case 'Lightning': {
-            Icon = Lightning
+            Icon = <LightningIcon/>
             break
         }
         default: {
-            Icon = Code
+            Icon = <CodeIcon/>
             break
         }
 
     }
 
-    return(
-        <div className={"max-w-100 bg-primary/20 flex flex-col gap-y-4 p-4 my-4 rounded-xl outline-1"}>
-            <div className={"h-10 w-10 bg-primary/25 flex items-center justify-center rounded-xl outline-1"}>
-                <img src={Icon} alt="Code"/>
+    return (
+        <motion.div
+            // 1. Estado inicial (invisible y un poco desplazado hacia abajo)
+            initial={{opacity: 0, y: 50}}
+
+            // 2. Estado final al entrar en el viewport
+            whileInView={{opacity: 1, y: 0}}
+
+            // 3. Ajustes de la animación
+            transition={{duration: 1, ease: "easeOut"}}
+
+            // 4. Opcional: para que se anime cada vez que entra y sale
+            viewport={{once: true}}
+            className={"my-4 flex max-w-100 flex-col gap-y-4 rounded-xl bg-primary/20 p-4 outline-1 transition-colors duration-300 hover:bg-primary/30"}>
+            <div className={"flex h-10 w-10 items-center justify-center rounded-xl bg-primary/25 outline-1"}>
+                {Icon}
             </div>
             <h2>{Title}</h2>
             <p className={"text-muted-foreground"}>{Description}</p>
-        </div>
+        </motion.div>
     )
 }
 

@@ -3,9 +3,8 @@ import {useEffect, useState} from "react";
 import SectionsNav from "./SectionsNav.jsx";
 import LanguageSelector from "./LanguageSelector.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
-
-import logoIcon from '../assets/Logo.svg'
-import cv from '../assets/Curriculum Gabriel Mayorga.pdf'
+import {LogoIcon} from "../assets/icons/index.js";
+import cv from '../../public/Curriculum Gabriel Mayorga.pdf'
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -30,7 +29,7 @@ const Navbar = () => {
             ? "grid-cols-1 z-2" 
             : "bg-background/40 grid-cols-2 md:grid-cols-3"}`}>
             <div className={`items-center ${isScrolled ? "hidden" : "flex"}`}>
-                <img src={logoIcon} alt="Logo" className={"h-11 w-11"}/>
+                <LogoIcon className={"h-11 w-11"}/>
                 <Link to={"./"}>
                     <p className={"font-bold"}>{translate("navbar.portfolio")}</p>
                 </Link>
@@ -43,7 +42,7 @@ const Navbar = () => {
                         <>
                             <li><NavLink to="/" className={`px-4 py-2 rounded-md text-sm 
                             font-medium transition-all duration-300 ease-in-out`}>{translate("navbar.home")}</NavLink></li>
-                            <li><NavLink to="/certificates">{translate("navbar.certificates")}</NavLink></li>
+                            <li><NavLink to="/courses">{translate("navbar.courses")}</NavLink></li>
                             <li><NavLink to="/projects">{translate("navbar.projects")}</NavLink></li>
                         </>
                     )}

@@ -9,10 +9,11 @@ const FeaturedProjectCard = ({position, year, title, description, technologies})
                 <h3 className={"text-2xl"}>{title}</h3>
                 <p className={"text-muted-foreground text-md"}>{description}</p>
                 <div className={"flex flex-wrap gap-2"}>
-                    <TextCardSm Text={technologies[0]}/>
-                    <TextCardSm Text={technologies[0]}/>
-                    <TextCardSm Text={technologies[0]}/>
-                    <TextCardSm Text={technologies[0]}/>
+                    {technologies.map((t) => {
+                        return(
+                            <TextCardSm Text={t}/>
+                        )
+                    })}
                 </div>
             </div>
         </div>

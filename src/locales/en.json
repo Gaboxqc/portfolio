@@ -2,13 +2,14 @@
   "navbar": {
     "portfolio": "Portfolio",
     "home": "Home",
-    "certificates": "Certificates",
+    "courses": "Courses",
     "projects": "Projects"
   },
   "hero": {
     "available": "Available to new projects",
     "subtitle": "Software Developer",
     "description": "I’m a developer who loves mastering new technologies to build useful digital products. My certifications are my technical foundation, and I use AI as a helpful ally for interface design.",
+    "projects": "View projects",
     "contact": "Contact me"
   },
   "about": {
@@ -28,22 +29,23 @@
     "subtitle": "A look at the technical challenges I’ve solved to put my knowledge into practice and keep learning.",
     "all-projects": "View all projects"
   },
-  "certificates":{
-    "title": "Certificates",
-    "subtitle": "Validated courses and training that back up my knowledge and technical skills."
+  "courses":{
+    "title": "Courses",
+    "subtitle": "Validated courses and training that back up my knowledge and technical skills.",
+    "all-courses": "View courses"
   },
   "contact": {
     "title": "Let's build something exceptional together",
     "subtitle": "I'm available for freelance projects or joining a team full-time",
     "conversation": "Start a conversation",
-    "all-certificates": "View all"
+    "all-courses": "View all"
   },
   "footer": {
     "title": "Full-stack developer focused on creating functional digital solutions. I combine a solid certified background with the use of AI to solve problems and design interfaces.",
     "navigation": "Navigation",
     "about": "About me",
     "projects": "Projects",
-    "certificates": "Certificates",
+    "courses": "Courses",
     "contact": "Contact",
     "services": "Services",
     "web-development": "Web Development",

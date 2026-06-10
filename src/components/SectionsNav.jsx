@@ -8,8 +8,8 @@ const SectionsNav = () => {
 
     const links = [
         {name: translate("navbar.home"), path: "/"},
-        {name: translate("navbar.certificates"), path: "./certificates"},
-        {name: translate("navbar.projects"), path: "./projects"}
+        {name: translate("navbar.courses"), path: "/courses"},
+        {name: translate("navbar.projects"), path: "/projects"}
     ]
     return (
         <div>

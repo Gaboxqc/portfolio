@@ -1,10 +1,6 @@
-import logoIcon from '../assets/Logo.svg'
-import githubIcon from '../assets/Github.svg'
-import linkedinIcon from '../assets/LinkedIn.svg'
-import mailIcon from '../assets/Mail.svg'
-import locationIcon from '../assets/Location.svg'
-import timeIcon from '../assets/Time.svg'
+import {LogoIcon, GithubIcon, LinkedInIcon, MailIcon, LocationIcon, TimeIcon} from "../assets/icons/index.js";
 import UseLanguage from "../hooks/useLanguage.jsx";
+import {Link} from "react-router";
 
 const Footer = () => {
 
@@ -14,19 +10,19 @@ const Footer = () => {
         <footer className={"container mx-auto p-4"}>
             <div className={"flex flex-col items-start gap-8 mt-4 mb-16"}>
                 <div className={"flex gap-4"}>
-                    <img src={logoIcon} alt="Logo icon" className={"h-8 w-8"}/>
+                    <LogoIcon className={"h-8 w-8"}/>
                     <h2>Gabriel Mayorga</h2>
                 </div>
                 <p className={"text-muted-foreground text-md"}>{translate("footer.title")}</p>
                 <div className={"flex items-center justify-center gap-4"}>
                     <a href={"https://github.com/Gaboxqc"} className={"bg-primary/10 outline-1 p-2 rounded-xl cursor-pointer"}>
-                        <img src={githubIcon} alt="Github Icon" className={"h-8 w-8"}/>
+                        <GithubIcon className={"h-8 w-8"}/>
                     </a>
                     <a href={"https://linkedin.com/in/gabriel-mayorga-b36611231"} className={"bg-primary/10 outline-1 p-2 rounded-xl cursor-pointer"}>
-                        <img src={linkedinIcon} alt="LinkedIn Icon" className={"h-8 w-8"}/>
+                        <LinkedInIcon className={"h-8 w-8"}/>
                     </a>
                     <a href={"mailto:gabrielmayorgate@gmail.com"} className={"bg-primary/10 outline-1 p-2 rounded-xl cursor-pointer"}>
-                        <img src={mailIcon} alt="Mail Icon" className={"h-8 w-8"}/>
+                        <MailIcon className={"h-8 w-8"}/>
                     </a>
                 </div>
             </div>
@@ -34,10 +30,11 @@ const Footer = () => {
                 <div>
                     <h4 className={"text-lg"}>{translate("footer.navigation")}</h4>
                     <ul className={"text-muted-foreground flex flex-col gap-4 my-4"}>
-                        <li>{translate("footer.about")}</li>
-                        <li>{translate("footer.projects")}</li>
-                        <li>{translate("footer.certificates")}</li>
-                        <li>{translate("footer.contact")}</li>
+                        <li><Link to={"#about"}>{translate("footer.about")}</Link></li>
+                        <li><Link to={"#featuredProjects"}>{translate("footer.projects")}</Link></li>
+                        <li><Link to={"#featuredCourses"}>{translate("footer.courses")}</Link></li>
+                        <li><Link to={"#contact"}>{translate("footer.contact")}</Link></li>
+
                     </ul>
                 </div>
                 <div>
@@ -53,15 +50,15 @@ const Footer = () => {
                     <h4 className={"text-lg"}>Contacto</h4>
                     <ul className={"text-muted-foreground flex flex-col gap-4 my-4"}>
                         <li className={"flex items-center gap-2 cursor-default"}>
-                            <img src={mailIcon} alt="Mail icon" className={"h-4 w-4"}/>
+                            <MailIcon className={"h-8 w-8"}/>
                             <p>gabrielmayorgate@gmail.com</p>
                         </li>
                         <li className={"flex items-center gap-2 cursor-default"}>
-                            <img src={locationIcon} alt="Mail icon" className={"h-4 w-4"}/>
+                            <LocationIcon className={"h-8 w-8"}/>
                             <p>Managua, NI</p>
                         </li>
                         <li className={"flex items-center gap-2 cursor-default"}>
-                            <img src={timeIcon} alt="Mail icon" className={"h-4 w-4"}/>
+                            <TimeIcon className={"h-8 w-8"}/>
                             <p>{translate("footer.time")}</p>
                         </li>
                     </ul>

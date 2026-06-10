@@ -1,6 +1,5 @@
 import * as Select from '@radix-ui/react-select'
 import useLanguage from "../hooks/useLanguage.jsx";
-import languageContext from "../context/LanguageContext.jsx";
 
 const languages = [
         {code: "es", name: "Español", flag: "🇪🇸"},
@@ -11,8 +10,6 @@ const languages = [
 const LanguageSelector = () => {
 
     const {locale, setLocale} = useLanguage()
-
-    const selectedLanguage = languages.find((lang) => lang.code === locale)
 
     return (
         <Select.Root value={locale} onValueChange={setLocale}>

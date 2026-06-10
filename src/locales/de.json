@@ -2,7 +2,7 @@
   "navbar": {
     "portfolio": "Portfolio",
     "home": "Startseite",
-    "certificates": "Zertifizierungen",
+    "courses": "Kurse",
     "projects": "Projekte"
   },
   "hero": {
@@ -29,10 +29,10 @@
     "subtitle": "Ein Einblick in die technischen Herausforderungen, die ich gelöst habe, um mein Wissen in die Praxis umzusetzen und mich weiterzuentwickeln.",
     "all-projects": "Alle Projekte anzeigen"
   },
-  "certificates": {
-    "title": "Zertifikate",
+  "courses": {
+    "title": "Kurse",
     "subtitle": "Validierte Kurse und Weiterbildungen, die mein Wissen und meine technischen Fähigkeiten belegen.",
-    "all-certificates": "Alle anzeigen"
+    "all-courses": "Alle anzeigen"
   },
   "contact": {
     "title": "Lass uns zusammen etwas Großartiges schaffen",
@@ -43,7 +43,7 @@
     "title": "Full-Stack-Entwickler mit dem Fokus auf funktionale digitale Lösungen. Ich verbinde ein solides zertifiziertes Fundament mit dem Einsatz von KI, um Probleme zu lösen und Interfaces zu gestalten.",
     "navigation": "Navigation",
     "about": "Über mich",
-    "certificates": "Zertifikate",
+    "course": "Kurse",
     "projects": "Projekte",
     "contact": "Kontakt",
     "services": "Dienstleistungen",
