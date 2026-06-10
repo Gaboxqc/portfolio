@@ -8,7 +8,7 @@ const CertificationCard = ({title, academy, year, tags, seria, url, isMain, isVe
         <motion.div
             initial={{opacity: 0, y: 50}}
             whileInView={{opacity: 1, y: 0}}
-            transition={{duration: 1, ease: "easeOut"}}
+            transition={{type: "spring"}}
             viewport={{once: true}}
             className="z-1 flex max-h-100 flex-col gap-4 rounded-xl border bg-card p-5">
             <div className={"flex h-16 justify-between"}>
@@ -28,7 +28,11 @@ const CertificationCard = ({title, academy, year, tags, seria, url, isMain, isVe
                 </div>
                 <div className={"flex items-center justify-between"}>
                     <ul className={"flex max-w-xs flex-wrap gap-2"}>
-                        <li><TextCardSm Text={"Cloud"}/></li>
+                        {tags.map((t) => {
+                            return(
+                                <li><TextCardSm Text={t.name}/></li>
+                            )
+                        })}
                     </ul>
                     <button className={"self-start"}>
                         <LinkIcon/>

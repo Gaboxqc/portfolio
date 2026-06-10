@@ -5,7 +5,7 @@ function ContactCard({title, label, Icon, link}) {
         <motion.div
             initial={{opacity: 0, y: 50}}
             whileInView={{opacity: 1, y: 0}}
-            transition={{duration: 1, ease: "easeOut"}}
+            transition={{type: "spring"}}
             viewport={{once: true}}
             className={"flex max-h-100 flex-col items-center gap-4 rounded-xl bg-card py-8 outline-1"}>
             <div

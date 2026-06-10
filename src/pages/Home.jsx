@@ -19,15 +19,33 @@ import ContactCard from "../components/cards/ContactCard.jsx";
 
 const Home = () => {
 
-    const {translate} = useLanguage()
+    const {translate, locale, setLocale} = useLanguage()
+
+    let language = 0
+
+    switch (locale) {
+        case 'es' : {
+            language = 0
+            break
+        }
+        case 'en' : {
+            language = 1
+            break
+        }
+        case 'de' : {
+            language = 2
+            break
+        }
+    }
+
     const {
         data: course,
         loading: loadCourse
-    } = useFetch("https://api.gabrielmayorga.dev/portfolio/course_by?offset=0&limit=10")
+    } = useFetch("https://api.gabrielmayorga.dev/portfolio/certifications_by")
 
     return (
 
-        <main className={"flex w-full flex-col"}>
+        <main className={"flex w-full flex-col gap-40"}>
             <section className={"h-screen bg-linear-to-br from-primary/20 via-transparent to-accent/10 text-white"}>
                 <div
                     className={"container mx-auto flex h-full flex-col items-start justify-center gap-y-10 px-4 pt-4 md:gap-4 md:gap-y-12"}>
@@ -46,8 +64,8 @@ const Home = () => {
                         <GradientButton label={translate("hero.projects")} nav={"/projects"}/>
 
                         <Link to={"#contact"}
-                              className={"flex h-13 w-auto items-center justify-center rounded-lg px-6" +
-                                  "outline-1 hover:bg-primary/10"}>{translate("hero.contact")}
+                              className={"flex h-13 w-auto items-center px-4 justify-center rounded-lg " +
+                                  "border border-accent/20 hover:bg-primary/10"}>{translate("hero.contact")}
                         </Link>
                     </div>
                     <div className={"flex items-center justify-center gap-5"}>
@@ -64,8 +82,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id={"about"}
-                     className={"container mx-auto flex h-full flex-col items-center px-5 py-12 xl:h-screen"}>
+            <section id={"about"} className={"container mx-auto flex h-full flex-col items-center px-5 py-12 xl:h-screen"}>
                 <h2 className={"text-center text-5xl leading-16"}>{translate("about.title")}</h2>
                 <p className={"mx-4 my-8 text-center leading-7 text-muted-foreground"}>{translate("about.description")}</p>
                 <div className={"grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
@@ -94,9 +111,9 @@ const Home = () => {
             <motion.section
                 initial={{opacity: 0, y: 50}}
                 whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 1, ease: "easeOut"}}
+                transition={{type: "spring"}}
                 viewport={{once: true}}
-                id={"featuredProjects"} className={"container mx-auto my-30 flex flex-col items-center"}>
+                id={"featuredProjects"} className={"container mx-auto flex flex-col items-center"}>
                 <h2 className={"text-center text-5xl leading-16"}>{translate("projects.title")}</h2>
                 <p className={"mx-4 my-4 text-center leading-7 text-muted-foreground"}>{translate("projects.subtitle")}</p>
                 <div className="mt-20 mb-30 grid lg:grid-cols-12">
@@ -136,19 +153,20 @@ const Home = () => {
                 <GradientButton label={translate("projects.all-projects")} nav={"/projects"}></GradientButton>
             </motion.section>
 
-            <section id={"featuredCourses"} className={"container mx-auto my-30 flex flex-col items-center"}>
+            <section id={"featuredCourses"} className={"container mx-auto flex flex-col items-center"}>
                 <h2 className={"text-center text-5xl leading-16 md:mx-4 md:text-left"}>{translate("courses.title")}</h2>
                 <div className={"grid w-full grid-cols-1 items-center md:mx-4 md:grid-cols-3"}>
-                    <p className={"col-start-2 my-4 w-max justify-self-center leading-7 text-muted-foreground md:text-left"}>{translate("courses.subtitle")}</p>
+                    <p className={"md:col-start-2 my-4 md:w-max text-center justify-self-center leading-7 text-muted-foreground md:text-left"}>{translate("courses.subtitle")}</p>
                     <Link to={"/courses"}
                           className={"col-start-3 hidden text-end font-normal text-primary hover:text-accent md:block"}>{translate("courses.all-courses")}</Link>
                 </div>
                 <div className={"my-20 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2"}>
 
                     {loadCourse ? console.log("Cargando") : course.slice(0, 4).map((c) => {
+                        console.log(c.tags)
                         return (
-                            <CertificationCard title={c.title} year={c.year} academy={c.academy.name}
-                                               link={c.url} tags={""}/>
+                            <CertificationCard title={c.translations[0].title} year={c.year} academy={c.academy.name}
+                                               link={c.url} tags={c.tags}/>
                         )
                     })
                     }
@@ -159,7 +177,7 @@ const Home = () => {
                 </Link>
             </section>
 
-            <section id={"contact"} className={"container mx-auto flex flex-col items-center py-30"}>
+            <section id={"contact"} className={"container mx-auto flex flex-col items-center pb-30"}>
                 <h2 className={"text-center text-5xl leading-16"}>{translate("contact.title")}</h2>
                 <p className={"mx-4 my-4 text-center leading-7 text-muted-foreground"}>{translate("contact.subtitle")}</p>
                 <div className={"my-16 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3"}>

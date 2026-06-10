@@ -16,7 +16,9 @@ const Layout = () => {
         <Footer />
       </div>
 
-      <ScrollRestoration />
+      <ScrollRestoration getKey={(location, matches) => {
+            return location.key;
+        }} />
     </LanguageProvider>
   );
 };
