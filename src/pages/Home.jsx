@@ -1,3 +1,6 @@
+import {Link} from "react-router";
+import {motion} from "framer-motion";
+
 import {GithubIcon, LinkedInIcon, MailIcon, ChatIcon, LocationIcon} from "../assets/icons/index.js";
 
 import project1 from '../assets/project1.jpg'
@@ -10,14 +13,17 @@ import SkillCard from "../components/cards/SkillCard.jsx";
 import TextCard from "../components/cards/TextCard.jsx";
 import FeaturedProjectCard from "../components/cards/FeaturedProjectCard.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
-import {Link} from "react-router";
 import useFetch from "../hooks/useFetch.jsx";
 import CertificationCard from "../components/cards/CertificationCard.jsx";
+import ContactCard from "../components/cards/ContactCard.jsx";
 
 const Home = () => {
 
     const {translate} = useLanguage()
-    const {data: course, loading: loadCourse} = useFetch("https://api.gabrielmayorga.dev/portfolio/course_by?offset=0&limit=10")
+    const {
+        data: course,
+        loading: loadCourse
+    } = useFetch("https://api.gabrielmayorga.dev/portfolio/course_by?offset=0&limit=10")
 
     return (
 
@@ -39,8 +45,9 @@ const Home = () => {
                     <div className={"flex gap-4"}>
                         <GradientButton label={translate("hero.projects")} nav={"/projects"}/>
 
-                        <Link to={"#contact"} className={"flex h-13 w-auto items-center justify-center rounded-lg px-6 " +
-                            "outline-1 hover:bg-primary/10"}>{translate("hero.contact")}
+                        <Link to={"#contact"}
+                              className={"flex h-13 w-auto items-center justify-center rounded-lg px-6" +
+                                  "outline-1 hover:bg-primary/10"}>{translate("hero.contact")}
                         </Link>
                     </div>
                     <div className={"flex items-center justify-center gap-5"}>
@@ -57,7 +64,8 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id={"about"} className={"container mx-auto flex h-full flex-col items-center px-5 py-12 xl:h-screen"}>
+            <section id={"about"}
+                     className={"container mx-auto flex h-full flex-col items-center px-5 py-12 xl:h-screen"}>
                 <h2 className={"text-center text-5xl leading-16"}>{translate("about.title")}</h2>
                 <p className={"mx-4 my-8 text-center leading-7 text-muted-foreground"}>{translate("about.description")}</p>
                 <div className={"grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
@@ -83,7 +91,12 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id={"featuredProjects"} className={"container mx-auto my-30 flex flex-col items-center"}>
+            <motion.section
+                initial={{opacity: 0, y: 50}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{duration: 1, ease: "easeOut"}}
+                viewport={{once: true}}
+                id={"featuredProjects"} className={"container mx-auto my-30 flex flex-col items-center"}>
                 <h2 className={"text-center text-5xl leading-16"}>{translate("projects.title")}</h2>
                 <p className={"mx-4 my-4 text-center leading-7 text-muted-foreground"}>{translate("projects.subtitle")}</p>
                 <div className="mt-20 mb-30 grid lg:grid-cols-12">
@@ -101,23 +114,27 @@ const Home = () => {
                                              description={"I have been working with JSON, managing state, and building like a real-world app. I create it as a full-stack project!"}
                                              technologies={["React", "Node.js", "PostgresSQL", "Redis"]}/>
                     </div>
-                    <div className={"col-span-7 flex flex-col gap-50 "}>
-                        <div className={"sticky top-40 hidden h-150 w-full self-start rounded-xl overflow-hidden lg:block"}>
+                    <div className={"col-span-7 flex flex-col gap-50"}>
+                        <div
+                            className={"sticky top-40 hidden h-150 w-full self-start overflow-hidden rounded-xl lg:block"}>
                             <img src={project1} alt=""/>
                         </div>
-                        <div className={"sticky top-40 hidden h-150 w-full self-start rounded-xl overflow-hidden  lg:block"}>
+                        <div
+                            className={"sticky top-40 hidden h-150 w-full self-start overflow-hidden rounded-xl lg:block"}>
                             <img src={project2} alt=""/>
                         </div>
-                        <div className={"sticky top-40 hidden h-150 w-full self-start rounded-xl overflow-hidden  lg:block"}>
+                        <div
+                            className={"sticky top-40 hidden h-150 w-full self-start overflow-hidden rounded-xl lg:block"}>
                             <img src={project3} alt=""/>
                         </div>
-                        <div className={"sticky top-40 hidden h-150 w-full self-start rounded-xl overflow-hidden  lg:block"}>
+                        <div
+                            className={"sticky top-40 hidden h-150 w-full self-start overflow-hidden rounded-xl lg:block"}>
                             <img src={project4} alt=""/>
                         </div>
                     </div>
                 </div>
                 <GradientButton label={translate("projects.all-projects")} nav={"/projects"}></GradientButton>
-            </section>
+            </motion.section>
 
             <section id={"featuredCourses"} className={"container mx-auto my-30 flex flex-col items-center"}>
                 <h2 className={"text-center text-5xl leading-16 md:mx-4 md:text-left"}>{translate("courses.title")}</h2>
@@ -131,7 +148,7 @@ const Home = () => {
                     {loadCourse ? console.log("Cargando") : course.slice(0, 4).map((c) => {
                         return (
                             <CertificationCard title={c.title} year={c.year} academy={c.academy.name}
-                                                link={c.url} tags={""}/>
+                                               link={c.url} tags={""}/>
                         )
                     })
                     }
@@ -146,36 +163,9 @@ const Home = () => {
                 <h2 className={"text-center text-5xl leading-16"}>{translate("contact.title")}</h2>
                 <p className={"mx-4 my-4 text-center leading-7 text-muted-foreground"}>{translate("contact.subtitle")}</p>
                 <div className={"my-16 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3"}>
-                    <div className={"flex max-h-100 flex-col items-center gap-4 rounded-xl bg-card py-8 outline-1"}>
-                        <div
-                            className={"flex h-14 w-14 items-center justify-center rounded-xl bg-primary/20 outline-1"}>
-                            <MailIcon className={"h-8 w-8"}/>
-                        </div>
-                        <span className={"text-xl"}>Email</span>
-                        <a href={"mailto:gabrielmayorgate@gmail.com"}
-                           className={"font-normal text-muted-foreground hover:text-accent"}>
-                            gabrielmayorgate@gmail.com
-                        </a>
-                    </div>
-                    <div className={"flex max-h-100 flex-col items-center gap-4 rounded-xl bg-card py-8 outline-1"}>
-                        <div
-                            className={"flex h-14 w-14 items-center justify-center rounded-xl bg-primary/20 outline-1"}>
-                            <LocationIcon className={"h-8 w-8"}/>
-                        </div>
-                        <span className={"text-xl"}>Ubicación</span>
-                        <p className={"font-normal text-muted-foreground"}>Managua, NI</p>
-                    </div>
-                    <div className={"flex max-h-100 flex-col items-center gap-4 rounded-xl bg-card py-8 outline-1"}>
-                        <div
-                            className={"flex h-14 w-14 items-center justify-center rounded-xl bg-primary/20 outline-1"}>
-                            <ChatIcon className={"h-8 w-8"}/>
-                        </div>
-                        <span className={"text-xl"}>Chat</span>
-                        <a href={"https://t.me/Gaboxqc"}
-                           className={"font-normal text-muted-foreground hover:text-accent"}>
-                            Telegram/Discord: Gaboxqc
-                        </a>
-                    </div>
+                    <ContactCard title={"Email"} label={"gabrielmayorgate@gmail.com"} link={"mailto:gabrielmayorgate@gmail.com"} Icon={MailIcon}/>
+                    <ContactCard title={"Ubicación"} label={"Managua, NI"} link={""} Icon={LocationIcon}/>
+                    <ContactCard title={"Chat"} label={"Telegram/Discord: Gaboxqc"} link={"https://t.me/Gaboxqc"} Icon={ChatIcon}/>
                 </div>
                 <GradientButton label={translate("contact.conversation")} nav={"https://t.me/Gaboxqc"}/>
             </section>

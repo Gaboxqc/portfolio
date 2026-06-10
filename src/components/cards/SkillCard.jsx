@@ -29,16 +29,9 @@ const SkillCard = ({Icon, Title, Description}) => {
 
     return (
         <motion.div
-            // 1. Estado inicial (invisible y un poco desplazado hacia abajo)
             initial={{opacity: 0, y: 50}}
-
-            // 2. Estado final al entrar en el viewport
             whileInView={{opacity: 1, y: 0}}
-
-            // 3. Ajustes de la animación
             transition={{duration: 1, ease: "easeOut"}}
-
-            // 4. Opcional: para que se anime cada vez que entra y sale
             viewport={{once: true}}
             className={"my-4 flex max-w-100 flex-col gap-y-4 rounded-xl bg-primary/20 p-4 outline-1 transition-colors duration-300 hover:bg-primary/30"}>
             <div className={"flex h-10 w-10 items-center justify-center rounded-xl bg-primary/25 outline-1"}>

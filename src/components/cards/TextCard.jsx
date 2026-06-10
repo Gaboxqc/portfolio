@@ -1,8 +1,15 @@
+import {motion} from "framer-motion";
+
 const TextCard = ({Text}) => {
     return(
-        <div className={"bg-primary/20 p-3 rounded-2xl text-center outline-1"}>
+        <motion.div
+            initial={{opacity: 0, y: 50}}
+            whileInView={{opacity: 1, y: 0}}
+            transition={{duration: 1, ease: "easeOut"}}
+            viewport={{once: true}}
+            className={"bg-primary/20 p-3 rounded-2xl text-center outline-1"}>
             <span>{Text}</span>
-        </div>
+        </motion.div>
     )
 }
 

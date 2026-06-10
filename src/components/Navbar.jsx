@@ -1,4 +1,5 @@
 import {Link, NavLink} from "react-router";
+import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
 import SectionsNav from "./SectionsNav.jsx";
 import LanguageSelector from "./LanguageSelector.jsx";
@@ -11,11 +12,17 @@ const Navbar = () => {
 
     const {translate} = useLanguage()
 
-    useEffect( () => {
+    const sections = [
+        {title: translate("navbar.home"), url: "/"},
+        {title: translate("navbar.courses"), url: "/courses"},
+        {title: translate("navbar.projects"), url: "/projects"}
+    ]
+
+    useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 setIsScrolled(true)
-            }else {
+            } else {
                 setIsScrolled(false)
             }
         }
@@ -25,32 +32,48 @@ const Navbar = () => {
     }, [])
 
     return (
-        <nav className={`w-screen grid px-10 items-center min-h-20 fixed transition-all duration-500 ease-in-out ${isScrolled 
-            ? "grid-cols-1 z-2" 
-            : "bg-background/40 grid-cols-2 md:grid-cols-3"}`}>
+        <nav
+            className={`w-screen grid px-10 items-center min-h-20 fixed transition-all duration-500 ease-in-out ${isScrolled
+                ? "grid-cols-1 z-2"
+                : "bg-background/40 grid-cols-2 md:grid-cols-3"}`}>
             <div className={`items-center ${isScrolled ? "hidden" : "flex"}`}>
                 <LogoIcon className={"h-11 w-11"}/>
                 <Link to={"./"}>
                     <p className={"font-bold"}>{translate("navbar.portfolio")}</p>
                 </Link>
             </div>
-            <div className={`md:flex md:justify-center transition-all duration-500 ease-in-out ${isScrolled ? "block" : "hidden"}`}>
-                <ul className={`flex justify-center gap-5 lg:max-w-3xl md:max-w-xs transition-all duration-500 ease-in-out ${isScrolled
-                    ? "border py-2 rounded-full bg-card/60 backdrop-blur-md shadow-lg shadow-black/20 "
-                    : ""}`}>
+            <div className={`md:flex md:justify-center  ${isScrolled ? "block" : "hidden"}`}>
+                <ul
+                    className={`flex justify-center gap-5 lg:max-w-3xl md:max-w-xs transition-all duration-500 ease-in-out ${isScrolled
+                        ? "border py-2 rounded-full bg-card/60 backdrop-blur-md shadow-lg shadow-black/20 "
+                        : ""}`}>
                     {isScrolled ? <SectionsNav/> : (
-                        <>
-                            <li><NavLink to="/" className={`px-4 py-2 rounded-md text-sm 
-                            font-medium transition-all duration-300 ease-in-out`}>{translate("navbar.home")}</NavLink></li>
-                            <li><NavLink to="/courses">{translate("navbar.courses")}</NavLink></li>
-                            <li><NavLink to="/projects">{translate("navbar.projects")}</NavLink></li>
-                        </>
+                        <motion.div
+                            initial={{scale: 1.1}}
+                            whileInView={{scale: 1}}
+                            transition={{type: "spring"}}
+                            className={"flex justify-between"}
+                        >
+                            {sections.map((s) => {
+                                return (
+                                    <li>
+                                        <NavLink key={s.url} to={s.url} className={({isActive}) =>
+                                            `${isActive ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}
+                                                 rounded-md px-4 py-2 text-sm font-medium`
+                                        }>
+                                            {s.title}
+                                        </NavLink>
+                                    </li>
+                                )
+                            })}
+                        </motion.div>
                     )}
                 </ul>
             </div>
             <div className={`items-center gap-4 justify-self-end ${isScrolled ? "hidden" : "flex"}`}>
                 <LanguageSelector/>
-                <a href={cv} download={"Gabriel Mayorga CV"} className={"h-10 w-auto px-4 flex justify-center items-center outline-1 rounded-lg bg-primary/10 hover:bg-primary/20 cursor-pointer"}>
+                <a href={cv} download={"Gabriel Mayorga CV"}
+                   className={"h-10 w-auto px-4 flex justify-center items-center outline-1 rounded-lg bg-primary/10 hover:bg-primary/20 cursor-pointer"}>
                     CV
                 </a>
             </div>
