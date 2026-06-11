@@ -3,15 +3,15 @@ import {motion} from "framer-motion";
 import {PlatziIcon, LinkIcon, DateIcon} from "../../assets/icons/index.js";
 import TextCardSm from "./TextCardSm.jsx";
 
-const CertificationCard = ({title, academy, year, tags, seria, url, isMain, isVerified}) => {
+const CertificationCard = ({title, academy, year, tags = [], serial, url, isVerified}) => {
     return (
         <motion.div
             initial={{opacity: 0, y: 50}}
             whileInView={{opacity: 1, y: 0}}
             transition={{type: "spring"}}
             viewport={{once: true}}
-            className="z-1 flex max-h-100 flex-col gap-4 rounded-xl border bg-card p-5">
-            <div className={"flex h-16 justify-between"}>
+            className="z-1 flex max-h-100 flex-col gap-4 rounded-xl border bg-card p-5 border-yellow-200/40 rounded-xl hover:border-yellow-200/70">
+            <div className={"flex h-16 justify-between "}>
                 <div className={"flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20 outline-1"}>
                     <PlatziIcon className={"h-8 w-8"}/>
                 </div>

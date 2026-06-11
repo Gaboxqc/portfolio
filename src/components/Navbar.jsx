@@ -59,7 +59,7 @@ const Navbar = () => {
                                     <li>
                                         <NavLink key={s.url} to={s.url} className={({isActive}) =>
                                             `${isActive ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}
-                                                 rounded-md px-4 py-2 text-sm font-medium`
+                                                 rounded-md px-4 py-2 text-md font-medium`
                                         }>
                                             {s.title}
                                         </NavLink>

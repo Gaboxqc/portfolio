@@ -1,8 +1,30 @@
 import TextCardTr from "../components/cards/TextCardTr.jsx";
 import CertificationCardMain from "../components/cards/CertificationCardMain.jsx";
 import CertificationCard from "../components/cards/CertificationCard.jsx";
+import CoursesSection from "../components/CoursesSection.jsx";
+import CertificationsSection from "../components/CertificationsSection.jsx";
+import useLanguage from "../hooks/useLanguage.jsx";
 
 const Courses = () => {
+    const {locale} = useLanguage()
+
+    let language = 0
+
+    switch (locale) {
+        case 'es' : {
+            language = 0
+            break
+        }
+        case 'en' : {
+            language = 1
+            break
+        }
+        case 'de' : {
+            language = 2
+            break
+        }
+    }
+
     return (
         <main className={"container pt-24 flex flex-col gap-8 mx-auto px-4 mb-30"}>
             <section className={"flex flex-col gap-8"}>
@@ -55,18 +77,16 @@ const Courses = () => {
             <section className={"flex flex-col gap-8"}>
                 <h3 className={"text-2xl"}>Certificaciones Principales</h3>
                 <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"}>
-                    <CertificationCardMain title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
-                    <CertificationCardMain title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
-                    <CertificationCardMain title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
-                    <CertificationCardMain title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
+                    <CertificationsSection language={language}/>
                 </div>
 
                 <h3 className={"text-2xl"}>Todas las certificaciones</h3>
                 <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"}>
-                    <CertificationCard title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
-                    <CertificationCard title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
-                    <CertificationCard title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
-                    <CertificationCard title={"AWS Certified Solutions Architect"} year={2025} academy={"Platzi"} link={"https://google.com"}/>
+                    <CoursesSection offset={0}/>
+                    <CoursesSection offset={10}/>
+                    <CoursesSection offset={20}/>
+                    <CoursesSection offset={30}/>
+                    <CoursesSection offset={40}/>
                 </div>
             </section>
         </main>

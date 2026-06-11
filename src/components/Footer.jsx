@@ -30,10 +30,10 @@ const Footer = () => {
                 <div>
                     <h4 className={"text-lg"}>{translate("footer.navigation")}</h4>
                     <ul className={"text-muted-foreground flex flex-col gap-4 my-4"}>
-                        <li><Link to={"#about"}>{translate("footer.about")}</Link></li>
-                        <li><Link to={"#featuredProjects"}>{translate("footer.projects")}</Link></li>
-                        <li><Link to={"#featuredCourses"}>{translate("footer.courses")}</Link></li>
-                        <li><Link to={"#contact"}>{translate("footer.contact")}</Link></li>
+                        <li><Link to={"/#about"}>{translate("footer.about")}</Link></li>
+                        <li><Link to={"/projects"}>{translate("footer.projects")}</Link></li>
+                        <li><Link to={"/courses"}>{translate("footer.courses")}</Link></li>
+                        <li><Link to={"/#contact"}>{translate("footer.contact")}</Link></li>
 
                     </ul>
                 </div>

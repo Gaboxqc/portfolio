@@ -2,7 +2,19 @@ import {SearchIcon} from "../assets/icons/index.js";
 import TextCardTr from "../components/cards/TextCardTr.jsx";
 import ProjectCard from "../components/cards/ProjectCard.jsx";
 
+import project1 from '../assets/project1.jpg'
+import project2 from '../assets/project2.jpg'
+import project3 from '../assets/project3.jpg'
+import project4 from '../assets/project4.jpg'
+
 const Projects = () => {
+    const projects = [
+        {title: "Personal finance app", description: "This app contains 5 pages (Overview, Transactions, Budgets, Pots, and Recurring Bills) and includes a lot of tricky elements. I build it as a full-stack app!", image: project1},
+        {title: "Link-sharing app", description: "In this project, I build a fully-functional link-sharing app for developers! I practice working with image uploads, repeater fields, drag-and-drop, and more!", image: project2},
+        {title: "Kanban task management web app", description: "In this project, I build a fully-functional task management app with a light/dark mode toggle.", image: project3},
+        {title: "Product feedback app", description: "I have been working with JSON, managing state, and building like a real-world app. I create it as a full-stack project!", image: project4}
+    ]
+
     return (
         <main className={"container pt-24 flex flex-col gap-8 mx-auto px-4"}>
             <section className={"flex flex-col gap-8"}>
@@ -55,12 +67,9 @@ const Projects = () => {
                 </div>
             </section>
             <section className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"}>
-                <ProjectCard/>
-                <ProjectCard/>
-                <ProjectCard/>
-                <ProjectCard/>
-                <ProjectCard/>
-                <ProjectCard/>
+                {projects.map((project) => (
+                    <ProjectCard title={project.title} description={project.description} image={project.image}/>
+                ))}
             </section>
         </main>
     )

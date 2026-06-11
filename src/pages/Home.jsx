@@ -13,13 +13,15 @@ import SkillCard from "../components/cards/SkillCard.jsx";
 import TextCard from "../components/cards/TextCard.jsx";
 import FeaturedProjectCard from "../components/cards/FeaturedProjectCard.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
-import useFetch from "../hooks/useFetch.jsx";
 import CertificationCard from "../components/cards/CertificationCard.jsx";
 import ContactCard from "../components/cards/ContactCard.jsx";
+import TypewriterLoop from "../components/TypewriterLoop.jsx";
+import CertificationsSection from "../components/CertificationsSection.jsx";
+import {useEffect} from "react";
 
 const Home = () => {
 
-    const {translate, locale, setLocale} = useLanguage()
+    const {translate, locale} = useLanguage()
 
     let language = 0
 
@@ -38,14 +40,26 @@ const Home = () => {
         }
     }
 
-    const {
-        data: course,
-        loading: loadCourse
-    } = useFetch("https://api.gabrielmayorga.dev/portfolio/certifications_by")
+    useEffect(() => {
+    const images = document.querySelectorAll('img');
+    let loaded = 0;
+
+    const onLoad = () => {
+        loaded++;
+        if (loaded === images.length) {
+            // All images ready, scroll is now stable
+            window.dispatchEvent(new Event('images-ready'));
+        }
+    };
+
+    images.forEach(img => {
+        if (img.complete) onLoad();
+        else img.addEventListener('load', onLoad);
+    });
+}, []);
 
     return (
-
-        <main className={"flex w-full flex-col gap-40"}>
+        <div className={"flex w-full flex-col gap-30"}>
             <section className={"h-screen bg-linear-to-br from-primary/20 via-transparent to-accent/10 text-white"}>
                 <div
                     className={"container mx-auto flex h-full flex-col items-start justify-center gap-y-10 px-4 pt-4 md:gap-4 md:gap-y-12"}>
@@ -54,10 +68,10 @@ const Home = () => {
                         <div className={"size-2 animate-pulse rounded-full bg-accent"}></div>
                         <p className={"text-sm"}>{translate("hero.available")}</p>
                     </div>
-                    <div>
+                    <div className={"flex flex-col"}>
                         <h1 className={"bg-linear-to-r from-accent to-primary bg-clip-text pb-3 text-7xl text-transparent md:text-8xl"}>Gabriel
                             Mayorga</h1>
-                        <h2 className={"bg-linear-to-r from-accent to-primary bg-clip-text text-3xl text-transparent md:mt-1"}>{translate("hero.subtitle")}</h2>
+                        <TypewriterLoop/>
                     </div>
                     <p className={"max-w-150 text-lg text-muted-foreground"}>{translate("hero.description")}.</p>
                     <div className={"flex gap-4"}>
@@ -82,7 +96,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id={"about"} className={"container mx-auto flex h-full flex-col items-center px-5 py-12 xl:h-screen"}>
+            <section id={"about"} className={"container mx-auto flex h-full flex-col items-center px-5 py-16 xl:h-screen"}>
                 <h2 className={"text-center text-5xl leading-16"}>{translate("about.title")}</h2>
                 <p className={"mx-4 my-8 text-center leading-7 text-muted-foreground"}>{translate("about.description")}</p>
                 <div className={"grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
@@ -109,11 +123,11 @@ const Home = () => {
             </section>
 
             <motion.section
+                id={"featuredProjects"} className={"container mx-auto flex flex-col items-center py-16"}
                 initial={{opacity: 0, y: 50}}
                 whileInView={{opacity: 1, y: 0}}
                 transition={{type: "spring"}}
-                viewport={{once: true}}
-                id={"featuredProjects"} className={"container mx-auto flex flex-col items-center"}>
+                viewport={{once: true}}>
                 <h2 className={"text-center text-5xl leading-16"}>{translate("projects.title")}</h2>
                 <p className={"mx-4 my-4 text-center leading-7 text-muted-foreground"}>{translate("projects.subtitle")}</p>
                 <div className="mt-20 mb-30 grid lg:grid-cols-12">
@@ -134,42 +148,34 @@ const Home = () => {
                     <div className={"col-span-7 flex flex-col gap-50"}>
                         <div
                             className={"sticky top-40 hidden h-150 w-full self-start overflow-hidden rounded-xl lg:block"}>
-                            <img src={project1} alt=""/>
+                            <img src={project1} loading="lazy" alt=""/>
                         </div>
                         <div
                             className={"sticky top-40 hidden h-150 w-full self-start overflow-hidden rounded-xl lg:block"}>
-                            <img src={project2} alt=""/>
+                            <img src={project2} loading="lazy" alt=""/>
                         </div>
                         <div
                             className={"sticky top-40 hidden h-150 w-full self-start overflow-hidden rounded-xl lg:block"}>
-                            <img src={project3} alt=""/>
+                            <img src={project3} loading="lazy" alt=""/>
                         </div>
                         <div
                             className={"sticky top-40 hidden h-150 w-full self-start overflow-hidden rounded-xl lg:block"}>
-                            <img src={project4} alt=""/>
+                            <img src={project4} loading="lazy" alt=""/>
                         </div>
                     </div>
                 </div>
                 <GradientButton label={translate("projects.all-projects")} nav={"/projects"}></GradientButton>
             </motion.section>
 
-            <section id={"featuredCourses"} className={"container mx-auto flex flex-col items-center"}>
-                <h2 className={"text-center text-5xl leading-16 md:mx-4 md:text-left"}>{translate("courses.title")}</h2>
+            <section id={"certifications"} className={"container mx-auto flex flex-col items-center py-16"}>
+                <h2 className={"text-center text-5xl leading-16 md:mx-4 md:text-left"}>{translate("certifications.title")}</h2>
                 <div className={"grid w-full grid-cols-1 items-center md:mx-4 md:grid-cols-3"}>
-                    <p className={"md:col-start-2 my-4 md:w-max text-center justify-self-center leading-7 text-muted-foreground md:text-left"}>{translate("courses.subtitle")}</p>
+                    <p className={"md:col-start-2 my-4 md:w-max text-center justify-self-center leading-7 text-muted-foreground md:text-left"}>{translate("certifications.subtitle")}</p>
                     <Link to={"/courses"}
-                          className={"col-start-3 hidden text-end font-normal text-primary hover:text-accent md:block"}>{translate("courses.all-courses")}</Link>
+                          className={"col-start-3 hidden text-end font-normal text-primary hover:text-accent md:block"}>{translate("certifications.all-courses")}</Link>
                 </div>
-                <div className={"my-20 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2"}>
-
-                    {loadCourse ? console.log("Cargando") : course.slice(0, 4).map((c) => {
-                        console.log(c.tags)
-                        return (
-                            <CertificationCard title={c.translations[0].title} year={c.year} academy={c.academy.name}
-                                               link={c.url} tags={c.tags}/>
-                        )
-                    })
-                    }
+                <div className={"my-20 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2 min-h-[800px]"}>
+                    <CertificationsSection language={language}/>
                 </div>
                 <Link to={"/courses"}
                       className={"cursor-pointer self-center rounded-xl bg-primary/20 p-4 outline-1 hover:bg-primary/30 md:hidden"}>
@@ -177,7 +183,7 @@ const Home = () => {
                 </Link>
             </section>
 
-            <section id={"contact"} className={"container mx-auto flex flex-col items-center pb-30"}>
+            <section id={"contact"} className={"container mx-auto flex flex-col items-center pt-16 pb-30"}>
                 <h2 className={"text-center text-5xl leading-16"}>{translate("contact.title")}</h2>
                 <p className={"mx-4 my-4 text-center leading-7 text-muted-foreground"}>{translate("contact.subtitle")}</p>
                 <div className={"my-16 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3"}>
@@ -187,7 +193,7 @@ const Home = () => {
                 </div>
                 <GradientButton label={translate("contact.conversation")} nav={"https://t.me/Gaboxqc"}/>
             </section>
-        </main>
+        </div>
     )
 }
 
