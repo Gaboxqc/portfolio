@@ -20,9 +20,7 @@ import {useEffect} from "react";
 
 const Home = () => {
 
-    const {translate, locale} = useLanguage()
-
-    let language = 0
+    const {translate} = useLanguage()
 
     useEffect(() => {
     const images = document.querySelectorAll('img');
@@ -95,14 +93,14 @@ const Home = () => {
                 </div>
                 <h2 className={"my-10 text-2xl"}>Tecnologías y herramientas</h2>
                 <div className="grid w-full grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-                    <TextCard Text={"HTML"}/>
-                    <TextCard Text={"CSS"}/>
-                    <TextCard Text={"JavaScript"}/>
-                    <TextCard Text={"Python"}/>
-                    <TextCard Text={"React"}/>
-                    <TextCard Text={"FastAPI"}/>
-                    <TextCard Text={"PostgreSQL"}/>
-                    <TextCard Text={"Figma"}/>
+                    <TextCard text={"HTML"}/>
+                    <TextCard text={"CSS"}/>
+                    <TextCard text={"JavaScript"}/>
+                    <TextCard text={"Python"}/>
+                    <TextCard text={"React"}/>
+                    <TextCard text={"FastAPI"}/>
+                    <TextCard text={"PostgreSQL"}/>
+                    <TextCard text={"Figma"}/>
                 </div>
             </section>
 
@@ -159,7 +157,7 @@ const Home = () => {
                           className={"col-start-3 hidden text-end font-normal text-primary hover:text-accent md:block"}>{translate("certifications.all-courses")}</Link>
                 </div>
                 <div className={"my-20 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2"}>
-                    <CertificationSection/>
+                    <CertificationSection limit={4}/>
                 </div>
                 <Link to={"/courses"}
                       className={"cursor-pointer self-center rounded-xl bg-primary/20 p-4 outline-1 hover:bg-primary/30 md:hidden"}>

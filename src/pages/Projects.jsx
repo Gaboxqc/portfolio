@@ -1,5 +1,5 @@
 import {SearchIcon} from "../assets/icons/index.js";
-import TextCardTr from "../components/cards/TextCardTr.jsx";
+import TextCardTransparent from "../components/cards/TextCardTransparent.jsx";
 import ProjectCard from "../components/cards/ProjectCard.jsx";
 
 import project1 from '../assets/project1.jpg'
@@ -31,34 +31,34 @@ const Projects = () => {
                 <div>
                     <p className={"mb-2 text-muted-foreground"}>Filtrar por tipo de proyecto</p>
                     <ul className={"flex gap-2 flex-wrap"}>
-                        <li><TextCardTr text={"Aplicación Web"}/></li>
-                        <li><TextCardTr text={"App Mobile"}/></li>
-                        <li><TextCardTr text={"Dashboard"}/></li>
-                        <li><TextCardTr text={"API"}/></li>
-                        <li><TextCardTr text={"Librería"}/></li>
-                        <li><TextCardTr text={"CLI Tool"}/></li>
+                        <li><TextCardTransparent text={"Aplicación Web"}/></li>
+                        <li><TextCardTransparent text={"App Mobile"}/></li>
+                        <li><TextCardTransparent text={"Dashboard"}/></li>
+                        <li><TextCardTransparent text={"API"}/></li>
+                        <li><TextCardTransparent text={"Librería"}/></li>
+                        <li><TextCardTransparent text={"CLI Tool"}/></li>
                     </ul>
                 </div>
                 <div>
                     <p className={"mb-2 text-muted-foreground"}>Filtrar por dificultad</p>
                     <ul className={"flex gap-2 flex-wrap"}>
-                        <li><TextCardTr text={"Principiante"}/></li>
-                        <li><TextCardTr text={"Intermedio"}/></li>
-                        <li><TextCardTr text={"Avanzado"}/></li>
-                        <li><TextCardTr text={"Experto"}/></li>
+                        <li><TextCardTransparent text={"Principiante"}/></li>
+                        <li><TextCardTransparent text={"Intermedio"}/></li>
+                        <li><TextCardTransparent text={"Avanzado"}/></li>
+                        <li><TextCardTransparent text={"Experto"}/></li>
                     </ul>
                 </div>
                 <div>
                     <p className={"mb-2 text-muted-foreground"}>Filtrar por tecnologías</p>
                     <ul className={"flex gap-2 flex-wrap"}>
-                        <li><TextCardTr text={"CLI"}/></li>
-                        <li><TextCardTr text={"D3.js"}/></li>
-                        <li><TextCardTr text={"Docker"}/></li>
-                        <li><TextCardTr text={"Express"}/></li>
-                        <li><TextCardTr text={"Firabase"}/></li>
-                        <li><TextCardTr text={"GraphQL"}/></li>
-                        <li><TextCardTr text={"Kubernetes"}/></li>
-                        <li><TextCardTr text={"MongoDB"}/></li>
+                        <li><TextCardTransparent text={"CLI"}/></li>
+                        <li><TextCardTransparent text={"D3.js"}/></li>
+                        <li><TextCardTransparent text={"Docker"}/></li>
+                        <li><TextCardTransparent text={"Express"}/></li>
+                        <li><TextCardTransparent text={"Firabase"}/></li>
+                        <li><TextCardTransparent text={"GraphQL"}/></li>
+                        <li><TextCardTransparent text={"Kubernetes"}/></li>
+                        <li><TextCardTransparent text={"MongoDB"}/></li>
                     </ul>
                 </div>
                 <div className={"h-16 bg-card flex items-center justify-between p-4 rounded-xl border"}>

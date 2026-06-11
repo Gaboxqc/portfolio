@@ -3,12 +3,12 @@ import axios from "axios";
 import CertificationCard from "../cards/CertificationCard.jsx";
 import useLanguage from "../../hooks/useLanguage.jsx";
 
-const fetchCertifications = async () => {
-    const response = await axios.get("https://api.gabrielmayorga.dev/portfolio/certifications")
+const fetchCertifications = async (limit) => {
+    const response = await axios.get(`https://api.gabrielmayorga.dev/portfolio/certifications?limit=${limit}`)
     return response.data
 }
 
-function CertificationSection({isMain= false}) {
+function CertificationSection({limit = 10 , isMain= false}) {
     const [certification, setCertifications] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -25,7 +25,7 @@ function CertificationSection({isMain= false}) {
     useEffect(() => {
         let isMounted = true;
 
-        fetchCertifications().then((data) => {
+        fetchCertifications(limit).then((data) => {
             if (isMounted) {
                 setCertifications(data)
                 setError(null)
