@@ -5,7 +5,7 @@ import SectionsNav from "./sections/SectionsNav.jsx";
 import LanguageSelector from "./ui/LanguageSelector.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
 import {LogoIcon} from "../assets/icons/index.js";
-import cv from '../../public/Curriculum Gabriel Mayorga.pdf'
+import cv from '../../public/Curriculum.pdf'
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
