@@ -1,5 +1,5 @@
 import * as Select from '@radix-ui/react-select'
-import useLanguage from "../hooks/useLanguage.jsx";
+import useLanguage from "../../hooks/useLanguage.jsx";
 
 const languages = [
         {code: "es", name: "Español", flag: "🇪🇸"},

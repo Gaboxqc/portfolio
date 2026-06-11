@@ -1,52 +1,26 @@
 import TextCardTr from "../components/cards/TextCardTr.jsx";
-import CertificationCardMain from "../components/cards/CertificationCardMain.jsx";
-import CertificationCard from "../components/cards/CertificationCard.jsx";
-import CoursesSection from "../components/CoursesSection.jsx";
-import CertificationsSection from "../components/CertificationsSection.jsx";
+import CoursesSection from "../components/sections/CoursesSection.jsx";
+import CertificationSection from "../components/sections/CertificationSection.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
 
 const Courses = () => {
-    const {locale} = useLanguage()
-
-    let language = 0
-
-    switch (locale) {
-        case 'es' : {
-            language = 0
-            break
-        }
-        case 'en' : {
-            language = 1
-            break
-        }
-        case 'de' : {
-            language = 2
-            break
-        }
-    }
+    const {translate} = useLanguage()
 
     return (
-        <main className={"container pt-24 flex flex-col gap-8 mx-auto px-4 mb-30"}>
+        <main className={"container mx-auto mb-30 flex flex-col gap-8 px-4 pt-24"}>
             <section className={"flex flex-col gap-8"}>
-                <p className={"text-muted-foreground"}>Volver</p>
-                <h1 className={"text-5xl md:text-6xl"}>Cursos y certificaciones</h1>
-                <p className={"text-muted-foreground text-lg max-w-4xl"}>Un registro completo de mis certificaciones profesionales, validando experiencia en desarrollo, cloud computing, DevOps y seguridad.</p>
+                <p className={"text-muted-foreground"}>{translate("course-section.back")}</p>
+                <h1 className={"text-5xl md:text-6xl"}>{translate("course-section.title")}</h1>
+                <p className={"max-w-4xl text-lg text-muted-foreground"}>{translate("course-section.description")}</p>
             </section>
             <section className={"flex flex-col gap-8"}>
                 <div>
                     <p className={"mb-2 text-muted-foreground"}>Filtrar por categoría</p>
-                    <ul className={"flex gap-2 flex-wrap"}>
-                        <li><TextCardTr text={"Cloud"}/></li>
-                        <li><TextCardTr text={"DevOps"}/></li>
-                        <li><TextCardTr text={"Frontend"}/></li>
-                        <li><TextCardTr text={"Backend"}/></li>
-                        <li><TextCardTr text={"Bases de datos"}/></li>
-                        <li><TextCardTr text={"Seguridad"}/></li>
-                    </ul>
+
                 </div>
                 <div>
                     <p className={"mb-2 text-muted-foreground"}>Filtrar por lenguaje de programación</p>
-                    <ul className={"flex gap-2 flex-wrap"}>
+                    <ul className={"flex flex-wrap gap-2"}>
                         <li><TextCardTr text={"JavaScript"}/></li>
                         <li><TextCardTr text={"TypeScript"}/></li>
                         <li><TextCardTr text={"Python"}/></li>
@@ -58,7 +32,7 @@ const Courses = () => {
                 </div>
                 <div>
                     <p className={"mb-2 text-muted-foreground"}>Filtrar por framework</p>
-                    <ul className={"flex gap-2 flex-wrap"}>
+                    <ul className={"flex flex-wrap gap-2"}>
                         <li><TextCardTr text={"React"}/></li>
                         <li><TextCardTr text={"React Native"}/></li>
                         <li><TextCardTr text={"Vue.js"}/></li>
@@ -69,24 +43,24 @@ const Courses = () => {
                         <li><TextCardTr text={"Docker"}/></li>
                     </ul>
                 </div>
-                <div className={"h-16 bg-card flex items-center justify-between p-4 rounded-xl border"}>
-                    <p className={"text-muted-foreground text-sm"}>2 proyectos encontrados</p>
-                    <button className={"bg-primary/20 py-2 px-4 rounded-xl border text-sm font-normal"}><span>X </span> Limpiar filtros</button>
+                <div className={"flex h-16 items-center justify-between rounded-xl border bg-card p-4"}>
+                    <p className={"text-sm text-muted-foreground"}>2 proyectos encontrados</p>
+                    <button className={"rounded-xl border bg-primary/20 px-4 py-2 text-sm font-normal"}>
+                        <span>X </span> Limpiar filtros
+                    </button>
                 </div>
             </section>
             <section className={"flex flex-col gap-8"}>
                 <h3 className={"text-2xl"}>Certificaciones Principales</h3>
-                <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"}>
-                    <CertificationsSection language={language}/>
+                <div className={"grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"}>
+                    <CertificationSection isMain={true}/>
                 </div>
+            </section>
 
+            <section className={"flex flex-col gap-8 my-30"}>
                 <h3 className={"text-2xl"}>Todas las certificaciones</h3>
-                <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"}>
+                <div className={"grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"}>
                     <CoursesSection offset={0}/>
-                    <CoursesSection offset={10}/>
-                    <CoursesSection offset={20}/>
-                    <CoursesSection offset={30}/>
-                    <CoursesSection offset={40}/>
                 </div>
             </section>
         </main>

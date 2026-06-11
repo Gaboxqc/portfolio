@@ -1,12 +1,13 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router";
-import useLanguage from "../hooks/useLanguage.jsx";
+import { motion } from "framer-motion";
+import useLanguage from "../../hooks/useLanguage.jsx";
 
 const SectionsNav = () => {
     const { translate } = useLanguage();
     const { pathname } = useLocation();
     const navRef = useRef(null);
-    const indicatorRef = useRef(null);
+    const [indicator, setIndicator] = useState({ left: 0, width: 0 });
 
     const links = [
         { name: translate("navbar.home"), path: "/" },
@@ -16,21 +17,21 @@ const SectionsNav = () => {
 
     useEffect(() => {
         const activeEl = navRef.current?.querySelector('[data-active="true"]');
-        const indicator = indicatorRef.current;
-        if (!activeEl || !indicator) return;
+        if (!activeEl) return;
 
-        indicator.style.left = `${activeEl.offsetLeft}px`;
-        indicator.style.width = `${activeEl.offsetWidth}px`;
+        setIndicator({
+            left: activeEl.offsetLeft,
+            width: activeEl.offsetWidth
+        });
     }, [pathname]);
 
     return (
-        <div ref={navRef} className="relative flex items-center">
+        <div ref={navRef} className="relative h-10 flex items-center">
 
-            {/* This is the indicatorRef — the sliding pill */}
-            <div
-                ref={indicatorRef}
-                className="absolute inset-y-0 -z-10 rounded-full bg-linear-to-r from-primary/60 to-accent/60 transition-all duration-300 ease-[cubic-bezier(0.380,0.700,0.125,1.000)]"
-            />
+            <motion.div
+                className="absolute inset-y-0 -z-10 rounded-full bg-linear-to-r from-primary/60 to-accent/60"
+                animate={indicator}
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}/>
 
             {links.map((link) => (
                 <NavLink

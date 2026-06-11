@@ -8,15 +8,14 @@ import project2 from '../assets/project2.jpg'
 import project3 from '../assets/project3.jpg'
 import project4 from '../assets/project4.jpg'
 
-import GradientButton from "../components/GradientButton.jsx";
+import GradientButton from "../components/ui/GradientButton.jsx";
 import SkillCard from "../components/cards/SkillCard.jsx";
 import TextCard from "../components/cards/TextCard.jsx";
 import FeaturedProjectCard from "../components/cards/FeaturedProjectCard.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
-import CertificationCard from "../components/cards/CertificationCard.jsx";
 import ContactCard from "../components/cards/ContactCard.jsx";
-import TypewriterLoop from "../components/TypewriterLoop.jsx";
-import CertificationsSection from "../components/CertificationsSection.jsx";
+import TypewriterLoop from "../components/ui/TypewriterLoop.jsx";
+import CertificationSection from "../components/sections/CertificationSection.jsx";
 import {useEffect} from "react";
 
 const Home = () => {
@@ -24,21 +23,6 @@ const Home = () => {
     const {translate, locale} = useLanguage()
 
     let language = 0
-
-    switch (locale) {
-        case 'es' : {
-            language = 0
-            break
-        }
-        case 'en' : {
-            language = 1
-            break
-        }
-        case 'de' : {
-            language = 2
-            break
-        }
-    }
 
     useEffect(() => {
     const images = document.querySelectorAll('img');
@@ -174,8 +158,8 @@ const Home = () => {
                     <Link to={"/courses"}
                           className={"col-start-3 hidden text-end font-normal text-primary hover:text-accent md:block"}>{translate("certifications.all-courses")}</Link>
                 </div>
-                <div className={"my-20 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2 min-h-[800px]"}>
-                    <CertificationsSection language={language}/>
+                <div className={"my-20 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2"}>
+                    <CertificationSection/>
                 </div>
                 <Link to={"/courses"}
                       className={"cursor-pointer self-center rounded-xl bg-primary/20 p-4 outline-1 hover:bg-primary/30 md:hidden"}>

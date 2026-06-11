@@ -1,8 +1,8 @@
 import {Link, NavLink} from "react-router";
 import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
-import SectionsNav from "./SectionsNav.jsx";
-import LanguageSelector from "./LanguageSelector.jsx";
+import SectionsNav from "./sections/SectionsNav.jsx";
+import LanguageSelector from "./ui/LanguageSelector.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
 import {LogoIcon} from "../assets/icons/index.js";
 import cv from '../../public/Curriculum Gabriel Mayorga.pdf'
@@ -42,10 +42,10 @@ const Navbar = () => {
                     <p className={"font-bold"}>{translate("navbar.portfolio")}</p>
                 </Link>
             </div>
-            <div className={`md:flex md:justify-center  ${isScrolled ? "block" : "hidden"}`}>
+            <div className={`md:flex justify-center items-center  ${isScrolled ? "flex" : "hidden"}`}>
                 <ul
-                    className={`flex justify-center gap-5 lg:max-w-3xl md:max-w-xs transition-all duration-500 ease-in-out ${isScrolled
-                        ? "border py-2 rounded-full bg-card/60 backdrop-blur-md shadow-lg shadow-black/20 "
+                    className={`flex h-12 justify-center items-center gap-5 lg:max-w-3xl md:max-w-xs transition-all duration-500 ease-in-out ${isScrolled
+                        ? "border rounded-full bg-card/60 backdrop-blur-md shadow-lg shadow-black/20 "
                         : ""}`}>
                     {isScrolled ? <SectionsNav/> : (
                         <motion.div

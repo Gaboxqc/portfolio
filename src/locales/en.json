@@ -29,7 +29,7 @@
     "subtitle": "A look at the technical challenges I’ve solved to put my knowledge into practice and keep learning.",
     "all-projects": "View all projects"
   },
-  "certifications":{
+  "certifications": {
     "title": "Certifications",
     "subtitle": "Validated courses and training that back up my knowledge and technical skills.",
     "all-courses": "View courses"
@@ -56,5 +56,17 @@
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "service": "Terms of Service"
+  },
+  "course-section": {
+    "title": "Courses and certifications",
+    "description": "A complete record of my professional certifications, validating expertise in development, cloud computing, DevOps, and security.",
+    "category_filter": "Filter by category",
+    "language_filter": "Filter by programming language",
+    "framework_filer": "Filter by framework",
+    "founded_projects": "projects found",
+    "clean_filter": "Clear filters",
+    "main_certification": "Main certifications",
+    "all_courses": "All courses",
+    "back": "Back"
   }
 }

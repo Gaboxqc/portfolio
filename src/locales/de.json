@@ -55,5 +55,17 @@
     "rights": "Alle Rechte vorbehalten.",
     "privacy": "Datenschutzerklärung",
     "service": "Nutzungsbedingungen"
+  },
+  "course-section": {
+    "title": "Kurse und Zertifikate",
+    "description": "Eine vollständige Übersicht meiner professionellen Zertifizierungen, die meine Expertise in den Bereichen Entwicklung, Cloud Computing, DevOps und Sicherheit belegen.",
+    "category_filter": "Nach Kategorie filtern",
+    "language_filter": "Nach Programmiersprache filtern",
+    "framework_filer": "Nach Framework filtern",
+    "founded_projects": "Projekte gefunden",
+    "clean_filter": "Filter löschen",
+    "main_certification": "Hauptzertifizierungen",
+    "all_courses": "Alle Kurse",
+    "back": "Zurück"
   }
 }
