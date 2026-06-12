@@ -6,8 +6,8 @@ const useCourses = ({ categoryIds = [], tagIds = [] } = {}) => {
     const [fetchedKey, setFetchedKey] = useState(null)
     const [error, setError] = useState(null)
 
-    const currentKey = [...categoryIds].sort().join(",") + "|" + [...tagIds].sort().join(",");
-    const loading = fetchedKey !== currentKey;
+    const currentKey = [...categoryIds].sort().join(",") + "|" + [...tagIds].sort().join(",")
+    const loading = fetchedKey !== currentKey
 
     useEffect(() => {
         const controller = new AbortController()
