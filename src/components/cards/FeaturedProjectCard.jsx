@@ -1,4 +1,4 @@
-import TextCardSm from "./TextCardSm.jsx";
+import TextCardSlim from "./TextCardSlim.jsx";
 
 const FeaturedProjectCard = ({position, year, title, description, technologies}) => {
     return (
@@ -11,7 +11,7 @@ const FeaturedProjectCard = ({position, year, title, description, technologies})
                 <div className={"flex flex-wrap gap-2"}>
                     {technologies.map((t) => {
                         return(
-                            <TextCardSm Text={t}/>
+                            <TextCardSlim Text={t}/>
                         )
                     })}
                 </div>

@@ -1,6 +1,7 @@
 import CertificationCard from "../cards/CertificationCard.jsx";
 import useLanguage from "../../hooks/useLanguage.jsx";
 import getTranslation from "../../utils/getTranslation.js";
+import {motion} from "framer-motion";
 
 function CoursesSection({courses = [], loading = false, error = null}) {
     const {locale} = useLanguage();
@@ -25,14 +26,21 @@ function CoursesSection({courses = [], loading = false, error = null}) {
             {courses.map((course) => {
                 const translation = getTranslation(course.translations, locale);
                 return (
-                    <CertificationCard
-                        key={course.id}
-                        title={translation.title}
-                        year={course.year}
-                        academy={course.academy.name}
-                        url={course.url}
-                        tags={course.tags}
-                    />
+                    <motion.div
+                            initial={{opacity: 0, y: 50}}
+                            whileInView={{opacity: 1, y: 0}}
+                            transition={{type: "spring"}}
+                            viewport={{once: true}}>
+                        <CertificationCard
+                            key={course.id}
+                            title={translation.title}
+                            year={course.year}
+                            academy={course.academy.name}
+                            url={course.url}
+                            tags={course.tags}
+                            animation={"rise"}
+                        />
+                    </motion.div>
                 );
             })}
         </>

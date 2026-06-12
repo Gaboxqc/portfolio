@@ -1,22 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import {useEffect, useRef, useState} from "react";
 import CoursesSection from "../components/sections/CoursesSection.jsx";
 import CertificationSection from "../components/sections/CertificationSection.jsx";
 import FilterGroup from "../components/ui/FilterGroup.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
 import useFilters from "../hooks/useFilters.jsx";
 import useCourses from "../hooks/useCourses.jsx";
-import {ArrowIcon} from "../assets/icons/index.js";
+import {ArrowIcon, CloseIcon} from "../assets/icons/index.js";
 import {NavLink, useNavigate} from "react-router";
+import {AnimatePresence, motion} from "framer-motion";
 
 const Courses = () => {
     const navigate = useNavigate()
-    const { translate } = useLanguage()
+    const {translate} = useLanguage()
     const categories = useFilters("category")
 
     const [selectedCategories, setSelectedCategories] = useState([])
     const [selectedTags, setSelectedTags] = useState([])
 
-    const { courses, loading, error } = useCourses({
+    const {courses, loading, error} = useCourses({
         categoryIds: selectedCategories,
         tagIds: selectedTags,
     });
@@ -46,9 +47,12 @@ const Courses = () => {
         <main className="container mx-auto mb-30 flex flex-col gap-8 px-4 pt-24">
 
             <section className="flex flex-col gap-8">
-                <NavLink to="#" onClick={(e) => { e.preventDefault(); navigate(-1); }}
-                         className={"flex gap-2 items-center cursor-pointer hover:text-foreground"}>
-                    <ArrowIcon className={"rotate-180 h-5 w-5 text-muted-foreground"} />
+                <NavLink to="#" onClick={(e) => {
+                    e.preventDefault();
+                    navigate(-1);
+                }}
+                         className={"flex cursor-pointer items-center gap-2 hover:text-foreground"}>
+                    <ArrowIcon className={"h-5 w-5 rotate-180 text-muted-foreground"}/>
                     <p className="text-muted-foreground">{translate("course-section.back")}</p>
                 </NavLink>
                 <h1 className="text-5xl md:text-6xl">{translate("course-section.title")}</h1>
@@ -70,23 +74,43 @@ const Courses = () => {
                         onToggle={(id) => toggle(setSelectedTags, id)}
                     />
                 )}
-                {hasActiveFilters && (
-                    <div className="flex h-16 items-center justify-between rounded-xl border bg-card p-4">
-                        <p className="text-sm text-muted-foreground">
-                            {loading ? "Cargando..." : `${courses.length} ${translate("course-section.founded_projects")}`}
-                        </p>
-                        <button onClick={clearFilters} className="rounded-xl border bg-primary/20 px-4 py-2 text-sm font-normal">
-                            ✕ {translate("course-section.clean_filter")}
+                <AnimatePresence mode={"wait"}>
+                    {hasActiveFilters && (
+                    <motion.div
+                        key="results-bar"
+                        initial={{opacity: 0, height: 0}}
+                        animate={{opacity: 1, height: "auto"}}
+                        exit={{opacity: 0, height: 0}}
+                        transition={{duration: 0.3, ease: "easeOut"}}
+                        className="flex h-16 items-center justify-between rounded-xl border bg-card p-4">
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                                key={courses.length}
+                                initial={{opacity: 0, y: 6}}
+                                animate={{opacity: 1, y: 0}}
+                                exit={{opacity: 0, y: -6}}
+                                transition={{duration: 0.2}}
+                                className="text-sm text-[#8B9DC3]"
+                            >
+                                {courses.length} {translate("course-section.founded_projects")}
+                            </motion.span>
+                        </AnimatePresence>
+
+                        <button onClick={clearFilters}
+                                className="flex items-center rounded-xl gap-1 border bg-primary/20 px-4 py-2 text-sm font-normal text-muted-foreground cursor-pointer hover:bg-primary/30 hover:text-foreground">
+                            <CloseIcon className={"h-5 w-5"}/>
+                             {translate("course-section.clean_filter")}
                         </button>
-                    </div>
+                    </motion.div>
                 )}
+                </AnimatePresence>
             </section>
 
             {!hasActiveFilters && (
                 <section className="flex flex-col gap-8">
                     <h3 className="text-2xl">{translate("course-section.main_certification")}</h3>
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        <CertificationSection isMain={true} categories={categories} />
+                        <CertificationSection isMain={true} categories={categories} animation={"rise"}/>
                     </div>
                 </section>
             )}
@@ -94,7 +118,7 @@ const Courses = () => {
             <section className="my-8 flex flex-col gap-8">
                 <h3 className="text-2xl">{translate("course-section.all_courses")}</h3>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <CoursesSection courses={courses} loading={loading} error={error} />
+                    <CoursesSection courses={courses} loading={loading} error={error}/>
                 </div>
             </section>
         </main>
