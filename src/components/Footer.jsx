@@ -7,8 +7,9 @@ const Footer = () => {
     const {translate} = UseLanguage()
 
     return(
-        <footer className={"container mx-auto p-4"}>
-            <div className={"flex flex-col items-start gap-8 mt-4 mb-16"}>
+        <footer className={"container mx-auto p-4 mt-32"}>
+            <div className={"flex items-center justify-between"}>
+                <div className={"flex max-w-100 flex-col items-start gap-8 mt-4 mb-16"}>
                 <div className={"flex gap-4"}>
                     <LogoIcon className={"h-8 w-8"}/>
                     <h2>Gabriel Mayorga</h2>
@@ -26,7 +27,7 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-            <div className={"grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12"}>
+                <div className={"grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12"}>
                 <div>
                     <h4 className={"text-lg"}>{translate("footer.navigation")}</h4>
                     <ul className={"text-muted-foreground flex flex-col gap-4 my-4"}>
@@ -63,6 +64,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
+            </div>
             </div>
             <div className={"text-muted-foreground text-sm text-center py-12 border-t"}>
                 <p>© 2026 Gabriel Mayorga. {translate("footer.rights")}</p>

@@ -1,5 +1,5 @@
 import test from '../../assets/project1.jpg'
-import TextCardSm from "./TextCardSm.jsx";
+import TextCardSlim from "./TextCardSlim.jsx";
 
 const ProjectCard = ({title, description, year, dificulty, tags, type, image, gitUrl, projectUrl}) => {
 
@@ -19,14 +19,14 @@ const ProjectCard = ({title, description, year, dificulty, tags, type, image, gi
                         <p className={"text-md text-muted-foreground"}>{description}</p>
                         <div>
                             <ul className={"flex flex-wrap gap-2"}>
-                                <li><TextCardSm Text={"CLI"}/></li>
-                                <li><TextCardSm Text={"D3.js"}/></li>
-                                <li><TextCardSm Text={"Docker"}/></li>
-                                <li><TextCardSm Text={"Express"}/></li>
-                                <li><TextCardSm Text={"Firabase"}/></li>
-                                <li><TextCardSm Text={"GraphQL"}/></li>
-                                <li><TextCardSm Text={"Kubernetes"}/></li>
-                                <li><TextCardSm Text={"MongoDB"}/></li>
+                                <li><TextCardSlim Text={"CLI"}/></li>
+                                <li><TextCardSlim Text={"D3.js"}/></li>
+                                <li><TextCardSlim Text={"Docker"}/></li>
+                                <li><TextCardSlim Text={"Express"}/></li>
+                                <li><TextCardSlim Text={"Firabase"}/></li>
+                                <li><TextCardSlim Text={"GraphQL"}/></li>
+                                <li><TextCardSlim Text={"Kubernetes"}/></li>
+                                <li><TextCardSlim Text={"MongoDB"}/></li>
                             </ul>
                         </div>
                     </div>

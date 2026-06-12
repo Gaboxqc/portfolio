@@ -18,3 +18,4 @@ export { default as RocketIcon } from './Rocket.svg?react';
 export { default as SearchIcon } from './Search.svg?react';
 export { default as StarIcon } from './Star.svg?react';
 export { default as TimeIcon } from './Time.svg?react';
+export { default as CloseIcon } from './Close.svg?react';

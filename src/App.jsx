@@ -2,6 +2,7 @@ import {Analytics} from "@vercel/analytics/react";
 import {SpeedInsights} from "@vercel/speed-insights/react";
 import {createBrowserRouter, RouterProvider} from "react-router";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import {motion} from "framer-motion";
 
 import Home from "./pages/Home.jsx";
 import Courses from "./pages/Courses.jsx";
@@ -28,15 +29,17 @@ function App() {
             <QueryClientProvider client={queryClient}>
                 <RouterProvider router={router}/>
 
-                <div>
-                    <div className={"pointer-events-none fixed right-1/2 bottom-1/2 -z-10 size-100 rounded-full bg-primary/20 blur-3xl " +
-                            "animate-pulse [animation-duration:3s] xl:right-0"}>
-                    </div>
-                    <div
-                        className={"pointer-events-none fixed top-1/2 left-1/3 -z-10 size-100 rounded-full bg-accent/20 blur-3xl delay-150 " +
-                            "animate-pulse [animation-duration:3s] [animation-delay:1.5s]"}>
-                    </div>
-                </div>
+                <motion.div
+                    className="fixed bottom-0 h-150 w-150  rounded-full bg-[#00D4FF] opacity-20 blur-[120px] -z-10"
+                    animate={{opacity: [0.25, 0.08, 0.25], scale: [1, 0.93, 1]}}
+                    transition={{duration: 2, ease: "linear", repeat: Infinity}}
+                />
+
+                <motion.div
+                    className="fixed top-0 right-0 h-150 w-150 rounded-full bg-[#5B8DEF] opacity-20 blur-[120px] -z-10"
+                    animate={{opacity: [0.08, 0.22, 0.08], scale: [0.93, 1, 0.93]}}
+                    transition={{duration: 2, ease: "linear", repeat: Infinity}}
+                />
 
                 <Analytics/>
                 <SpeedInsights/>
