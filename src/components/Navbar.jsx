@@ -32,8 +32,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <nav
-            className={`w-screen grid px-10 items-center min-h-20 fixed transition-all duration-500 ease-in-out ${isScrolled
+        <nav className={`w-screen grid px-2 md:px-10 items-center min-h-20 fixed transition-all duration-500 ease-in-out ${isScrolled
                 ? "grid-cols-1 z-2"
                 : "bg-background/40 grid-cols-2 md:grid-cols-3"}`}>
             <div className={`items-center ${isScrolled ? "hidden" : "flex"}`}>

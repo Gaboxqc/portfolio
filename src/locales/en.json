@@ -61,12 +61,22 @@
     "title": "Courses and certifications",
     "description": "A complete record of my professional certifications, validating expertise in development, cloud computing, DevOps, and security.",
     "category_filter": "Filter by category",
-    "language_filter": "Filter by programming language",
-    "framework_filer": "Filter by framework",
+    "tag_filter": "Filter by tag",
     "founded_projects": "projects found",
     "clean_filter": "Clear filters",
     "main_certification": "Main certifications",
     "all_courses": "All courses",
+    "back": "Back"
+  },
+  "project-section": {
+    "title": "Projects",
+    "description": "A comprehensive collection of projects spanning web development, mobile applications, open-source tools, and enterprise solutions.",
+    "type_filter": "Filter by project type",
+    "difficulty_filter": "Filter by difficulty",
+    "tag_filter": "Filter by tag",
+    "founded_projects": "projects found",
+    "clean_filter": "Clear filters",
+    "search": "Search projects",
     "back": "Back"
   }
 }

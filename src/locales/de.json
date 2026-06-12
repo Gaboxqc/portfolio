@@ -60,12 +60,22 @@
     "title": "Kurse und Zertifikate",
     "description": "Eine vollständige Übersicht meiner professionellen Zertifizierungen, die meine Expertise in den Bereichen Entwicklung, Cloud Computing, DevOps und Sicherheit belegen.",
     "category_filter": "Nach Kategorie filtern",
-    "language_filter": "Nach Programmiersprache filtern",
-    "framework_filer": "Nach Framework filtern",
+    "tag_filter": "Nach Tag filtern",
     "founded_projects": "Projekte gefunden",
     "clean_filter": "Filter löschen",
     "main_certification": "Hauptzertifizierungen",
     "all_courses": "Alle Kurse",
+    "back": "Zurück"
+  },
+  "project-section": {
+    "title": "Projekte",
+    "description": "Eine umfassende Sammlung von Projekten aus den Bereichen Webentwicklung, mobile Apps, Open-Source-Tools und Unternehmenslösungen.",
+    "type_filter": "Nach Projekttyp filtern",
+    "difficulty_filter": "Nach Schwierigkeitsgrad filtern",
+    "tag_filter": "Nach Tag filtern",
+    "founded_projects": "Projekte gefunden",
+    "clean_filter": "Filter löschen",
+    "search": "Projekte suchen",
     "back": "Zurück"
   }
 }
