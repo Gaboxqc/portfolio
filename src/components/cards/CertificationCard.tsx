@@ -14,7 +14,7 @@ interface CertificationCardProps {
     animation?: string;
 }
 
-const CertificationCard = ({ title, academy, year, tags = [], serial, url, isMain = false }: CertificationCardProps) => {
+const CertificationCard = ({ title, academy, year, tags = [], url, isMain = false }: CertificationCardProps) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 40 }}

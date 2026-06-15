@@ -5,7 +5,7 @@ import NavbarSections from "./sections/NavbarSections";
 import LanguageSelector from "./ui/LanguageSelector";
 import useLanguage from "../hooks/useLanguage";
 import {LogoIcon} from "../assets/icons/index";
-import cv from '../../public/Curriculum.pdf'
+
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -41,7 +41,7 @@ const Navbar = () => {
 
             <div className={`${isScrolled ? "hidden" : "flex"} items-center gap-4 justify-self-end`}>
                 <LanguageSelector/>
-                <a href={cv} download={"Gabriel Mayorga CV"}
+                <a href={"https://assets.gabrielmayorga.dev/portfolio/curriculum.pdf"} download={"Gabriel-Mayorga-CV"}
                    className={"flex h-10 w-auto cursor-pointer items-center justify-center rounded-lg bg-primary/10 px-4 outline-1 hover:bg-primary/20"}>
                     CV
                 </a>

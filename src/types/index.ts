@@ -3,7 +3,6 @@ import type { ComponentType, SVGProps } from "react";
 /** Shared shape for an icon component imported via vite-plugin-svgr (`*.svg?react`). */
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
-/** A single localized translation row for a translatable entity. */
 export interface Translation {
   language_code: string;
   title: string;
