@@ -1,16 +1,16 @@
-import CertificationCard from "../cards/CertificationCard.jsx";
+import CourseCard from "../cards/CourseCard.jsx";
 import useLanguage from "../../hooks/useLanguage.jsx";
 import getTranslation from "../../utils/getTranslation.js";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
-function CoursesSection({courses = [], loading = false, error = null}) {
-    const {locale} = useLanguage();
+function CoursesSection({ courses = [], loading = false, error = null }) {
+    const { locale } = useLanguage();
 
     if (loading)
         return (
             <>
                 {[...Array(4)].map((_, i) => (
-                    <div key={i} className="h-40 w-full animate-pulse rounded-xl bg-muted-foreground/10"/>
+                    <div key={i} className="h-40 w-full animate-pulse rounded-xl bg-muted-foreground/10" />
                 ))}
             </>
         );
@@ -27,18 +27,18 @@ function CoursesSection({courses = [], loading = false, error = null}) {
                 const translation = getTranslation(course.translations, locale);
                 return (
                     <motion.div
-                            initial={{opacity: 0, y: 50}}
-                            whileInView={{opacity: 1, y: 0}}
-                            transition={{type: "spring"}}
-                            viewport={{once: true}}>
-                        <CertificationCard
-                            key={course.id}
+                        initial={{opacity: 0, y: 50}}
+                        whileInView={{opacity: 1, y: 0}}
+                        transition={{type: "spring"}}
+                        viewport={{once: true}}
+                        key={course.id}
+                    >
+                        <CourseCard
                             title={translation.title}
                             year={course.year}
                             academy={course.academy.name}
                             url={course.url}
                             tags={course.tags}
-                            animation={"rise"}
                         />
                     </motion.div>
                 );

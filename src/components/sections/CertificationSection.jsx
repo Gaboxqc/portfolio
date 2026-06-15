@@ -20,7 +20,7 @@ function CertificationSection({limit = 10, isMain = false, animation}) {
             translations.find(t => t.language_code === locale) ??
             translations.find(t => t.language_code === "en") ??
             translations[0]
-        );
+        )
     }
 
     useEffect(() => {
@@ -64,8 +64,9 @@ function CertificationSection({limit = 10, isMain = false, animation}) {
                             initial={{opacity: 0, y: 50}}
                             whileInView={{opacity: 1, y: 0}}
                             transition={{type: "spring"}}
-                            viewport={{once: true}}>
-                            <CertificationCard key={certification.id} title={translation.title}
+                            viewport={{once: true}}
+                            key={certification.id}>
+                            <CertificationCard  title={translation.title}
                                                year={certification.year} academy={certification.academy.name}
                                                url={certification.url} tags={certification.tags} isMain={isMain}
                                                animation={animation}/>

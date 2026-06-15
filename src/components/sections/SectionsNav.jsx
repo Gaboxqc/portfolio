@@ -5,24 +5,24 @@ import {motion} from "framer-motion";
 import useLanguage from "../../hooks/useLanguage.jsx";
 
 const SectionsNav = ({pill = false}) => {
-    const {translate} = useLanguage();
-    const {pathname} = useLocation();
-    const navRef = useRef(null);
-const [indicator, setIndicator] = useState({left: 0, width: 0});
-const [hasMeasured, setHasMeasured] = useState(false);
+    const {translate} = useLanguage()
+    const {pathname} = useLocation()
+    const navRef = useRef(null)
+    const [indicator, setIndicator] = useState({left: 0, width: 0})
+    const [hasMeasured, setHasMeasured] = useState(false)
 
     const links = [
         {name: translate("navbar.home"), path: "/"},
         {name: translate("navbar.courses"), path: "/courses"},
         {name: translate("navbar.projects"), path: "/projects"}
-    ];
+    ]
 
     useEffect(() => {
-    const activeEl = navRef.current?.querySelector('[data-active="true"]');
-    if (!activeEl) return;
-    setIndicator({left: activeEl.offsetLeft, width: activeEl.offsetWidth});
-    setHasMeasured(true);
-}, [pathname]);
+    const activeEl = navRef.current?.querySelector('[data-active="true"]')
+    if (!activeEl) return
+    setIndicator({left: activeEl.offsetLeft, width: activeEl.offsetWidth})
+    setHasMeasured(true)
+}, [pathname])
 
     return (
         <div
@@ -50,7 +50,7 @@ const [hasMeasured, setHasMeasured] = useState(false);
                 </NavLink>
             ))}
         </div>
-    );
-};
+    )
+}
 
-export default SectionsNav;
+export default SectionsNav

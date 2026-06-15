@@ -1,6 +1,6 @@
 // Navbar.jsx
 import {Link} from "react-router";
-import {motion, AnimatePresence} from "framer-motion";
+import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
 import SectionsNav from "./sections/SectionsNav.jsx";
 import LanguageSelector from "./ui/LanguageSelector.jsx";
