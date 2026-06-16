@@ -64,7 +64,6 @@ src/
 │   ├── sections/   # CoursesSection, CertificationSection, SectionsNav
 │   └── ui/         # GradientButton, FilterGroup, TypewriterLoop, LanguageSelector
 ├── hooks/
-│   ├── useFetch.jsx            # generic data fetching wrapper
 │   ├── useFilters.jsx          # filter state logic
 │   ├── useLanguage.jsx         # i18n context and translation helper
 │   ├── useScrollRestoration.jsx

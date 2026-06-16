@@ -7,8 +7,8 @@ const Footer = () => {
     const {translate} = UseLanguage()
 
     return(
-        <footer className={"container mx-auto p-4 mt-32"}>
-            <div className={"flex items-center justify-between"}>
+        <footer className={"container mx-auto p-4 mt-16 md:mt-32"}>
+            <div className={"flex flex-col justify-center md:flex-row md:items-center md:justify-between"}>
                 <div className={"flex max-w-100 flex-col items-start gap-8 mt-4 mb-16"}>
                 <div className={"flex gap-4"}>
                     <LogoIcon className={"h-8 w-8"}/>

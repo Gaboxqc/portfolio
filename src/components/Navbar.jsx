@@ -1,6 +1,6 @@
 // Navbar.jsx
 import {Link} from "react-router";
-import {motion, AnimatePresence} from "framer-motion";
+import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
 import SectionsNav from "./sections/SectionsNav.jsx";
 import LanguageSelector from "./ui/LanguageSelector.jsx";
@@ -28,7 +28,7 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            <div className="items-center justify-center md:flex">
+            <div className={`items-center justify-center md:flex ${isScrolled ? "flex" : "hidden"}`}>
                 {isScrolled ? (
                     <motion.div key="pill" initial={{scale: 0.92}} animate={{scale: 1}} transition={{type: "spring"}}>
                         <SectionsNav pill={true}/>

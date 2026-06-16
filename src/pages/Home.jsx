@@ -145,11 +145,11 @@ const Home = () => {
                             <ArrowIcon/>
                         </Link>
                     </div>
-                    <div className={"my-20 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2"}>
+                    <div className={"my-20 grid w-full grid-cols-1 gap-12 px-4 md:grid-cols-2"}>
                         <CertificationSection limit={4} animation={"tilt"}/>
                     </div>
                     <Link to={"/courses"}
-                          className={"cursor-pointer self-center rounded-xl bg-primary/20 p-4 outline-1 hover:bg-primary/30 md:hidden"}>
+                          className={"flex items-center gap-2 self-center rounded-xl bg-primary/20 p-4 outline-1 hover:bg-primary/30 md:hidden"}>
                         {translate("certifications.all-courses")}
                         <ArrowIcon/>
                     </Link>

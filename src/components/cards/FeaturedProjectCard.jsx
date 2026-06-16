@@ -11,7 +11,7 @@ const FeaturedProjectCard = ({position, year, title, description, technologies})
                 <div className={"flex flex-wrap gap-2"}>
                     {technologies.map((t) => {
                         return(
-                            <TextCardSlim Text={t}/>
+                            <TextCardSlim key={t} Text={t}/>
                         )
                     })}
                 </div>
