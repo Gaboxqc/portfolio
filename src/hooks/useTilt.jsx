@@ -9,10 +9,10 @@ function useTilt(){
 
     function handleMouseMove(e) {
         const rect = e.currentTarget.getBoundingClientRect();
-    const px = Math.min(Math.max((e.clientX - rect.left) / rect.width - 0.5, -0.5), 0.5);
-    const py = Math.min(Math.max((e.clientY - rect.top) / rect.height - 0.5, -0.5), 0.5);
-    x.set(px);
-    y.set(py);
+    const px = Math.min(Math.max((e.clientX - rect.left) / rect.width - 0.5, -0.5), 0.5)
+    const py = Math.min(Math.max((e.clientY - rect.top) / rect.height - 0.5, -0.5), 0.5)
+    x.set(px)
+    y.set(py)
     console.log(e.currentTarget, e.target);
     }
 
@@ -26,7 +26,7 @@ function useTilt(){
         whileInView: { opacity: 1, x: 0 },
         viewport: { once: true, margin: "-60px" },
         transition: { duration: 0.5, ease: "easeOut" },
-    };
+    }
 
     return { rotateX, rotateY, handleMouseMove, handleMouseLeave, fadeInLeft }
 }

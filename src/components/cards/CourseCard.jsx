@@ -29,7 +29,7 @@ const CourseCard = ({ title, academy, year, tags = [], url }) => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default CourseCard;

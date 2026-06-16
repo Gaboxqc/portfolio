@@ -44,7 +44,7 @@ const CertificationCard = ({ title, academy, year, tags = [], serial, url, isMai
                 </div>
             </div>
         </motion.div>
-    );
-};
+    )
+}
 
 export default CertificationCard;

@@ -28,7 +28,7 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            <div className="items-center justify-center md:flex">
+            <div className={`items-center justify-center md:flex ${isScrolled ? "flex" : "hidden"}`}>
                 {isScrolled ? (
                     <motion.div key="pill" initial={{scale: 0.92}} animate={{scale: 1}} transition={{type: "spring"}}>
                         <SectionsNav pill={true}/>
