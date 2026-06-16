@@ -1,23 +1,37 @@
+import { forwardRef } from "react";
 import TextCardSlim from "./TextCardSlim.jsx";
 
-const FeaturedProjectCard = ({position, year, title, description, technologies}) => {
+const FeaturedProjectCard = forwardRef(({ position, year, title, description, technologies, isActive }, ref) => {
     return (
-        <div className={"grid grid-cols-12 px-4 xl:h-screen"}>
-            <span className={"col-span-4 text-7xl text-accent font-bold"}>0{position}</span>
-            <div className="col-span-8 flex flex-col gap-5">
-                <span className={"text-muted-foreground text-sm"}>{year}</span>
-                <h3 className={"text-2xl"}>{title}</h3>
-                <p className={"text-muted-foreground text-md"}>{description}</p>
-                <div className={"flex flex-wrap gap-2"}>
-                    {technologies.map((t) => {
-                        return(
-                            <TextCardSlim key={t} Text={t}/>
-                        )
-                    })}
+        <div
+            ref={ref}
+            className={`grid grid-cols-12 px-2 min-h-[40vh] lg:min-h-[45vh] py-8 content-center transition-all duration-500 ${
+                isActive ? "opacity-100 scale-100" : "opacity-25 scale-98"
+            }`}
+        >
+            <span className={`col-span-3 text-6xl font-bold transition-colors duration-500 ${
+                isActive ? "text-accent" : "text-muted-foreground"
+            }`}>
+                0{position}
+            </span>
+
+            <div className="col-span-9 flex flex-col gap-4">
+                <span className="text-muted-foreground text-sm">{year}</span>
+                <h3 className={`text-3xl font-bold tracking-tight transition-colors duration-500 ${
+                    isActive ? "text-foreground" : "text-muted-foreground"
+                }`}>
+                    {title}
+                </h3>
+                <p className="text-muted-foreground text-md leading-relaxed">{description}</p>
+                <div className="flex flex-wrap gap-2">
+                    {technologies.map((t) => (
+                        <TextCardSlim key={t} Text={t} />
+                    ))}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+});
 
-export default FeaturedProjectCard
+FeaturedProjectCard.displayName = "FeaturedProjectCard";
+export default FeaturedProjectCard;

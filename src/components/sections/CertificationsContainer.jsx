@@ -9,7 +9,7 @@ const fetchCertifications = async (limit) => {
     return response.data
 }
 
-function CertificationSection({limit = 10, isMain = false, animation}) {
+function CertificationsContainer({limit = 10, isMain = false, animation}) {
     const [certification, setCertifications] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -79,4 +79,4 @@ function CertificationSection({limit = 10, isMain = false, animation}) {
 
 }
 
-export default CertificationSection
+export default CertificationsContainer

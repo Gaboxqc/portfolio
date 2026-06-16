@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
-import CoursesSection from "../components/sections/CoursesSection.jsx";
-import CertificationSection from "../components/sections/CertificationSection.jsx";
+import CoursesContainer from "../components/sections/CoursesContainer.jsx";
+import CertificationsContainer from "../components/sections/CertificationsContainer.jsx";
 import FilterGroup from "../components/ui/FilterGroup.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
 import useFilters from "../hooks/useFilters.jsx";
@@ -9,7 +9,7 @@ import {ArrowIcon, CloseIcon} from "../assets/icons/index.js";
 import {NavLink, useNavigate} from "react-router";
 import {AnimatePresence, motion} from "framer-motion";
 
-const Courses = () => {
+const CoursesPage = () => {
     const navigate = useNavigate()
     const {translate} = useLanguage()
     const categories = useFilters("category")
@@ -110,7 +110,7 @@ const Courses = () => {
                 <section className="flex flex-col gap-8">
                     <h3 className="text-2xl">{translate("course-section.main_certification")}</h3>
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        <CertificationSection isMain={true} categories={categories} animation={"rise"}/>
+                        <CertificationsContainer isMain={true} categories={categories} animation={"rise"}/>
                     </div>
                 </section>
             )}
@@ -118,11 +118,11 @@ const Courses = () => {
             <section className="my-8 flex flex-col gap-8">
                 <h3 className="text-2xl">{translate("course-section.all_courses")}</h3>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <CoursesSection courses={courses} loading={loading} error={error}/>
+                    <CoursesContainer courses={courses} loading={loading} error={error}/>
                 </div>
             </section>
         </main>
     )
 }
 
-export default Courses;
+export default CoursesPage;

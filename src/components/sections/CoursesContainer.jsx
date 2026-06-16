@@ -3,7 +3,7 @@ import useLanguage from "../../hooks/useLanguage.jsx";
 import getTranslation from "../../utils/getTranslation.js";
 import { motion } from "framer-motion";
 
-function CoursesSection({ courses = [], loading = false, error = null }) {
+function CoursesContainer({ courses = [], loading = false, error = null }) {
     const { locale } = useLanguage();
 
     if (loading)
@@ -47,4 +47,4 @@ function CoursesSection({ courses = [], loading = false, error = null }) {
     );
 }
 
-export default CoursesSection;
+export default CoursesContainer;
