@@ -4,9 +4,9 @@ import {createBrowserRouter, RouterProvider} from "react-router";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {motion} from "framer-motion";
 
-import Home from "./pages/Home.jsx";
-import Courses from "./pages/Courses.jsx";
-import Projects from "./pages/Projects.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import CoursesPage from "./pages/CoursesPage.jsx";
+import ProjectsPage from "./pages/ProjectsPage.jsx";
 import Layout from "./Layout.jsx";
 
 const queryClient = new QueryClient()
@@ -16,9 +16,9 @@ const router = createBrowserRouter([
         path: "/",
         element: <Layout/>,
         children: [
-            {index: true, element: <Home/>},
-            {path: "courses", element: <Courses/>},
-            {path: "projects", element: <Projects/>},
+            {index: true, element: <HomePage/>},
+            {path: "courses", element: <CoursesPage/>},
+            {path: "projects", element: <ProjectsPage/>},
         ],
     },
 ]);

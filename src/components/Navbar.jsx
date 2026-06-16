@@ -2,7 +2,7 @@
 import {Link} from "react-router";
 import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
-import SectionsNav from "./sections/SectionsNav.jsx";
+import NavbarSections from "./sections/NavbarSections.jsx";
 import LanguageSelector from "./ui/LanguageSelector.jsx";
 import useLanguage from "../hooks/useLanguage.jsx";
 import {LogoIcon} from "../assets/icons/index.js";
@@ -31,11 +31,11 @@ const Navbar = () => {
             <div className={`items-center justify-center md:flex ${isScrolled ? "flex" : "hidden"}`}>
                 {isScrolled ? (
                     <motion.div key="pill" initial={{scale: 0.92}} animate={{scale: 1}} transition={{type: "spring"}}>
-                        <SectionsNav pill={true}/>
+                        <NavbarSections pill={true}/>
                     </motion.div>
                 ) : (
                     <motion.div key="inline" initial={{scale: 1.1}} animate={{scale: 1}} transition={{type: "spring"}}>
-                        <SectionsNav pill={false}/>
+                        <NavbarSections pill={false}/>
                     </motion.div>
                 )}
             </div>

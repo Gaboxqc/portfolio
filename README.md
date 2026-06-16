@@ -61,7 +61,7 @@ npm run lint     # ESLint
 src/
 ├── components/
 │   ├── cards/      # ProjectCard, CertificationCard, SkillCard, etc.
-│   ├── sections/   # CoursesSection, CertificationSection, SectionsNav
+│   ├── sections/   # CoursesContainer, CertificationsContainer, NavbarSections
 │   └── ui/         # GradientButton, FilterGroup, TypewriterLoop, LanguageSelector
 ├── hooks/
 │   ├── useFilters.jsx          # filter state logic
@@ -73,9 +73,9 @@ src/
 │   ├── es.json
 │   └── de.json
 ├── pages/
-│   ├── Home.jsx
-│   ├── Projects.jsx
-│   └── Courses.jsx
+│   ├── HomePage.jsx
+│   ├── ProjectsPage.jsx
+│   └── CoursesPage.jsx
 ├── styles/
 │   ├── index.css
 │   └── theme.css

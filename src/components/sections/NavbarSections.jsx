@@ -1,10 +1,10 @@
-// SectionsNav.jsx
+// NavbarSections.jsx
 import {useRef, useEffect, useState} from "react";
 import {NavLink, useLocation} from "react-router";
 import {motion} from "framer-motion";
 import useLanguage from "../../hooks/useLanguage.jsx";
 
-const SectionsNav = ({pill = false}) => {
+const NavbarSections = ({pill = false}) => {
     const {translate} = useLanguage()
     const {pathname} = useLocation()
     const navRef = useRef(null)
@@ -53,4 +53,4 @@ const SectionsNav = ({pill = false}) => {
     )
 }
 
-export default SectionsNav
+export default NavbarSections

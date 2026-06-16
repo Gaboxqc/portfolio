@@ -12,7 +12,7 @@ import useFilters from "../hooks/useFilters.jsx";
 import {useState} from "react";
 import {NavLink, useNavigate} from "react-router";
 
-const Projects = () => {
+const ProjectsPage = () => {
     const {translate} = useLanguage()
     const navigate = useNavigate()
     const projectTypes = useFilters("project_type")
@@ -108,4 +108,4 @@ const Projects = () => {
     )
 }
 
-export default Projects
+export default ProjectsPage
