@@ -6,7 +6,7 @@ function AboutSection() {
     const {translate} = useLanguage()
 
     return (
-        <section id={"about"} className={"container mx-auto flex h-full flex-col items-center px-5 py-16 xl:h-screen"}>
+        <section id={"about"} className={"container mx-auto flex h-full flex-col items-center px-5 py-16 my-30 xl:h-screen"}>
             <h2 className={"bg-linear-to-r from-foreground to-muted-foreground bg-clip-text text-center text-5xl leading-16 text-transparent"}>
                 {translate("about.title")}
             </h2>
@@ -22,7 +22,7 @@ function AboutSection() {
                 <SkillCard Icon={"Lightning"} Title={translate("about.fast-delivery")}
                            Description={translate("about.fast-delivery-description")}/>
             </div>
-            <h2 className={"my-10 text-2xl"}>Tecnologías y herramientas</h2>
+            <h2 className={"my-10 text-2xl"}>{translate("about.second-title")}</h2>
             <div className="grid w-full grid-cols-2 gap-3 gap-y-6 md:grid-cols-3 lg:grid-cols-4">
                 <TextCard text={"HTML"}/>
                 <TextCard text={"CSS"}/>

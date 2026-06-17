@@ -14,9 +14,9 @@ const LanguageSelector = () => {
     return (
         <Select.Root value={locale} onValueChange={setLocale}>
             <Select.Trigger
-                className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2 focus:outline-0 cursor-pointer">
+                className="flex items-center gap-2 rounded-xl border border-primary/40 bg-card px-4 md:px-7 py-2 focus:outline-0 cursor-pointer hover:bg-primary/20">
                 <svg
-                    className="h-4 w-4 text-slate-400"
+                    className="h-4 w-4 text-muted-foreground"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -27,7 +27,7 @@ const LanguageSelector = () => {
                           d="M3.6 9h16.8M3.6 15h16.8M12 3a18.9 18.9 0 004.9 9c-.9 3.2-2.4 6.5-4.9 9m0-18a18.9 18.9 0 01-4.9 9c.9 3.2 2.4 6.5 4.9 9"/>
                 </svg>
                 <Select.Value placeholder={"Español"}/>
-                <Select.Icon className="ml-1 text-slate-400">
+                <Select.Icon className="ml-1 text-muted-foreground">
                     <svg
                         className="h-3 w-3 transition-transform duration-200"
                         fill="none"
@@ -42,20 +42,22 @@ const LanguageSelector = () => {
 
             <Select.Portal>
                 <Select.Content
-                    className="rounded-2xl border border-slate-800 bg-[#0b1324] p-2 text-slate-200 shadow-xl">
+                    position="popper"
+                    sideOffset={8}
+                    className="rounded-2xl border border-primary/30 bg-card py-2 px-2 text-muted-foreground shadow-xl">
                     <Select.Viewport>
                         {languages.map((language) => {
                             return (
                                 <Select.Item
                                     key={language.code}
                                     value={language.code}
-                                    className="flex cursor-pointer items-center justify-between rounded-xl p-3 text-slate-300 transition-colors outline-none hover:bg-slate-800/40 data-[state=checked]:text-white">
+                                    className="flex cursor-pointer items-center justify-between rounded-xl p-3 text-muted-foreground transition-colors outline-none hover:bg-primary/20 data-[state=checked]:text-accent px-5">
                                     <div className="flex items-center gap-3">
                                         <span className="text-base">{language.flag}</span>
                                         <Select.ItemText>{language.name}</Select.ItemText>
                                     </div>
-                                    <Select.ItemIndicator>
-                                        <div className="w-2 h-2 rounded-full bg-[#00d2ff] shadow-[0_0_8px_#00d2ff]"/>
+                                    <Select.ItemIndicator className="hidden md:block ml-4 shrink-0">
+                                        <div className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#00d2ff]"/>
                                     </Select.ItemIndicator>
                                 </Select.Item>
                             );

@@ -14,6 +14,7 @@
   },
   "about": {
     "title": "Building digital solutions with dedication",
+    "second-title": "Technologies and Tools",
     "description": "What I might lack in traditional workplace experience, I make up for with constant study and a real passion for what I do. I enjoy building digital products that run smoothly, always following the best practices I’ve learned and certified. I adapt quickly to any tool",
     "clean-code": "Clean code",
     "clean-code-description": "Writing tidy, maintainable, and scalable code is my priority. I believe a solid structure is key for any project to grow without issues.",
@@ -37,8 +38,8 @@
   "contact": {
     "title": "Let's build something exceptional together",
     "subtitle": "I'm available for freelance projects or joining a team full-time",
-    "conversation": "Start a conversation",
-    "all-courses": "View all"
+    "location": "Location",
+    "conversation": "Start a conversation"
   },
   "footer": {
     "title": "Full-stack developer focused on creating functional digital solutions. I combine a solid certified background with the use of AI to solve problems and design interfaces.",

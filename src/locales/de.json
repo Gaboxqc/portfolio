@@ -14,6 +14,7 @@
   },
   "about": {
     "title": "Digitale Lösungen mit vollem Einsatz entwickeln",
+    "second-title": "Technologien und Werkzeuge",
     "description": "Was mir an traditioneller Berufserfahrung in Unternehmen fehlt, mache ich durch ständiges Lernen und echte Leidenschaft wett. Es macht mir Spaß, digitale Produkte zu bauen, die rund laufen. Dabei wende ich immer die Best Practices an, die ich mir durch Zertifikate erarbeitet habe. Ich passe mich schnell an jedes Tool an.",
     "clean-code": "Sauberer Code",
     "clean-code-description": "Strukturierter, wartbarer und skalierbarer Code steht bei mir an erster Stelle. Nur mit einer guten Basis kann ein Projekt problemlos wachsen.",
@@ -37,6 +38,7 @@
   "contact": {
     "title": "Lass uns zusammen etwas Großartiges schaffen",
     "subtitle": "Ich stehe für freiberufliche Projekte zur Verfügung oder bin bereit, mich in ein Team auf Vollzeitbasis zu integrieren",
+    "location": "Standort",
     "conversation": "Gespräch beginnen"
   },
   "footer": {

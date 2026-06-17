@@ -13,7 +13,6 @@ function useTilt(){
     const py = Math.min(Math.max((e.clientY - rect.top) / rect.height - 0.5, -0.5), 0.5)
     x.set(px)
     y.set(py)
-    console.log(e.currentTarget, e.target);
     }
 
     function handleMouseLeave() {
