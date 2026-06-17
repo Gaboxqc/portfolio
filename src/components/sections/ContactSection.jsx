@@ -6,7 +6,7 @@ import ContactCard from "../cards/ContactCard.jsx";
 function ContactSection() {
     const {translate} = useLanguage()
     return (
-        <section id={"contact"} className={"bg-linear-to-t from-primary/10 via-transparent to-transparent"}>
+        <section id={"contact"} className={"bg-linear-to-t from-primary/10 via-transparent to-transparent py-30"}>
             <div className={"container mx-auto flex flex-col items-center pt-16 pb-30"}>
                 <h2 className={"bg-linear-to-r from-foreground to-accent bg-clip-text text-center text-5xl leading-16 text-transparent"}>{translate("contact.title")}</h2>
                 <p className={"mx-4 my-4 text-center leading-7 text-muted-foreground"}>{translate("contact.subtitle")}</p>

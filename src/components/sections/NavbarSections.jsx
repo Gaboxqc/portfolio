@@ -5,7 +5,7 @@ import {motion} from "framer-motion";
 import useLanguage from "../../hooks/useLanguage.jsx";
 
 const NavbarSections = ({pill = false}) => {
-    const {translate} = useLanguage()
+    const {translate, locale} = useLanguage()
     const {pathname} = useLocation()
     const navRef = useRef(null)
     const [indicator, setIndicator] = useState({left: 0, width: 0})
@@ -22,7 +22,7 @@ const NavbarSections = ({pill = false}) => {
     if (!activeEl) return
     setIndicator({left: activeEl.offsetLeft, width: activeEl.offsetWidth})
     setHasMeasured(true)
-}, [pathname])
+}, [pathname, locale])
 
     return (
         <div

@@ -1,19 +1,15 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+// hooks/useFilters.jsx
+import { useQuery } from "@tanstack/react-query";
+import { getFilterOptions } from "../services/filters.js";
 
-function useFilters(endpoint) {
-    const [result, setResult] = useState([])
+const useFilters = (endpoint) => {
+    const { data, isLoading, error } = useQuery({
+        queryKey: ["filters", endpoint],
+        queryFn: ({ signal }) => getFilterOptions(endpoint, signal),
+        staleTime: Infinity,
+    });
 
-    useEffect(() => {
-        const controller = new AbortController()
-        axios
-            .get(`https://api.gabrielmayorga.dev/portfolio/${endpoint}`, { signal: controller.signal })
-            .then(({ data }) => setResult(data))
-            .catch((err) => { if (!axios.isCancel(err)) console.error(err); })
-        return () => controller.abort()
-    }, [endpoint])
+    return { options: data ?? [], loading: isLoading, error: error?.message ?? null };
+};
 
-    return result
-}
-
-export default useFilters
+export default useFilters;

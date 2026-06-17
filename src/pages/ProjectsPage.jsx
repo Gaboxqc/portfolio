@@ -1,111 +1,103 @@
-import {ArrowIcon, SearchIcon} from "../assets/icons/index.js";
-import TextCardTransparent from "../components/cards/TextCardTransparent.jsx";
-import ProjectCard from "../components/cards/ProjectCard.jsx";
-
-import project1 from '../assets/project1.jpg'
-import project2 from '../assets/project2.jpg'
-import project3 from '../assets/project3.jpg'
-import project4 from '../assets/project4.jpg'
-import useLanguage from "../hooks/useLanguage.jsx";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { SearchIcon } from "../assets/icons/index.js";
+import PageHeader from "../components/ui/PageHeader.jsx";
+import ResultsBar from "../components/ui/ResultsBar.jsx";
 import FilterGroup from "../components/ui/FilterGroup.jsx";
+import ProjectsContainer from "../components/containers/ProjectsContainer.jsx";
+import useLanguage from "../hooks/useLanguage.jsx";
 import useFilters from "../hooks/useFilters.jsx";
-import {useState} from "react";
-import {NavLink, useNavigate} from "react-router";
+import useProjects from "../hooks/useProjects.jsx";
+import useToggleArray from "../hooks/useToggleArray.jsx";
 
 const ProjectsPage = () => {
-    const {translate} = useLanguage()
-    const navigate = useNavigate()
-    const projectTypes = useFilters("project_type")
-    const difficulty_level = useFilters("difficulty_level")
+    const { translate } = useLanguage();
 
-    const [selectedProjectTypes, setSelectedProjectTypes] = useState()
-    const [selectedDifficultyLevels, setSelectedDifficultyLevels] = useState()
+    const { options: projectTypes } = useFilters("project_type");
+    const { options: difficultyLevels } = useFilters("difficulty_level");
+    const { options: tags } = useFilters("tag");
 
-    const toggle = (setter, id) =>
-        setter((prev) => prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id])
+    const [search, setSearch] = useState("");
+    const [selectedTypes, toggleType, clearTypes] = useToggleArray();
+    const [selectedDifficulties, toggleDifficulty, clearDifficulties] = useToggleArray();
+    const [selectedTags, toggleTag, clearTags] = useToggleArray();
 
-    const projects = [
-        {
-            title: "Personal finance app",
-            description: "This app contains 5 pages (Overview, Transactions, Budgets, Pots, and Recurring Bills) and includes a lot of tricky elements. I build it as a full-stack app!",
-            image: project1
-        },
-        {
-            title: "Link-sharing app",
-            description: "In this project, I build a fully-functional link-sharing app for developers! I practice working with image uploads, repeater fields, drag-and-drop, and more!",
-            image: project2
-        },
-        {
-            title: "Kanban task management web app",
-            description: "In this project, I build a fully-functional task management app with a light/dark mode toggle.",
-            image: project3
-        },
-        {
-            title: "Product feedback app",
-            description: "I have been working with JSON, managing state, and building like a real-world app. I create it as a full-stack project!",
-            image: project4
-        }
-    ]
+    const { projects, loading, error } = useProjects({
+        typeIds: selectedTypes,
+        difficultyIds: selectedDifficulties,
+        tagIds: selectedTags,
+        search,
+    });
+
+    const hasActiveFilters =
+        selectedTypes.length > 0 ||
+        selectedDifficulties.length > 0 ||
+        selectedTags.length > 0 ||
+        search.trim().length > 0;
+
+    const clearFilters = () => {
+        clearTypes();
+        clearDifficulties();
+        clearTags();
+        setSearch("");
+    };
 
     return (
-        <main className={"container mx-auto flex flex-col gap-8 px-4 pt-24"}>
-            <section className={"flex flex-col gap-8"}>
-                <NavLink to="#" onClick={(e) => { e.preventDefault(); navigate(-1); }}
-                         className={"flex gap-2 items-center cursor-pointer"}>
-                    <ArrowIcon className={"rotate-180 h-5 w-5 text-muted-foreground"} />
-                    <p className="text-muted-foreground">{translate("course-section.back")}</p>
-                </NavLink>
-                <h1 className={"text-5xl md:text-6xl"}>{translate("project-section.title")}</h1>
-                <p className={"max-w-4xl text-lg text-muted-foreground"}>{translate("project-section.description")}</p>
-            </section>
-            <section className={"flex flex-col gap-8"}>
-                <div className={"flex h-12 w-full items-center rounded-xl border bg-background"}>
-                    <SearchIcon className={"mr-2 ml-3 h-5 w-5"}/>
-                    <input type="text" className={"w-full p-2 text-muted-foreground outline-0"}
-                           placeholder={translate("project-section.search")}/>
-                </div>
-                <div>
-                    <FilterGroup
-                        label={translate("project-section.type_filter")}
-                        items={projectTypes}
-                        selected={selectedProjectTypes}
-                        onToggle={(id) => toggle(setSelectedProjectTypes, id)}
+        <main className="container mx-auto mb-30 flex flex-col gap-8 px-4 pt-24">
+            <PageHeader
+                backLabel={translate("course-section.back")}
+                title={translate("project-section.title")}
+                description={translate("project-section.description")}
+            />
+
+            <section className="flex flex-col gap-8">
+                <div className="flex h-12 w-full items-center rounded-xl border bg-background">
+                    <SearchIcon className="mr-2 ml-3 h-5 w-5" />
+                    <input
+                        type="text"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="w-full p-2 text-muted-foreground outline-0"
+                        placeholder={translate("project-section.search")}
                     />
                 </div>
-                <div>
-                    <FilterGroup
-                        label={translate("project-section.difficulty_filter")}
-                        items={difficulty_level}
-                        selected={selectedDifficultyLevels}
-                        onToggle={(id) => toggle(setSelectedDifficultyLevels(), id)}
-                    />
-                </div>
-                <div>
-                    <p className={"mb-2 text-muted-foreground"}>{translate("project-section.tag_filter")}</p>
-                    <ul className={"flex flex-wrap gap-2"}>
-                        <li><TextCardTransparent text={"CLI"}/></li>
-                        <li><TextCardTransparent text={"D3.js"}/></li>
-                        <li><TextCardTransparent text={"Docker"}/></li>
-                        <li><TextCardTransparent text={"Express"}/></li>
-                        <li><TextCardTransparent text={"Firabase"}/></li>
-                        <li><TextCardTransparent text={"GraphQL"}/></li>
-                        <li><TextCardTransparent text={"Kubernetes"}/></li>
-                        <li><TextCardTransparent text={"MongoDB"}/></li>
-                    </ul>
-                </div>
-                <div className={"flex hidden h-16 items-center justify-between rounded-xl border bg-card p-4"}>
-                    <p className={"text-sm text-muted-foreground"}>2 {translate("project-section.founded_projects")}</p>
-                    <button className={"rounded-xl border bg-primary/20 px-4 py-2 text-sm font-normal"}>
-                        <span>X </span>{translate("project-section.clean_filter")}</button>
-                </div>
+
+                <FilterGroup
+                    label={translate("project-section.type_filter")}
+                    items={projectTypes}
+                    selected={selectedTypes}
+                    onToggle={toggleType}
+                />
+                <FilterGroup
+                    label={translate("project-section.difficulty_filter")}
+                    items={difficultyLevels}
+                    selected={selectedDifficulties}
+                    onToggle={toggleDifficulty}
+                />
+                <FilterGroup
+                    label={translate("project-section.tag_filter")}
+                    items={tags}
+                    selected={selectedTags}
+                    onToggle={toggleTag}
+                />
+
+                <AnimatePresence mode="wait">
+                    {hasActiveFilters && (
+                        <ResultsBar
+                            count={projects.length}
+                            label={translate("project-section.founded_projects")}
+                            clearLabel={translate("project-section.clean_filter")}
+                            onClear={clearFilters}
+                        />
+                    )}
+                </AnimatePresence>
             </section>
-            <section className={"grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"}>
-                {projects.map((project) => (
-                    <ProjectCard key={project.title} title={project.title} description={project.description} image={project.image}/>
-                ))}
+
+            <section className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <ProjectsContainer projects={projects} loading={loading} error={error} />
             </section>
         </main>
-    )
-}
+    );
+};
 
-export default ProjectsPage
+export default ProjectsPage;

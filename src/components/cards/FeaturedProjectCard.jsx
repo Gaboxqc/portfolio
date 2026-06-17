@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import TextCardSlim from "./TextCardSlim.jsx";
 
-const FeaturedProjectCard = forwardRef(({ position, year, title, description, technologies, isActive }, ref) => {
+const FeaturedProjectCard = forwardRef(({ position, year, title, description, tags, isActive }, ref) => {
     return (
         <div
             ref={ref}
@@ -24,8 +24,8 @@ const FeaturedProjectCard = forwardRef(({ position, year, title, description, te
                 </h3>
                 <p className="text-muted-foreground text-md leading-relaxed">{description}</p>
                 <div className="flex flex-wrap gap-2">
-                    {technologies.map((t) => (
-                        <TextCardSlim key={t} Text={t} />
+                    {tags.map((t) => (
+                        <TextCardSlim key={t.id} Text={t.name} />
                     ))}
                 </div>
             </div>

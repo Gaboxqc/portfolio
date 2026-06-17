@@ -1,4 +1,3 @@
-// Navbar.jsx
 import {Link} from "react-router";
 import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
