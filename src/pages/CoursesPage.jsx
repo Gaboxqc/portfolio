@@ -11,8 +11,8 @@ import { AnimatePresence } from "framer-motion";
 
 const CoursesPage = () => {
     const { translate } = useLanguage();
-    const { options: categories } = useFilters("category");
-    const { options: tags } = useFilters("tag");
+    const { options: categories } = useFilters("categories");
+    const { options: tags } = useFilters("tags");
 
     const [selectedCategories, toggleCategory, clearCategories] = useToggleArray();
     const [selectedTags, toggleTag, clearTags] = useToggleArray();

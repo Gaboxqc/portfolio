@@ -13,9 +13,9 @@ import useToggleArray from "../hooks/useToggleArray.jsx";
 const ProjectsPage = () => {
     const { translate } = useLanguage();
 
-    const { options: projectTypes } = useFilters("project_type");
-    const { options: difficultyLevels } = useFilters("difficulty_level");
-    const { options: tags } = useFilters("tag");
+    const { options: projectTypes } = useFilters("project_types");
+    const { options: difficultyLevels } = useFilters("difficulty_levels");
+    const { options: tags } = useFilters("tags");
 
     const [search, setSearch] = useState("");
     const [selectedTypes, toggleType, clearTypes] = useToggleArray();

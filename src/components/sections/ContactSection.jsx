@@ -13,7 +13,7 @@ function ContactSection() {
                 <div className={"my-16 grid w-full grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3"}>
                     <ContactCard title={"Email"} label={"gabrielmayorgate@gmail.com"}
                                  link={"mailto:gabrielmayorgate@gmail.com"} Icon={MailIcon}/>
-                    <ContactCard title={"Ubicación"} label={"Managua, NI"} link={""} Icon={LocationIcon}/>
+                    <ContactCard title={translate("contact.location")} label={"Managua, NI"} link={""} Icon={LocationIcon}/>
                     <ContactCard title={"Chat"} label={"Telegram/Discord: Gaboxqc"} link={"https://t.me/Gaboxqc"}
                                  Icon={ChatIcon}/>
                 </div>
