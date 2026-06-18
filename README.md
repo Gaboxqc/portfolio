@@ -19,6 +19,7 @@ The whole site works in English, Spanish, and German. I added the multilingual s
 ## Stack
 
 - **React 19 + Vite 8** — I'm not going back to CRA after using Vite
+- **TypeScript** — full type coverage across components, hooks, services, and the API models
 - **Tailwind CSS v4** — utility classes with a custom theme
 - **Framer Motion** — page transitions and the animated background blobs
 - **React Router v7** — client-side navigation
@@ -64,26 +65,28 @@ src/
 │   ├── sections/   # CoursesContainer, CertificationsContainer, NavbarSections
 │   └── ui/         # GradientButton, FilterGroup, TypewriterLoop, LanguageSelector
 ├── hooks/
-│   ├── useFilters.jsx          # filter state logic
-│   ├── useLanguage.jsx         # i18n context and translation helper
-│   ├── useScrollRestoration.jsx
-│   └── useTilt.jsx             # card tilt effect on hover
+│   ├── useFilters.ts          # filter state logic
+│   ├── useLanguage.ts         # i18n context and translation helper
+│   ├── useScrollRestoration.ts
+│   └── useTilt.ts             # card tilt effect on hover
 ├── locales/
 │   ├── en.json
 │   ├── es.json
 │   └── de.json
 ├── pages/
-│   ├── HomePage.jsx
-│   ├── ProjectsPage.jsx
-│   └── CoursesPage.jsx
+│   ├── HomePage.tsx
+│   ├── ProjectsPage.tsx
+│   └── CoursesPage.tsx
 ├── styles/
 │   ├── index.css
 │   └── theme.css
+├── types/
+│   └── index.ts        # shared domain types (Project, Certification, Course, etc.)
 ├── utils/
-│   └── getTranslation.js
-├── App.jsx
-├── Layout.jsx
-└── main.jsx
+│   └── getTranslation.ts
+├── App.tsx
+├── Layout.tsx
+└── main.tsx
 ```
 
 ---
@@ -100,7 +103,7 @@ The frontend uses TanStack Query + a custom `useFetch` hook to pull from it. Rea
 
 ## Adding a language
 
-The locale files are in `src/locales/`. If you wanted to add French for example, you'd create `fr.json` following the same structure as `en.json`, then register the new option in `useLanguage.jsx`. That covers the UI strings — for content translations you'd also need to add them on the API side.
+The locale files are in `src/locales/`. If you wanted to add French for example, you'd create `fr.json` following the same structure as `en.json`, then register the new option in `LanguageContext.tsx`. That covers the UI strings — for content translations you'd also need to add them on the API side.
 
 ---
 
