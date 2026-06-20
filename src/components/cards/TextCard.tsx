@@ -1,20 +1,23 @@
-import {motion} from "framer-motion";
+import { motion } from 'framer-motion'
 
 interface TextCardProps {
-    text: string;
+  text: string
 }
 
-const TextCard = ({text}: TextCardProps) => {
-    return(
-        <motion.div
-            initial={{opacity: 0, y: 50}}
-            whileInView={{opacity: 1, y: 0}}
-            transition={{type: "spring"}}
-            viewport={{once: true}}
-            className={"bg-card p-3 rounded-2xl text-center border border-primary/30 hover:border-primary/80"}>
-            <p>{text}</p>
-        </motion.div>
-    )
+const TextCard = ({ text }: TextCardProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ type: 'spring' }}
+      viewport={{ once: true }}
+      className={
+        'rounded-2xl border border-primary/30 bg-card p-3 text-center hover:border-primary/80'
+      }
+    >
+      <p>{text}</p>
+    </motion.div>
+  )
 }
 
 export default TextCard

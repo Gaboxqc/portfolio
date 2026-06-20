@@ -1,51 +1,49 @@
-import {createContext, useState, type ReactNode} from "react";
+import { createContext, useState, type ReactNode } from 'react'
 
-import es from "../locales/es.json"
-import en from "../locales/en.json"
-import de from "../locales/de.json"
+import es from '../locales/es.json'
+import en from '../locales/en.json'
+import de from '../locales/de.json'
 
-export type Locale = "es" | "en" | "de";
+export type Locale = 'es' | 'en' | 'de'
 
-// Loose on purpose: locale files are translator-maintained content and may
-// drift slightly in shape between languages, so we don't tie this to the
-// exact structure of one specific json file.
-type Dictionary = Record<string, unknown>;
+type Dictionary = Record<string, unknown>
 
 export interface LanguageContextValue {
-    locale: Locale;
-    setLocale: (locale: Locale) => void;
-    translate: (path: string) => string;
+  locale: Locale
+  setLocale: (locale: Locale) => void
+  translate: (path: string) => string
 }
 
-export const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
+// eslint-disable-next-line react-refresh/only-export-components
+export const LanguageContext = createContext<LanguageContextValue | undefined>(undefined)
 
-const dictionaries: Record<Locale, Dictionary> = {es, en, de}
+const dictionaries: Record<Locale, Dictionary> = { es, en, de }
 
 interface LanguageProviderProps {
-    children: ReactNode;
+  children: ReactNode
 }
 
-const LanguageProvider = ({children}: LanguageProviderProps) => {
-    const [locale, setLocale] = useState<Locale>("es")
+const LanguageProvider = ({ children }: LanguageProviderProps) => {
+  const [locale, setLocale] = useState<Locale>('es')
 
-    const translate = (path: string): string => {
-        const directory = dictionaries[locale] || dictionaries["es"]
+  const translate = (path: string): string => {
+    const directory = dictionaries[locale] || dictionaries['es']
 
-        const value = path.split(".").reduce<unknown>((obj, key) => {
-            if (obj && typeof obj === "object" && key in obj) {
-                return (obj as Record<string, unknown>)[key]
-            }
-            return undefined
-        }, directory)
+    const value = path.split('.').reduce<unknown>((obj, key) => {
+      if (obj && typeof obj === 'object' && key in obj) {
+        return (obj as Record<string, unknown>)[key]
+      }
+      return undefined
+    }, directory)
 
-        return typeof value === "string" ? value : path
-    }
+    return typeof value === 'string' ? value : path
+  }
 
-    return (
-        <LanguageContext.Provider value={{locale, setLocale, translate}}>
-            {children}
-        </LanguageContext.Provider>
-    )
+  return (
+    <LanguageContext.Provider value={{ locale, setLocale, translate }}>
+      {children}
+    </LanguageContext.Provider>
+  )
 }
 
 export default LanguageProvider
