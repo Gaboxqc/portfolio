@@ -36,8 +36,7 @@ function HeroSection() {
           <Link
             to={'#contact'}
             className={
-              'flex h-13 w-auto items-center justify-center rounded-lg px-4' +
-              'border border-accent/20 hover:bg-primary/10'
+              'flex h-13 w-auto items-center justify-center rounded-lg px-4 border border-accent/20 hover:bg-primary/10'
             }
           >
             {translate('hero.contact')}
