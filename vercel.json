@@ -3,6 +3,10 @@
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    },
+    {
+      "source": "/statpitch/:path*",
+      "destination": "https://statpitch-frontend.vercel.app/:path*"
     }
   ]
 }
