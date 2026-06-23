@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/statpitch",
+      "destination": "https://statpitch-frontend.vercel.app/"
+    },
+    {
       "source": "/statpitch/:path*",
       "destination": "https://statpitch-frontend.vercel.app/:path*"
     },
